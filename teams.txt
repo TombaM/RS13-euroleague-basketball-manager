@@ -1,6 +1,6 @@
 Num::Name::Country::Town::Coach::
-1::CSKA::Russia::Moscow::Dimitris Itoudis::
-2::Real Madrid::Spain::Madrid::Pablo Laso::
+1::CSKA::Russia::Moscow::Dimitris, Itoudis::
+2::Real Madrid::Spain::Madrid::Pablo, Laso::
 3::Maccabi::Israel::Tel Aviv::Ainaris, Bagatskis::
 4::Panathinaikos::Greece::Athens::Xavi, Pascual::
 5::Anadolu Efes::Turkey::Istanbul::Velimir, Perasovic::
