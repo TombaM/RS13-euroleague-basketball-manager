@@ -1,0 +1,9 @@
+Num::Name::Country::Town::Coach::
+1::CSKA::Russia::Moscow::Dimitris Itoudis::
+2::Real Madrid::Spain::Madrid::Pablo Laso::
+3::Maccabi::Israel::Tel Aviv::Ainaris, Bagatskis::
+4::Panathinaikos::Greece::Athens::Xavi, Pascual::
+5::Anadolu Efes::Turkey::Istanbul::Velimir, Perasovic::
+6::Crvena Zvezda::Serbia::Belgrade::Dejan, Radonjic::
+7::EA7 Emporio Armani::Italy::Milan::Jasmin, Repesa::
+8::Zalgiris::Lithuania::Kaunas::Sarunas, Jasikevicius::

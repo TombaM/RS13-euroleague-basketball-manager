@@ -1,0 +1,114 @@
+NUMBER - NAME - DATE OF BIRTH - NATIONALITY - POSITION - HEIGHT - 1 POINTER - 2 POINTER - 3 POINTER - ASSISTS - DRIBBLE - PHYSICALITY - DEFENSE 
+
+CSKA
+1::Nando, De Colo::23/6/1987::France::Guard::1.96::
+4::Milos, Teododic::19/3/1987::Serbia::Guard::1.95::
+5::James, Augustine::27/2/1984::United States of America::Forward::2.08::
+7::Vitaly, Fridzon::14/10/1985::Russian Federation::Guard::1.95::
+9::Aaron, Jackson::6/5/1986::United States of America::Guard::1.90::
+11:Semen, Antonov::18/7/1989::Russian Federation::Forward::2.02::
+19::Joel, Freeland::7/2/1987::United Kingdom::Center::2.10::
+20::Andrey, Vorontsevich::17/7/1987::Russian Federation::Forward::2.07::
+22::Cory, Higgins::14/6/1989::United States of America::Guard::1.96::
+31::Victor, Khryapa::3/8/1982::Russian Federation::Forward::2.03::
+41::Nikita, Kurbanov::5/10/1986::Russian Federation::Forward::2.02::
+42::Kyle, Hines::2/11/1986::United States of America::Center::1.98::
+
+Real Madrid
+3::Anthony, Randolph::15/7/1989::United States of America::Forward::2.11::
+4::Dontaye, Draper::10/8/1984::United States of America::Guard::1.81::
+5::Rudy, Ferndandez::4/4/1985::Spain::Forward::1.96::
+7::Luka, Doncin::28/2/1999::Slovenia::Guard::2.01::
+8::Jonas, Maciulis::10/2/1985::Lithuania::Forward::1.98::
+9::Felipe, Reyes::16/3/1980::Spain::Forward::2.04::
+14::Gustavo, Ayon::1/4/1985::Mexico::Center::2.07::
+20::Jaycee, Carroll::16/4/1983::United States of America::Guard::1.88::
+21::Othello, Hunter::28/5/1986::United States of America::Center::2.03::
+23::Sergio Llull::15/11/1987::Spain::Guard::1.90::
+33::Trey, Thompkins::29/5/1990::United States of America::Forward::2.08::
+44::Jeffery, Taylor::23/5/1989::Sweden::Forward::2.01
+
+Maccabi
+0::Andrew, Goudelock::12/7/1988::United States of America::Guard::1.91::
+3::Victor, Rudd::18/3/1991::United States of America::Forward::2.05::
+4::D.J., Seeley::28/11/1989::United States of America::Guard::1.93::
+5::Diamon, Simpson::8/9/1987::United States of America::Forward::2.03::
+6::Devin, Smith::12/4/1983::United States of America::Forward::1.98::
+9::Gal, Mekel::4/3/1988::Israel::Guard::1.92::
+10::Guy, Pnini::4/9/1983::Israel::Forward::2.01::
+12::Yogev, Ohayon::24/4/1987::Israel::Guard::1.89::
+15::Sylven, Landesberg::10/4/1990::Israel::Guard::1.98::
+23::Joe, Alexander::26/12/1986::Israel::Forward::2.03::
+24::Colton, Iverson::29/6/1989::United States of America::Center::2.13::
+30::Quincy, Miller::18/11/1992::United States of America::Forward::2.06::
+
+Panathinaikos
+0::Chris, Singleton::21/11/1989::United States of America::Center::2.06::
+2::Demetric, Nichols::4/9/1984::United States of America::Forward::2.03::
+3::K.C., Rivers::1/3/1987::United States of America::Forward::1.96::
+5::Mike, James::18/8/1990::United States of America::Guard::1.85::
+9::Antonis, Fotsis::2/4/1981::Greece::Forward::2.09::
+11::Nikos, Pappas::11/7/1990::Greece::Guard::1.95::
+12::James, Feldeine::26/6/1988::United States of America::1.93::
+14::James, Gist::26/10/1986::United States of America::Forward::2.07::
+15::Vasilis, Charalampopoulos::6/1/1997::Greece::Forward::2.02::
+21::Kenny, Gabriel::3/7/1989::United States of America::Forward::2.03::
+29::Ioannis, Bourousis::17/11/1983::Greece::Center::2.15::
+33::Nick, Calathes::7/2/1989::Greece::Guard::1.98::
+
+Anadolu Efes
+1::Deshaun, Thomas::29/8/1991::United States of America::Forward::2.01::
+2::Tyler, Honneycut::15/7/1990::United States of America::Forward::2.03::
+3::Ogulcan, Baykan::7/1/1996::Turkey::Guard::1.96::
+4::Dogus, Balbay::21/1/1989::Turkey::Guard::1.85::
+5::Derick, Brown::8/9/1987::United States of America::Forward::2.03::
+6::Cedi, Osman::8/4/1995::Turkey::Forward::2.04::
+15::Jason, Granger::15/9/1989::Uruguay::Guard::1.89::
+31::Thomas, Huertel::10/4/1989::France::Guard::1.89::
+32::Maxim, Mutaf::9/1/1991::Turkey::Guard::1.93::
+33::Brandon, Paul::30/4/1991::United States of America::Guard::1.93::
+42::Bryant, Dunston::28/5/1986::United States of America::Center::2.03::
+52::Alex, Kirk::14/11/1991::United States of America::Center::2.11
+
+Crvena Zvezda
+0::Nate, Walters::15/5/1991::United States of America::Guard::1.93::
+2::Deon, Thompson::16/9/1988::United States of America::Center::1988::
+6::Nemanja, Dangubic::13/4/1993::Serbia::Forward::2.04::
+9::Luka, Mitrovic::21/3/1993::Serbia::Forward::2.04::
+10::Branko, Lazic::12/1/1989::Serbia::Guard::1.94::
+13::Ognjen, Dobric::27/10/1994::Serbia::Forward::2.00::
+15::Marko, Simonovic::30/5/1986::Serbia::Forward::2.03::
+22::Charles, Jenkins::28/2/1989::United States of America::Guard::1.91::
+23::Marko, Guduric::8/3/1995::Serbia::Guard::1.96::
+24::Stefan, Jovic::3/11/1990::Serbia::Guard::1.98::
+32::Ognjen, Kuzmic::16/5/1990::Serbia::Center::2.14::
+51::Milko, Bjelica::4/6/1984::Montenegro::Forward::2.07::
+
+EA7 Emporio Armani
+1::Jamel, Mclean::18/4/1988::United States of America::Forward::2.03::
+7::Ricky, Hickman::1/9/1985::United States of America::Guard::1.89::
+9::Mantas, Kalnietis::6/9/1986::Lithuania::Guard::1.95::
+11::Miroslav, Raduljica::5/1/1988::Serbia::Center::2.13::
+12::Zoran, Dragic::22/6/1989::Slovenia::Guard::1.96::
+13::Milan, Macvan::16/11/1989::Serbia::Center::2.06::
+14::Davide, Pascolo::14/12/1990::Italy::Forward::2.03::
+20::Andrea, Cincarini::21/6/1986::Italy::Guard::1.90::
+21::Rakim, Sanders::8/7/1989::United States of America::Forward::1.93::
+23::Awudu, Abass::27/1/1993::Italy::Guard::2.00::
+30::Bruno, Cerella::30/7/1986::Italy::Guard::1.94::
+43::Krunoslav, Simon::24/6/1985::Croatia::Forward::1.97::
+
+Zalgiris
+3::Kevin, Pangos::26/1/1993::Slovenia::Guard::1.88::
+4::Lukas, Lekavicius::30/3/1994::Lithuania::Guard::1.80::
+6::Paulius, Valinskas::9/12/1995::Lithuania::Guard::1.91::
+9::Leo, Westermann::24/7/1992::France::Guard::1.97::
+10::Renaldas, Seibutis::23/7/1985::Lithuania::Guard::1.96::
+12::Brock, Motum::16/10/1990::Australia::Forward::2.08::
+13::Paulius, Jankunas::29/4/1984::Lithuania::Forward::2.05::
+15::Robertas, Javtokas::20/3/1980::Lithuania::Center::2.11::
+21::Arturas, Milaknis::16/6/1986::Lithuania::Guard::1.95::
+23::Augusto, Lima::17/9/1991::Spain::Center::2.08::
+44::Antanas, Kavaliauskas::19/91984::Lithuania::Center::2.08::
+92::Edgaras, Ulanovas::7/1/1992::Lithuania::Forward::1.98::
+
