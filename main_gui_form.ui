@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_gui_form</class>
+ <widget class="QWidget" name="main_gui_form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>HOME</string>
+  </property>
+  <widget class="QWidget" name="top_bar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>25</x>
+     <y>10</y>
+     <width>750</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="home_button">
+      <property name="text">
+       <string>HOME</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="info_button">
+      <property name="text">
+       <string>INFO</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="team_button">
+      <property name="text">
+       <string>TEAM</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="training_button">
+      <property name="text">
+       <string>TRAINING</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="standings_button">
+      <property name="text">
+       <string>STANDINGS</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="schedule_button">
+      <property name="text">
+       <string>SCHEDULE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="next_game_button">
+      <property name="text">
+       <string>NEXT GAME</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="home" native="true">
+   <property name="geometry">
+    <rect>
+     <x>25</x>
+     <y>170</y>
+     <width>750</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QCalendarWidget" name="calendar_widget"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QListWidget" name="info_list"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QListWidget" name="team_info">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>150</y>
+     <width>400</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

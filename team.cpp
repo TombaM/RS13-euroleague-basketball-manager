@@ -1,178 +1,138 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <fstream>
-#include <algorithm>
-#include <numeric>
-#include "player.h"
+#include "team.h"
 
-bool is_separator(char c)
+#include <iostream>
+#include <QFile>
+#include <QMessageBox>
+#include <QTextStream>
+#include <QDebug>
+
+team::team(int position, std::string name, std::string state, std::string town, std::string coach, double home_efficiency, double away_efficiency)
+        : m_position(position), m_name(name), m_state(state), m_town(town), m_coach(coach), m_home_efficiency(home_efficiency), m_away_efficiency(away_efficiency)
+    {
+
+    }
+
+bool team::is_players_separator(char c)
 {
     return c == ':';
 }
 
-
-std::vector<std::string> parse(std::string & line)
+std::vector<std::string> team::players_parse(std::string & line)
 {
-  std::vector<std::string> res;
+    std::vector<std::string> res;
 
-  auto i = line.begin();
-  while(i != line.end())
-  {
-    i = std::find_if_not(i, line.end(), is_separator);
+    auto i = line.begin();
+    while(i != line.end()) {
 
-    auto j = std::find_if(i, line.end(), is_separator);
+        i = std::find_if_not(i, line.end(), is_players_separator);
 
-    if(i != line.end())
-      res.push_back(std::string(i, j));
+       auto j = std::find_if(i, line.end(), is_players_separator);
 
-    i = j;
-  }
-  return res;
+        if(i != line.end())
+              res.push_back(std::string(i, j));
+
+        i = j;
+    }
+
+    return res;
 }
 
-
-class Team
+std::vector<player> team::get_players()
 {
-public:
-  Team(int position, std::string name, std::string state, std::string town, std::string coach,
-       double homeEfficiency, double awayEfficiency)
-  : m_position(position), m_name(name), m_state(state), m_town(town), m_coach(coach),
-    m_homeEfficiency(homeEfficiency), m_awayEfficiency(awayEfficiency)
-  {
+  return m_players;
+}
 
-  }
-  // Getters
-  int get_position()
-  {
-    return m_position;
-  }
-
-  std::string get_name()
-  {
-    return m_name;
-  }
-
-  std::string get_state()
-  {
-    return m_state;
-  }
-
-  std::string get_town()
-  {
-    return m_town;
-  }
-
-  std::string get_coach()
-  {
-    return m_coach;
-  }
-
-
-  double get_homeEfficiency()
-  {
-    return m_homeEfficiency;
-  }
-
-  double get_awayEfficiency()
-  {
-    return m_awayEfficiency;
-  }
-
-  void toString()
-  {
-    std::cout << std::to_string(get_position()) + " " + get_name() + " " + get_state() +
-                 " " + get_town() + " " + get_coach() + " " + std::to_string(get_homeEfficiency()) + " " + std::to_string(get_awayEfficiency()) << std::endl;
-  }
-
-  void addPlayers()
-  {
-    std::ifstream in(m_name, std::ifstream::in);
-    std::string line;
-
-    while(std::getline(in, line))
+// Getters
+int team::get_position()
     {
-      std::vector<std::string> data = parse(line);
+        return m_position;
+    }
 
-      int number = std::stoi(data[0]);
-      std::string name = data[1];
-      std::string dateOfBirth = data[2];
-      std::string nationality = data[3];
-      std::string position = data[4];
-      double height = std::stof(data[5]);
-      int onePointer = std::stoi(data[6]);
-      int twoPointer = std::stoi(data[7]);
-      int threePointer = std::stoi(data[8]);
-      int assits = std::stoi(data[9]);
-      int dribble = std::stoi(data[10]);
-      int defence = std::stoi(data[11]);
-      int physicality = std::stoi(data[12]);
+std::string team::get_name()
+    {
+        return m_name;
+    }
 
-      Player p = Player(number, name, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
-      m_players.push_back(p);
+std::string team::get_state()
+    {
+        return m_state;
+    }
+
+std::string team::get_town()
+    {
+        return m_town;
+    }
+
+std::string team::get_coach()
+    {
+        return m_coach;
+    }
+
+double team::get_home_efficiency()
+    {
+        return m_home_efficiency;
+    }
+
+double team::get_away_efficiency()
+    {
+        return m_away_efficiency;
+    }
+
+void team::to_string()
+    {
+        std::cout << std::to_string(get_position()) + " " + get_name() + " " + get_state() +
+                 " " + get_town() + " " + get_coach() + " " + std::to_string(get_home_efficiency()) + " " + std::to_string(get_away_efficiency()) << std::endl;
+    }
+
+void team::add_players(const std::string &team_name)
+{
+    //QString q_name = QString::fromStdString(m_name);
+
+    //int n = team_name.size();
+    //std::cout << n << std::endl;
+    //std::cout << "std::string: " << team_name << std::endl;
+    //std::string t_name = team_name + ".txt";
+    QString q_team_name = QString::fromStdString(team_name);
+    //qDebug() << "QString: " << q_team_name;
+
+    QFile file("//home//slobodan//"  + q_team_name); // NOTE: WHEN I PUT team_name IT DOESNT WORK!
+
+    if(!file.open(QIODevice::ReadOnly)) {
+        QMessageBox::information(0, "error", file.errorString());
+    }
+
+    QTextStream in(&file);
+
+    while(!in.atEnd()) {
+
+        QString q_line = in.readLine();
+        std::string line = q_line.toStdString(); // line as a string
+
+        std::vector<std::string> data = players_parse(line);
+
+        int number = std::stoi(data[0]);
+        std::string name = data[1];
+        std::string date_of_birth = data[2];
+        std::string nationality = data[3];
+        std::string position = data[4];
+        double height = std::stof(data[5]);
+        int one_pointer = std::stoi(data[6]);
+        int two_pointer = std::stoi(data[7]);
+        int three_pointer = std::stoi(data[8]);
+        int assits = std::stoi(data[9]);
+        int dribble = std::stoi(data[10]);
+        int defence = std::stoi(data[11]);
+        int physicality = std::stoi(data[12]);
+
+        player p = player(number, name, date_of_birth, nationality, position, height, one_pointer, two_pointer, three_pointer, assits, dribble, defence, physicality);
+        m_players.push_back(p);
     }
 
     // Stampanje igraca
     auto i = m_players.begin();
-    while(i != m_players.end())
-    {
-      (*i).toString();
-      i++;
+    while(i != m_players.end()) {
+
+        (*i).to_string();
+        i++;
     }
-  }
-
-  std::vector<Player> get_players()
-  {
-    return m_players;
-  }
-
-private:
-  int m_position;
-  std::string m_name;
-  std::string m_state;
-  std::string m_town;
-  std::string m_coach;
-  double m_homeEfficiency;
-  double m_awayEfficiency;
-  std::vector<Player> m_players;
-};
-
-int main(int arch, char** argv)
-{
-  std::vector<Team> teams;
-
-  std::ifstream in("teams.txt", std::ifstream::in);
-  std::string line;
-
-  while(std::getline(in, line))
-  {
-    std::vector<std::string> data = parse(line);
-
-    int position = std::stoi(data[0]);
-    std::string name = data[1];
-    std::string state = data[2];
-    std::string town = data[3];
-    std::string coach = data[4];
-    double homeEff = std::stof(data[5]);
-    double awayEff = std::stof(data[6]);
-
-    Team t = Team(position, name, state, town, coach, homeEff, awayEff);
-    teams.push_back(t);
-  }
-
-  // Stampanje timova
-  // auto i = teams.begin();
-  // while(i != teams.end())
-  // {
-  //   (*i).toString();
-  //   i++;
-  // }
-
-  int j = 0;
-  while(j < 8)
-  {
-    std::cout << std::endl << std::endl << teams[j].get_name() << std::endl;
-    teams[j++].addPlayers();
-  }
-  return 0;
 }

@@ -1,9 +1,12 @@
 #include "player.h"
+
 #include <iostream>
 #include <fstream>
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <iostream>
+
 
 #define HIGH_PRIORITY 20
 #define MIDDLE_PRIORITY 10
@@ -11,86 +14,86 @@
 #define NUM 6
 #define PARAMETER 2.7
 
-Player::Player(int number, std::string & name, std::string & dateOfBirth, std::string & nationality, std::string & position,
-       double height, int oneP, int twoP, int threeP, int assists, int dribble, int defence, int phyicality)
-: m_number(number), m_name(name), m_nationality(nationality), m_position(position), m_height(height), m_onePointer(oneP),
-  m_twoPointer(twoP), m_threePointer(threeP), m_assits(assists), m_dribble(dribble), m_defence(defence), m_physicality(phyicality),
-  m_injury(false)
+player::player(int number, std::string &name, std::string &date_of_birth, std::string &nationality, std::string &position,
+            double height, int one_point, int two_points, int three_points, int assists, int dribble, int defence, int phyicality)
+        : m_number(number), m_name(name), m_nationality(nationality), m_position(position), m_height(height), m_one_pointer(one_point),
+        m_two_pointer(two_points), m_three_pointer(three_points), m_assits(assists), m_dribble(dribble), m_defence(defence), m_physicality(phyicality),
+        m_injury(false)
 {
 
 }
 
-int Player::get_number()
+int player::get_number()
 {
   return m_number;
 }
 
-std::string Player::get_name()
+std::string player::get_name()
 {
   return m_name;
 }
 
-std::string Player::get_dateOfBirth()
+std::string player::get_date_of_birth()
 {
-  return m_dateOfBirth;
+  return m_date_of_birth;
 }
 
-std::string Player::get_nationality()
+std::string player::get_nationality()
 {
   return m_nationality;
 }
 
-std::string Player::get_position()
+std::string player::get_position()
 {
   return m_position;
 }
 
-double Player::get_height()
+double player::get_height()
 {
   return m_height;
 }
 
-int Player::get_onePointer()
+int player::get_one_pointer()
 {
-  return m_onePointer;
+  return m_one_pointer;
 }
 
-int Player::get_twoPointer()
+int player::get_two_pointer()
 {
-  return m_twoPointer;
+  return m_two_pointer;
 }
 
-int Player::get_threePointer()
+int player::get_three_pointer()
 {
-  return m_threePointer;
+  return m_three_pointer;
 }
 
-int Player::get_assists()
+int player::get_assists()
 {
   return m_assits;
 }
 
-int Player::get_dribble()
+int player::get_dribble()
 {
   return m_dribble;
 }
 
-int Player::get_defence()
+int player::get_defence()
 {
   return m_defence;
 }
 
-int Player::get_physicality()
+int player::get_physicality()
 {
   return m_physicality;
 }
 
-int Player::get_injury()
+int player::get_injury()
 {
   return m_injury;
 }
 
-int Player::attack_rating()
+int player::attack_rating()
 {
   /*if(!get_position().compare("Guard")) {
     return (get_assists() * HIGH_PRIORITY + get_dribble() * HIGH_PRIORITY
@@ -107,24 +110,24 @@ int Player::attack_rating()
      + get_onePointer() * HIGH_PRIORITY + get_twoPointer() * HIGH_PRIORITY
      + get_threePointer() * LOW_PRIORITY + get_physicality() * HIGH_PRIORITY)/NUM;
      */
-  return (get_assists() + get_dribble() + get_onePointer() + get_twoPointer() + get_threePointer()) / 5;
+  return (get_assists() + get_dribble() + get_one_pointer() + get_two_pointer() + get_three_pointer()) / 5;
 }
 
-int Player::defense_rating()
+int player::defense_rating()
 {
   return (get_defence() + get_physicality()) / 2;
 }
 
-int Player::overall_rating()
+int player::overall_rating()
 {
   return (attack_rating() + defense_rating());
 }
 
-void Player::toString()
+void player::to_string()
 {
-  std::cout << std::to_string(get_number()) + " " + get_name() + " " + get_dateOfBirth() + " " + get_nationality() + " " +
-  get_position() + " " + std::to_string(get_height()) + " " + std::to_string(get_onePointer()) + " " +
-  std::to_string(get_twoPointer()) + " " + std::to_string(get_threePointer()) + " " + std::to_string(get_assists()) + " " +
+  std::cout << std::to_string(get_number()) + " " + get_name() + " " + get_date_of_birth() + " " + get_nationality() + " " +
+  get_position() + " " + std::to_string(get_height()) + " " + std::to_string(get_one_pointer()) + " " +
+  std::to_string(get_two_pointer()) + " " + std::to_string(get_three_pointer()) + " " + std::to_string(get_assists()) + " " +
   std::to_string(get_dribble()) + " " + std::to_string(get_defence()) + " " + std::to_string(get_defence()) + " " +
   std::to_string(get_physicality()) + " " + std::to_string(overall_rating()) << std::endl;
 }
