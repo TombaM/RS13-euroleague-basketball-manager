@@ -134,8 +134,6 @@ void LogIn::on_login_button_clicked()
         //setTeam(qTeam.toStdString());
 
     }
-    this->hide();
-    form.show();
 
     std::vector<team> l;
     std::string myTeamName = qTeam.toStdString();
@@ -150,7 +148,8 @@ void LogIn::on_login_button_clicked()
         i++;
     }
 
-    auto j = currentLeague.getTeams().begin();
+    /* PROBLEM */
+    /*auto j = currentLeague.getTeams().begin();
     while(j != currentLeague.getTeams().end())
     {
         if(myTeamName != j->get_name())
@@ -159,11 +158,21 @@ void LogIn::on_login_button_clicked()
             //l.push_back(temp);
         }
         j++;
-    }
+    }*/
 
     currentLeague.setMyTeam(*i);
 
     std::cout << currentLeague.getMyTeam().get_name() << std::endl;
+
+    currentLeague.setTransferMarket();
+    std::vector<player> result;
+    result = currentLeague.getTransferMarket();
+    auto k = result.begin();
+    while(k != result.end())
+    {
+        std::cout << k->toString() << std::endl;
+        k++;
+    }
 
     std::vector<team> t = currentLeague.getTeams();
     team mt = currentLeague.getMyTeam();
@@ -206,6 +215,9 @@ void LogIn::on_login_button_clicked()
     currentLeague.setSchedule(tm);
 
     std::cout << currentLeague.getSchedule()[0].get_name() << std::endl;
+
+    this->hide();
+    form.show();
 }
 
 /*
@@ -256,67 +268,3 @@ std::vector<team> LogIn::getTeams() const
 }
 */
 
-void LogIn::on_name_edit_editingFinished()
-{
-    /*QFile file("teams.txt");
-    if(!file.open(QIODevice::ReadOnly)) {
-        QMessageBox::information(0, "error", file.errorString());
-    }
-
-    QTextStream in(&file);
-
-    std::vector<team> teams;
-    QStringList items;
-
-    while(!in.atEnd()) {
-
-        QString qLine = in.readLine();
-        std::string line = qLine.toStdString();
-
-        std::vector<std::string> data = parse(line);
-
-        int position = std::stoi(data[0]); //std::cout << position << std::endl;
-        std::string name = data[1]; //std::cout << name << std::endl;
-        std::string state = data[2]; //std::cout << state << std::endl;
-        std::string town = data[3]; //std::cout << town << std::endl;
-        std::string coach = data[4]; //std::cout << coach << std::endl;
-        std::string sHomeEff = data[5];
-        std::string sAwayEff = data[4];
-        QString qHomeEff = QString::fromStdString(sHomeEff);
-        QString qAwayEff = QString::fromStdString(sAwayEff);
-        double homeEff = qHomeEff.toDouble(); //std::cout << home_eff << std::endl;
-        double awayEff = qAwayEff.toDouble(); //std::cout << away_eff << std::endl;
-
-        team t = team(position, name, state, town, coach, homeEff, awayEff);
-        teams.push_back(t);
-
-        //QString qTeamName = QString::fromStdString(name);
-        //qDebug() << qTeamName;
-        //items += qTeamName; // adding team names to QStringLis
-    }
-
-    // Adding to combobox
-    //items.sort();
-    //ui->teams_combo->addItems(items);
-
-    int j = 0;
-
-    while(j < NO_OF_TEAMS) {
-
-        std::string team_name = teams[j].get_name();
-        std::cout << std::endl << std::endl << team_name << std::endl;
-        teams[j++].addPlayers(team_name);
-    }
-
-
-    currentLeague.setTeams(teams);*/
-
-//    auto i = currentLeague.getTeams().cbegin();
-//    while(i != currentLeague.getTeams().cend())
-//    {
-//        std::cout<< i->get_name() << std::endl;
-//        i++;
-//    }
-
-
-}

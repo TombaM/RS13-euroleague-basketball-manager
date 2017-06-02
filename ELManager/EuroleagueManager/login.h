@@ -32,7 +32,6 @@ public:
 private slots:
     void on_login_button_clicked();
 
-    void on_name_edit_editingFinished();
 
 private:
     Ui::LogIn *ui;

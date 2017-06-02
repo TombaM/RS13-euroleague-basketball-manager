@@ -152,7 +152,7 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
       <string notr="true">background:transparent;</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="homePage">
       <widget class="QLabel" name="label">
@@ -170,19 +170,7 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
       </widget>
      </widget>
      <widget class="QWidget" name="myTeamPage">
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>40</y>
-         <width>67</width>
-         <height>17</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>my team</string>
-       </property>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout_2"/>
      </widget>
      <widget class="QWidget" name="standingsPage">
       <widget class="QLabel" name="label_3">
@@ -215,29 +203,25 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
       </widget>
      </widget>
      <widget class="QWidget" name="transferMarketPage">
-      <widget class="QLabel" name="label_5">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>531</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>transfer market</string>
-       </property>
-      </widget>
-      <widget class="QTableView" name="tableView">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>541</width>
-         <height>361</height>
-        </rect>
-       </property>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QListWidget" name="transfer_list_widget">
+         <property name="styleSheet">
+          <string notr="true">background-color:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(243, 243, 243, 255), stop:1 rgba(188, 188, 188, 255))</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="buy_button">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(195, 231, 119)</string>
+         </property>
+         <property name="text">
+          <string>BUY PLAYER</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>

@@ -15,13 +15,15 @@ public:
     team getMyTeam() const;
     void setSchedule(const std::vector<std::vector<team> > &schedule);
     std::vector<team> getSchedule();
-
+    void setTransferMarket();
+    std::vector<player> getTransferMarket();
 
 private:
     std::vector<team> m_teams;
     team m_myTeam;
     int m_round;
     std::vector<std::vector<team>> m_schedule;
+    std::vector<player> m_transferMarket;
 };
 
 #endif // LEAGUE_H

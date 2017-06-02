@@ -16,9 +16,9 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -40,14 +40,15 @@ public:
     QWidget *homePage;
     QLabel *label;
     QWidget *myTeamPage;
-    QLabel *label_2;
+    QGridLayout *gridLayout_2;
     QWidget *standingsPage;
     QLabel *label_3;
     QWidget *schedulePage;
     QLabel *label_4;
     QWidget *transferMarketPage;
-    QLabel *label_5;
-    QTableView *tableView;
+    QGridLayout *gridLayout_3;
+    QListWidget *transfer_list_widget;
+    QPushButton *buy_button;
 
     void setupUi(QWidget *MainForm)
     {
@@ -127,9 +128,8 @@ public:
         stackedWidget->addWidget(homePage);
         myTeamPage = new QWidget();
         myTeamPage->setObjectName(QStringLiteral("myTeamPage"));
-        label_2 = new QLabel(myTeamPage);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(260, 40, 67, 17));
+        gridLayout_2 = new QGridLayout(myTeamPage);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         stackedWidget->addWidget(myTeamPage);
         standingsPage = new QWidget();
         standingsPage->setObjectName(QStringLiteral("standingsPage"));
@@ -145,12 +145,20 @@ public:
         stackedWidget->addWidget(schedulePage);
         transferMarketPage = new QWidget();
         transferMarketPage->setObjectName(QStringLiteral("transferMarketPage"));
-        label_5 = new QLabel(transferMarketPage);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(10, 10, 531, 21));
-        tableView = new QTableView(transferMarketPage);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(10, 50, 541, 361));
+        gridLayout_3 = new QGridLayout(transferMarketPage);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        transfer_list_widget = new QListWidget(transferMarketPage);
+        transfer_list_widget->setObjectName(QStringLiteral("transfer_list_widget"));
+        transfer_list_widget->setStyleSheet(QStringLiteral("background-color:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(243, 243, 243, 255), stop:1 rgba(188, 188, 188, 255))"));
+
+        gridLayout_3->addWidget(transfer_list_widget, 0, 0, 1, 1);
+
+        buy_button = new QPushButton(transferMarketPage);
+        buy_button->setObjectName(QStringLiteral("buy_button"));
+        buy_button->setStyleSheet(QStringLiteral("background-color:rgb(195, 231, 119)"));
+
+        gridLayout_3->addWidget(buy_button, 1, 0, 1, 1);
+
         stackedWidget->addWidget(transferMarketPage);
 
         gridLayout->addWidget(stackedWidget, 2, 1, 1, 1);
@@ -158,7 +166,7 @@ public:
 
         retranslateUi(MainForm);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainForm);
@@ -174,10 +182,9 @@ public:
         transferMarketButton->setText(QApplication::translate("MainForm", "TRANSFER MARKET", Q_NULLPTR));
         homeButton_2->setText(QApplication::translate("MainForm", "NEXT GAME", Q_NULLPTR));
         label->setText(QApplication::translate("MainForm", "page home", Q_NULLPTR));
-        label_2->setText(QApplication::translate("MainForm", "my team", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainForm", "standings", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainForm", "schedule", Q_NULLPTR));
-        label_5->setText(QApplication::translate("MainForm", "transfer market", Q_NULLPTR));
+        buy_button->setText(QApplication::translate("MainForm", "BUY PLAYER", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -4,4 +4,5 @@
 #include "league.h"
 
 extern league currentLeague;
+
 #endif // GLOBAL_LEAGUE_H

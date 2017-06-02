@@ -26,6 +26,8 @@ private slots:
 
     void on_transferMarketButton_clicked();
 
+    void on_buy_button_clicked();
+
 private:
     Ui::MainForm *ui;
 };

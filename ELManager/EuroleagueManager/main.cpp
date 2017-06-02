@@ -4,15 +4,45 @@
 #include <QApplication>
 #include <iostream>
 #include <algorithm>
+#include <QFile>
+#include <QMessageBox>
+#include <QTextStream>
+#include <QDebug>
+
 
 //league myLeague = league();
-
+std::vector<player> t;
 QString settingStyle = " QGroupBox#groupBoxSettings {\
         background-color: rgb(0,0,0);\
         border: 1px solid rgb(170, 170, 255);\
         border-radius: 3px;\
         border-color:rgb(170, 170, 255);\
 }";
+
+//bool is_1separator(char c)
+//{
+//    return c == ':';
+//}
+
+//std::vector<std::string> players1Parse(std::string & line)
+//{
+//    std::vector<std::string> res;
+
+//    auto i = line.begin();
+//    while(i != line.end()) {
+
+//        i = std::find_if_not(i, line.end(), is_1separator);
+
+//       auto j = std::find_if(i, line.end(), is_1separator);
+
+//        if(i != line.end())
+//              res.push_back(std::string(i, j));
+
+//        i = j;
+//    }
+
+//    return res;
+//}
 
 int main(int argc, char *argv[])
 {
@@ -21,47 +51,7 @@ int main(int argc, char *argv[])
     logIn.setStyleSheet(settingStyle);
     logIn.show();
 
-    //std::cout << logIn.getTeam();
-
-    //std::string myTeamName = logIn.getTeam();
-    //std::vector<team> t = logIn.getTeams();
-
-   // auto i = std::find_if(t.begin(), t.end(),
-     //                     [myTeamName](team t){return myTeamName.compare(t.get_name());});
-
-    //std::cout <<logIn.getName() << logIn.getSurname() << logIn.getNationality() << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << std::endl;
     a.exec();
-    /*
-    auto i = t.begin();
-    while (i != t.end())
-    {
-        if(logIn.getTeam().compare(i->get_name()))
-            break;
-        std::cout << i->get_name() << std::endl;
-        i++;
-    }
-    if (t.size() == 0)
-    {
-        std::cout << "SIZE 0" << std::endl;
-    }
-    if(i == t.end())
-    {
-        std::cout << "jeste" << std::endl;
-    }
-    team mineTeam = *i;
-    std::cout << mineTeam.get_name();
-    if(logIn.getTeams().size() == 0)
-    {
-        std::cout << "SIZE 0" << std::endl;
-    }
-    league mainLeague = league(logIn.getTeams());
-//    auto i = logIn.getTeams().begin();
-//    while (i != logIn.getTeams().end())
-//    {
-//        std::cout << i->get_name() << std::endl;
-//        i++;
-//    }
-*/
 
     return 0;
 }

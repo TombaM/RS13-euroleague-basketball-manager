@@ -5,6 +5,7 @@
 #include <iostream>
 #include "player.h"
 
+
 class team
 {
 public:
@@ -30,7 +31,8 @@ public:
     std::vector<player> get_players() const;
     static bool is_players_separator(char c);
     std::vector<std::string> playersParse(std::string & line);
-    bool operator =(const team &t);
+    team & operator =(const team &t);
+    //int m_max_budget;
 private:
     int m_position;
     std::string m_name;
@@ -40,6 +42,9 @@ private:
     double m_homeEfficiency;
     double m_awayEfficiency;
     std::vector<player> m_players;
+    //int m_max_budget;
+
+
 };
 
 #endif // TEAM_H

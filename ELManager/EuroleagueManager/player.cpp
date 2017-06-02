@@ -12,47 +12,17 @@
 #define LOW_PRIORITY 5
 #define NUM 6
 #define PARAMETER 2.7
-
-/*player::player(const player &p){
-    m_number=p.get_number();
-    m_name=p.get_name();
-    m_dateOfBirth=p.get_dateOfBirth();
-    m_nationality=p.get_nationality();
-    m_position=p.get_position();
-    m_height=p.get_height();
-    m_onePointer=p.get_onePointer();
-    m_twoPointer=p.get_twoPointer();
-    m_threePointer=p.get_threePointer();
-    m_assits=p.get_assists();
-    m_dribble=p.get_dribble();
-    m_defence=p.get_defence();
-    m_physicality=p.get_physicality();
-}*/
+#define VALUE 500
 
 player::player(int number, std::string &name, std::string &dateOfBirth, std::string &nationality, std::string &position,
             double height, int onePoint, int twoPoints, int threePoints, int assists, int dribble, int defence, int phyicality)
-        : m_number(number), m_name(name), m_nationality(nationality), m_position(position), m_height(height), m_onePointer(onePoint),
+        : m_number(number), m_name(name), m_dateOfBirth(dateOfBirth),m_nationality(nationality), m_position(position), m_height(height), m_onePointer(onePoint),
         m_twoPointer(twoPoints), m_threePointer(threePoints), m_assits(assists), m_dribble(dribble), m_defence(defence), m_physicality(phyicality),
         m_injury(false)
 {
-
+    m_price=overallRating()*VALUE;
 }
 
-/*bool player::operator =(const player & p){
-    m_number=p.get_number();
-    m_name=p.get_name();
-    m_dateOfBirth=p.get_dateOfBirth();
-    m_nationality=p.get_nationality();
-    m_position=p.get_position();
-    m_height=p.get_height();
-    m_onePointer=p.get_onePointer();
-    m_twoPointer=p.get_twoPointer();
-    m_threePointer=p.get_threePointer();
-    m_assits=p.get_assists();
-    m_dribble=p.get_dribble();
-    m_defence=p.get_defence();
-    m_physicality=p.get_physicality();
-}*/
 
 int player::get_number() const
 {
@@ -154,11 +124,13 @@ int player::overallRating()
   return (attackRating() + defenseRating());
 }
 
-void player::toString()
+
+std::string player::toString()
 {
-  std::cout << std::to_string(get_number()) + " " + get_name() + " " + get_dateOfBirth() + " " + get_nationality() + " " +
+  return std::to_string(get_number()) + " " + get_name() + " " + get_dateOfBirth() + " " + get_nationality() + " " +
   get_position() + " " + std::to_string(get_height()) + " " + std::to_string(get_onePointer()) + " " +
   std::to_string(get_twoPointer()) + " " + std::to_string(get_threePointer()) + " " + std::to_string(get_assists()) + " " +
   std::to_string(get_dribble()) + " " + std::to_string(get_defence()) + " " + std::to_string(get_defence()) + " " +
-  std::to_string(get_physicality()) + " " + std::to_string(overallRating()) << std::endl;
+  std::to_string(get_physicality()) + " " + std::to_string(overallRating())+" "+std::to_string(m_price)
+          +"$";
 }

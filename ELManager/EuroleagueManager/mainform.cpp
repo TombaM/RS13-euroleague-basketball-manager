@@ -2,6 +2,7 @@
 #include "ui_mainform.h"
 #include "login.h"
 #include "global_league.h"
+#include "player.h"
 
 
 MainForm::MainForm(QWidget *parent) :
@@ -47,5 +48,32 @@ void MainForm::on_scheduleButton_clicked()
 void MainForm::on_transferMarketButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
+    std::vector<player> players = currentLeague.getTransferMarket();
 
+    auto i = players.begin();
+    auto end = players.end();
+
+    QStringList items;
+
+    while (i != end) {
+
+        QString qPlayerInfo = QString::fromStdString(i->toString());
+        items += qPlayerInfo;
+        i++;
+    }
+
+    ui->transfer_list_widget->addItems(items);
+}
+
+void MainForm::on_buy_button_clicked()
+{
+    QListWidgetItem *item = ui->transfer_list_widget->takeItem(ui->transfer_list_widget->currentRow());
+
+    QString qSelectedPlayer = item->text();
+
+    std::string selectedPlayer = qSelectedPlayer.toStdString();
+
+    std::cout << selectedPlayer << std::endl;
+
+    delete item;
 }

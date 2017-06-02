@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 #include <QDebug>
+#define VALUE 500
 
 team::team()
 {
@@ -25,7 +26,7 @@ team::team(const team &t){
 team::team(int position, std::string name, std::string state, std::string town, std::string coach, double homeEfficiency, double awayEfficiency)
         : m_position(position), m_name(name), m_state(state), m_town(town), m_coach(coach), m_homeEfficiency(homeEfficiency), m_awayEfficiency(awayEfficiency)
     {
-
+     //   m_max_budget=0;
     }
 
 bool team::is_players_separator(char c)
@@ -53,7 +54,7 @@ std::vector<std::string> team::playersParse(std::string & line)
     return res;
 }
 
-bool team::operator =(const team & t){
+team & team::operator =(const team & t){
     m_position=t.get_position();
     m_name=t.get_name();
     m_state=t.get_state();
@@ -62,6 +63,8 @@ bool team::operator =(const team & t){
     m_homeEfficiency=t.get_homeEfficiency();
     m_awayEfficiency=t.get_awayEfficiency();
     m_players=t.get_players();
+
+    return *this;
 }
 
 std::vector<player> team::get_players() const
@@ -157,7 +160,7 @@ void team::addPlayers(const std::string &teamName)
     auto i = m_players.begin();
     while(i != m_players.end()) {
 
-        (*i).toString();
+        std::cout << (*i).toString() << std::endl;
         i++;
     }
 }
