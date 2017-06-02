@@ -1,8 +1,0 @@
-1::CSKA::Russia::Moscow::Dimitris, Itoudis::0.8::0.8::
-2::Real Madrid::Spain::Madrid::Pablo, Laso::0.7::0.8::
-3::Maccabi::Israel::Tel Aviv::Ainaris, Bagatskis::0.9::0.6::
-4::Panathinaikos::Greece::Athens::Xavi, Pascual::0.9::0.7::
-5::Anadolu Efes::Turkey::Istanbul::Velimir, Perasovic::0.5::0.7::
-6::Crvena Zvezda::Serbia::Belgrade::Dejan, Radonjic::0.9::0.5::
-7::EA7 Emporio Armani::Italy::Milan::Jasmin, Repesa::0.7::0.6::
-8::Zalgiris::Lithuania::Kaunas::Sarunas, Jasikevicius::0.8::0.5::
