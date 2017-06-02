@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LogIn</class>
+ <widget class="QDialog" name="LogIn">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>321</width>
+    <height>293</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:qlineargradient(spread:pad, x1:0.398, y1:0.0336364, x2:0, y2:1, stop:0 rgba(226, 99, 0, 255), stop:0.641791 rgba(255, 157, 0, 255), stop:0.995025 rgba(255, 185, 73, 255))</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="2">
+    <widget class="QComboBox" name="teams_combo">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(238, 238, 236);</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Anadolu Efes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Crvena Zvezda</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>CSKA</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>EA7 Emporio Armani</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Maccabi</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Panathinaikos</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Real Madrid</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Zalgiris</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QLabel" name="label_3">
+     <property name="styleSheet">
+      <string notr="true">background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Nationality</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="styleSheet">
+      <string notr="true">background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Surname</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="styleSheet">
+      <string notr="true">background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Team</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="name_edit">
+     <property name="maximumSize">
+      <size>
+       <width>1000</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(238, 238, 236);</string>
+     </property>
+     <property name="maxLength">
+      <number>213219</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLineEdit" name="surname_edit">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(238, 238, 236);</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QPushButton" name="login_button">
+     <property name="minimumSize">
+      <size>
+       <width>210</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(97, 58, 0);
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>START GAME</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QComboBox" name="nationality_combo">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(238, 238, 236);</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Argentina</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Brasil</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bulgaria</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Canada</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>China</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Croatia</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>France</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hungary</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Germany</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Japan</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Macedonia</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Montenegro</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Russia</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Serbia</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Spain</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ukraine</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>United Kingdom</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>United States of America</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="label_5">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>TakaoPGothic</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>LOG IN</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
