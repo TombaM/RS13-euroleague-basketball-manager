@@ -17,16 +17,26 @@
 #include <random>
 #include <ctime>
 
+#include <QTime>
+
 league currentLeague;
 std::vector<team> teams;
 team myTeam;
-unsigned int k = rand() % 5;
+
+
+unsigned int k = rand();
 
 #define NUM_OF_TEAMS 8
 bool is_separator(char c)
 {
     return c == ':';
 }
+
+bool is_separatorSpace(char c)
+{
+    return c == ' ';
+}
+
 
 std::vector<std::string> parse(std::string &line)
 {        //setName(qName.toStdString());
@@ -43,6 +53,26 @@ std::vector<std::string> parse(std::string &line)
 
         if (i != line.end())
             res.push_back(std::string(i, j));
+
+        i = j;
+    }
+
+    return res;
+}
+
+std::vector<std::string> transferMarketParse(std::string & line)
+{
+    std::vector<std::string> res;
+
+    auto i = line.begin();
+    while(i != line.end()) {
+
+        i = std::find_if_not(i, line.end(), is_separatorSpace);
+
+       auto j = std::find_if(i, line.end(), is_separatorSpace);
+
+        if(i != line.end())
+              res.push_back(std::string(i, j));
 
         i = j;
     }
@@ -123,12 +153,14 @@ void MainWindow::on_startButton_clicked()
     }
 
     currentLeague.setTeams(result);
+    std::cout<<myTeam.m_maxBudget<<std::endl;
     currentLeague.setMyTeam(myTeam);
+    //std::cout<<myTeam.get_players().size()<<std::endl;
     std::vector<team> teams_for_print=currentLeague.getTeams();
-    for (unsigned int i=0;i<teams_for_print.size();i++)
-        std::cout<<teams_for_print[i].get_name()<<std::endl;
+   /* for (unsigned int i=0;i<teams_for_print.size();i++)
+        std::cout<<teams_for_print[i].get_name()<<std::endl;*/
 
-    std::cout << currentLeague.getMyTeam().get_name() << std::endl;
+  //  std::cout << currentLeague.getMyTeam().get_players().size()<< std::endl;
 
     currentLeague.setTransferMarket();
     std::vector<std::vector<team>> tm{
@@ -186,7 +218,6 @@ void MainWindow::on_myTeamButton_clicked()
     ui->gamePlayStackedWidget->setCurrentIndex(1);
 
 
-    /* ERROR MY TEAM IS EMPTY */
     std::vector<player> players = currentLeague.getMyTeam().get_players();
     auto i = players.begin();
     auto end = players.end();
@@ -199,7 +230,8 @@ void MainWindow::on_myTeamButton_clicked()
         items += qPlayerInfo;
         i++;
     }
-
+    team tomba=currentLeague.getMyTeam();
+    std::cout<<tomba.m_maxBudget<<std::endl;
     ui->myTeamList->addItems(items);
 }
 
@@ -230,10 +262,15 @@ void MainWindow::on_transferMarketButton_clicked()
         i++;
     }
 
+    std::cout << currentLeague.getMyTeam().getCurrentBudget() << std::endl;
+
     ui->transferMarketListWidget->addItems(items);
 }
+
+
 bool homeVictory(team & homeTeam, team & awayTeam, int parameter)
 {
+  //  std::cout<<k<<std::endl;
     int sumHomePlayers = 0;
     int sumAwayPlayers = 0;
     std::vector<player> homePlayers = homeTeam.get_players();
@@ -251,15 +288,18 @@ bool homeVictory(team & homeTeam, team & awayTeam, int parameter)
 
     int overallSum = sumAwayPlayers + sumHomePlayers;
 
+
     srand(time(NULL) * parameter);
 
     int random = rand() % (overallSum + 1);
+
 
     return sumHomePlayers >= random;
 }
 
 std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter){
     bool homeWin = homeVictory(homeTeam, awayTeam, parameter);
+
 
     int homePoints;
     int awayPoints;
@@ -268,12 +308,12 @@ std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter){
     if(homeWin)
     {
          homePoints = rand( ) % 40 + 60;
-         awayPoints = homePoints - rand() % 15;
+         awayPoints = homePoints - rand() % 15-1;
     }
     else
     {
         awayPoints = rand() % 50 + 50;
-        homePoints = awayPoints - rand() % 15;
+        homePoints = awayPoints - rand() % 15-1;
     }
 
     return std::to_string(homePoints)+ " : " + std::to_string(awayPoints);
@@ -287,9 +327,9 @@ void MainWindow::on_nextGameButton_clicked()
     for(unsigned int i = 0; i < nextRound.size() - 1; i = i+2)
     {
         std::string result = nextRound[i].get_name() + " " + getResultOthers(nextRound[i], nextRound[i+1], k++) + " " + nextRound[i+1].get_name();
-        std::cout << nextRound[i].get_name() << " ";
-        std::cout << getResultOthers(nextRound[i], nextRound[i+1], k++) << " ";
-        std::cout << nextRound[i+1].get_name() << std::endl;
+        //std::cout << nextRound[i].get_name() << " ";
+        //std::cout << getResultOthers(nextRound[i], nextRound[i+1], k++) << " ";
+        //std::cout << nextRound[i+1].get_name() << std::endl;
 
         /* Updating the round counter label */
         std::string roundLabelText = "Round " + std::to_string(currentLeague.getRound());
@@ -315,7 +355,40 @@ void MainWindow::on_buyButton_clicked()
 
     std::string selectedPlayer = qSelectedPlayer.toStdString();
 
-    std::cout << selectedPlayer << std::endl;
+    std::vector<std::string> data = transferMarketParse(selectedPlayer);
+
+    int number = std::stoi(data[0]);
+    std::string name = data[1];
+    std::string sur = data[2];
+    int assits = std::stoi(data[10]);
+    int dribble = std::stoi(data[11]);
+    int defence = std::stoi(data[12]);
+    int physicality = std::stoi(data[13]);
+    std::string dateOfBirth = data[3];
+    std::string nationality = data[4];
+    std::string position = data[5];
+    double height = std::stof(data[6]);
+    int onePointer = std::stoi(data[7]);
+    int twoPointer = std::stoi(data[8]);
+    int threePointer = std::stoi(data[9]);
+
+    player p = player(number, name, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
+
+    team t1 = currentLeague.getMyTeam();
+    t1.buyPlayer(p);
+    currentLeague.setMyTeam(t1);
+
+    std::vector<player> k = currentLeague.getMyTeam().get_players();
+    //k.push_back(p);
+    auto j = k.begin();
+    while(j != k.end())
+    {
+        std::cout << j->toString() << std::endl;
+        j++;
+    }
+//    team t1 = currentLeague.getMyTeam();
+//    t1.set_players(k);
+//    currentLeague.setMyTeam(t1);
 
     delete item;
 }

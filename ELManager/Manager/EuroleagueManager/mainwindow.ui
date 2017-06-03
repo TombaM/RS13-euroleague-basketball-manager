@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
-    <height>408</height>
+    <width>725</width>
+    <height>464</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
        <string notr="true">background:transparent;</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="logIn">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -298,7 +298,7 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
               <string notr="true">background:transparent;</string>
              </property>
              <property name="currentIndex">
-              <number>5</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="homePage">
               <widget class="QLabel" name="label">
@@ -331,6 +331,16 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
                 <widget class="QListWidget" name="myTeamList">
                  <property name="styleSheet">
                   <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="sellPlayerButton">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(52, 101, 164)</string>
+                 </property>
+                 <property name="text">
+                  <string>SELL PLAYER</string>
                  </property>
                 </widget>
                </item>
@@ -611,7 +621,7 @@ background-color:rgb(239, 173, 124)</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>443</width>
+     <width>725</width>
      <height>22</height>
     </rect>
    </property>

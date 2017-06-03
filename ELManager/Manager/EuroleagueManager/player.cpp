@@ -120,6 +120,5 @@ std::string player::toString()
   get_position() + " " + std::to_string(get_height()) + " " + std::to_string(get_onePointer()) + " " +
   std::to_string(get_twoPointer()) + " " + std::to_string(get_threePointer()) + " " + std::to_string(get_assists()) + " " +
   std::to_string(get_dribble()) + " " + std::to_string(get_defence()) + " " + std::to_string(get_defence()) + " " +
-  std::to_string(get_physicality()) + " " + std::to_string(overallRating())+" "+std::to_string(m_price)
-          +"$";
+  std::to_string(get_physicality()) + " " + std::to_string(overallRating());
 }

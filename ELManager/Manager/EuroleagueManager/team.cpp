@@ -21,12 +21,14 @@ team::team(const team &t){
     m_homeEfficiency=t.get_homeEfficiency();
     m_awayEfficiency=t.get_awayEfficiency();
     m_players=t.get_players();
+    m_maxBudget=t.m_maxBudget;
     //m_max_budget=0;
     //m_cur_budget=0;
 }
 
 team::team(int position, std::string name, std::string state, std::string town, std::string coach, double homeEfficiency, double awayEfficiency)
-        : m_position(position), m_name(name), m_state(state), m_town(town), m_coach(coach), m_homeEfficiency(homeEfficiency), m_awayEfficiency(awayEfficiency)
+        : m_position(position), m_name(name), m_state(state), m_town(town), m_coach(coach),
+          m_homeEfficiency(homeEfficiency), m_awayEfficiency(awayEfficiency),m_maxBudget(0)
     {
      //   m_max_budget=0;
     }
@@ -65,6 +67,7 @@ team & team::operator =(const team & t){
     m_homeEfficiency = t.get_homeEfficiency();
     m_awayEfficiency = t.get_awayEfficiency();
     m_players = t.get_players();
+    m_maxBudget=t.m_maxBudget;
 
     return *this;
 }
@@ -122,6 +125,7 @@ void team::toString()
 
 void team::addPlayers(const std::string &teamName)
 {
+    m_maxBudget=0;
     QString qTeamName = QString::fromStdString(teamName);
 
     QFile file(qTeamName);
@@ -153,15 +157,57 @@ void team::addPlayers(const std::string &teamName)
         int physicality = std::stoi(data[12]);
 
         player p = player(number, name, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
-      //  m_max_budget+=p.get_price();
-       // m_players.push_back(p);
+        m_maxBudget+=p.get_price();
+       // std::cout<<m_maxBudget<<std::endl;
+        m_players.push_back(p);
     }
     // m_cur_budget=m_max_budget;
     // Stampanje igraca
-//    auto i = m_players.begin();
-//    while(i != m_players.end()) {
+  /*  auto i = m_players.begin();
+    while(i != m_players.end()) {
 
-//        std::cout << (*i).toString() << std::endl;
-//        i++;
-//    }
+       std::cout << (*i).toString() << std::endl;
+      i++;
+    }*/
+}
+
+void team::set_players(const std::vector<player> p){
+    m_players=p;
+}
+
+int team::getCurrentBudget() const
+{
+    int currB = 0;
+
+    int n = m_players.size();
+
+    for(int i = 0; i < n; i++)
+    {
+        currB += m_players[i].get_price();
+    }
+
+    return currB;
+}
+
+void team::buyPlayer(player &p)
+{
+    int newBudget = getCurrentBudget() + p.get_price();
+    if(newBudget < m_maxBudget)
+        m_players.push_back(p);
+    else
+        std::cout << "CANNOT BUY PLAYER, MAX BUDGET REACHED" << std::endl;
+}
+
+
+std::vector<player> team::sellPlayer(std::string name)
+{
+    std::vector<player> p = get_players();
+    std::vector<player> q;
+    for(int i = 0; i < p.size(); i++)
+    {
+        if(name != p[i].get_name())
+            q.push_back(p[i]);
+    }
+
+    return q;
 }

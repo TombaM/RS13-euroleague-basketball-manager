@@ -64,6 +64,7 @@ public:
     QGridLayout *gridLayout_8;
     QLabel *label_2;
     QListWidget *myTeamList;
+    QPushButton *sellPlayerButton;
     QWidget *standingsPage;
     QLabel *label_3;
     QWidget *schedulePage;
@@ -91,7 +92,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(443, 408);
+        MainWindow->resize(725, 464);
         MainWindow->setStyleSheet(QStringLiteral("background-image: url(\"wallpaper1.jpg\");"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -265,6 +266,12 @@ public:
 
         gridLayout_8->addWidget(myTeamList, 1, 0, 1, 1);
 
+        sellPlayerButton = new QPushButton(myTeamPage);
+        sellPlayerButton->setObjectName(QStringLiteral("sellPlayerButton"));
+        sellPlayerButton->setStyleSheet(QStringLiteral("background-color:rgb(52, 101, 164)"));
+
+        gridLayout_8->addWidget(sellPlayerButton, 2, 0, 1, 1);
+
         gamePlayStackedWidget->addWidget(myTeamPage);
         standingsPage = new QWidget();
         standingsPage->setObjectName(QStringLiteral("standingsPage"));
@@ -371,13 +378,13 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 443, 22));
+        menuBar->setGeometry(QRect(0, 0, 725, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
-        gamePlayStackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(1);
+        gamePlayStackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -415,6 +422,7 @@ public:
         nextGameButton->setText(QApplication::translate("MainWindow", "NEXT GAME", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "HOME PAGE", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "MY TEAM PAGE", Q_NULLPTR));
+        sellPlayerButton->setText(QApplication::translate("MainWindow", "SELL PLAYER", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "standings", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "schedule", Q_NULLPTR));
         label_5->setText(QApplication::translate("MainWindow", "TRANSFER MARKET", Q_NULLPTR));
