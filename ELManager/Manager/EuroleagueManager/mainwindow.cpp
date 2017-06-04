@@ -16,12 +16,20 @@
 #include <cstdlib>
 #include <random>
 #include <ctime>
-
+#include <map>
 #include <QTime>
+
+#define AVG_THREE_POINTER 12
 
 league currentLeague;
 std::vector<team> teams;
 team myTeam;
+bool offenseTactic = true;
+bool deffenceTactic = true;
+
+
+
+std::map<std::string,int> standings;
 
 
 unsigned int k = rand();
@@ -217,6 +225,7 @@ void MainWindow::on_myTeamButton_clicked()
 {
     ui->gamePlayStackedWidget->setCurrentIndex(1);
 
+    ui->myTeamList->clear();
 
     std::vector<player> players = currentLeague.getMyTeam().get_players();
     auto i = players.begin();
@@ -230,14 +239,31 @@ void MainWindow::on_myTeamButton_clicked()
         items += qPlayerInfo;
         i++;
     }
-    team tomba=currentLeague.getMyTeam();
-    std::cout<<tomba.m_maxBudget<<std::endl;
+    //team tomba=currentLeague.getMyTeam();
+    //std::cout << tomba.m_maxBudget << std::endl;
     ui->myTeamList->addItems(items);
 }
 
 void MainWindow::on_standingsButton_clicked()
 {
     ui->gamePlayStackedWidget->setCurrentIndex(2);
+
+    ui->standingsListWidget->clear();
+
+    QStringList items;
+
+    for (auto iter = standings.begin(); iter != standings.end(); iter++ ) {
+
+        QString item = QString::fromStdString(iter->first);
+        int points = iter->second;
+        std::string sPoints = " " + std::to_string(points);
+        QString qPoints = QString::fromStdString(sPoints);
+        item += qPoints;
+
+        items += item;
+    }
+
+    ui->standingsListWidget->addItems(items);
 }
 
 void MainWindow::on_scheduleButton_clicked()
@@ -248,6 +274,8 @@ void MainWindow::on_scheduleButton_clicked()
 void MainWindow::on_transferMarketButton_clicked()
 {
     ui->gamePlayStackedWidget->setCurrentIndex(4);
+
+    ui->transferMarketListWidget->clear();
 
     std::vector<player> players = currentLeague.getTransferMarket();
     auto i = players.begin();
@@ -299,6 +327,14 @@ bool homeVictory(team & homeTeam, team & awayTeam, int parameter)
 
 std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter){
     bool homeWin = homeVictory(homeTeam, awayTeam, parameter);
+    if(homeWin){
+        standings[homeTeam.get_name()]+=2;
+        standings[awayTeam.get_name()]+=1;
+    }
+    else{
+        standings[homeTeam.get_name()]+= 1;
+        standings[awayTeam.get_name()]+= 2;
+    }
 
 
     int homePoints;
@@ -307,26 +343,113 @@ std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter){
     srand(time(NULL) * parameter);
     if(homeWin)
     {
-         homePoints = rand( ) % 40 + 60;
+         homePoints = rand( )%40 + 60;
          awayPoints = homePoints - rand() % 15-1;
     }
     else
     {
-        awayPoints = rand() % 50 + 50;
+        awayPoints = rand()%50 + 50;
         homePoints = awayPoints - rand() % 15-1;
     }
 
     return std::to_string(homePoints)+ " : " + std::to_string(awayPoints);
 }
 
+bool myTeamVictory(team &myTeam, team &oppTeam, bool isHomeCourt, int parameter)
+{
+    int sumMyTeamPlayers = 0;
+    int sumOppTeamPlayers = 0;
+    int sumMyTeamThreePointShoot = 0;
+    int sumOppTeamThreePointShoot = 0;
+    std::vector<player> myTeamPlayers = myTeam.get_players();
+    std::vector<player> oppTeamPlayers = oppTeam.get_players();
+
+    int len = myTeamPlayers.size();
+    for (int i = 0; i < len; i++) {
+
+        sumMyTeamThreePointShoot += myTeamPlayers[i].get_threePointer();
+        sumOppTeamThreePointShoot += oppTeamPlayers[i].get_threePointer();
+        sumMyTeamPlayers += myTeamPlayers[i].overallRating();
+        sumOppTeamPlayers += oppTeamPlayers[i].overallRating();
+    }
+
+    int myTeamThreePointAvg = sumMyTeamThreePointShoot / myTeam.get_players().size();
+    int oppTeamThreePointAvg = sumOppTeamThreePointShoot / oppTeam.get_players().size();
+
+    if (isHomeCourt) {
+
+        sumMyTeamPlayers = sumMyTeamPlayers * myTeam.get_homeEfficiency();
+        sumOppTeamPlayers = sumOppTeamPlayers * oppTeam.get_awayEfficiency();
+    } else {
+
+        sumMyTeamPlayers = sumMyTeamPlayers * myTeam.get_awayEfficiency();
+        sumOppTeamPlayers = sumOppTeamPlayers * oppTeam.get_homeEfficiency();
+    }
+
+    if (offenseTactic)
+        sumMyTeamPlayers += (myTeamThreePointAvg - AVG_THREE_POINTER)*10;
+
+    if (deffenceTactic)
+         sumOppTeamPlayers += (oppTeamThreePointAvg-AVG_THREE_POINTER)*10;
+
+    int overallSum = sumOppTeamPlayers + sumMyTeamPlayers;
+    srand(time(NULL) * parameter);
+    int random = rand() % (overallSum + 1);
+
+    return sumMyTeamPlayers >= random;
+
+}
+
+std::string getResultMyTeam(team &myTeam, team &oppTeam, bool isHomeCourt, int parameter)
+{
+    bool myTeamWin = myTeamVictory(myTeam, oppTeam, isHomeCourt, parameter);
+    if(myTeamWin){
+        standings[myTeam.get_name()]+= 2;
+        standings[oppTeam.get_name()]+= 1;
+    }
+    else{
+        standings[myTeam.get_name()]+= 1;
+        standings[myTeam.get_name()]+= 2;
+    }
+    int homePoints;
+    int awayPoints;
+    srand(time(NULL) * parameter);
+
+    if(myTeamWin) {
+
+         homePoints = rand()%40 + 60;
+         awayPoints = homePoints - rand()%15 - 1;
+    } else {
+
+        awayPoints = rand()%50 + 50;
+        homePoints = awayPoints - rand()%15 - 1;
+    }
+
+    return std::to_string(homePoints) + " : " + std::to_string(awayPoints);
+}
+
 void MainWindow::on_nextGameButton_clicked()
 {
-    ui->gamePlayStackedWidget->setCurrentIndex(5);
+    ui->gamePlayStackedWidget->setCurrentIndex(6);
+
     std::vector<team> nextRound = currentLeague.getNextRound();
+
+
+
 
     for(unsigned int i = 0; i < nextRound.size() - 1; i = i+2)
     {
-        std::string result = nextRound[i].get_name() + " " + getResultOthers(nextRound[i], nextRound[i+1], k++) + " " + nextRound[i+1].get_name();
+        std::string result;
+        if(nextRound[i].get_name()==currentLeague.getMyTeam().get_name()){
+            int x = i%2;
+            if(x) {
+                result = nextRound[i].get_name() + " " + getResultMyTeam(nextRound[i], nextRound[i+1],true, k++) + " " + nextRound[i+1].get_name();
+            }
+            else{
+                result = nextRound[i+1].get_name() + " " + getResultMyTeam(nextRound[i], nextRound[i+1],false, k++) + " " + nextRound[i].get_name();
+            }
+        } else
+            result = nextRound[i].get_name() + " " + getResultOthers(nextRound[i], nextRound[i+1], k++) + " " + nextRound[i+1].get_name();
         //std::cout << nextRound[i].get_name() << " ";
         //std::cout << getResultOthers(nextRound[i], nextRound[i+1], k++) << " ";
         //std::cout << nextRound[i+1].get_name() << std::endl;
@@ -344,6 +467,11 @@ void MainWindow::on_nextGameButton_clicked()
                 ui->thirdResultLabel->setText(QString::fromStdString(result));
         else if(i == 6)
             ui->fourthResultLabel->setText(QString::fromStdString(result));
+    }
+    auto i=standings.begin();
+    while(i!=standings.end()){
+        std::cout<<i->first<<" "<<i->second<<std::endl;
+        i++;
     }
 }
 
@@ -392,3 +520,51 @@ void MainWindow::on_buyButton_clicked()
 
     delete item;
 }
+
+void MainWindow::on_sellPlayerButton_clicked()
+{
+    QListWidgetItem *item = ui->myTeamList->takeItem(ui->myTeamList->currentRow());
+
+    QString qSelectedPlayer = item->text();
+
+    std::string selectedPlayer = qSelectedPlayer.toStdString();
+   //std::cout<<selectedPlayer<<std::endl;
+    std::vector<std::string> data = transferMarketParse(selectedPlayer);
+    std::string name=data[1] + " " + data[2];
+    team t = currentLeague.getMyTeam();
+    std::vector<player> p = t.sellPlayer(name);
+    t.set_players(p);
+    currentLeague.setMyTeam(t);
+
+    std::cout << currentLeague.getMyTeam().getCurrentBudget() << std::endl;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->gamePlayStackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_runAndGunButton_clicked(bool checked)
+{
+    if(checked)
+        offenseTactic = true;
+}
+
+void MainWindow::on_positionAttackButton_clicked(bool checked)
+{
+    if(checked)
+        offenseTactic = false;
+}
+
+void MainWindow::on_zoneButton_clicked(bool checked)
+{
+    if(checked)
+        deffenceTactic = true;
+}
+
+void MainWindow::on_manToManButton_clicked(bool checked)
+{
+    if(checked)
+        deffenceTactic = false;
+}
+

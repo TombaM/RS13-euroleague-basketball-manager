@@ -344,7 +344,8 @@ main.o: ../EuroleagueManager/main.cpp ../EuroleagueManager/mainwindow.h
 mainwindow.o: ../EuroleagueManager/mainwindow.cpp ../EuroleagueManager/mainwindow.h \
 		ui_mainwindow.h \
 		../EuroleagueManager/team.h \
-		../EuroleagueManager/player.h
+		../EuroleagueManager/player.h \
+		../EuroleagueManager/league.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../EuroleagueManager/mainwindow.cpp
 
 team.o: ../EuroleagueManager/team.cpp ../EuroleagueManager/team.h \
@@ -354,7 +355,9 @@ team.o: ../EuroleagueManager/team.cpp ../EuroleagueManager/team.h \
 player.o: ../EuroleagueManager/player.cpp ../EuroleagueManager/player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../EuroleagueManager/player.cpp
 
-league.o: ../EuroleagueManager/league.cpp ../EuroleagueManager/league.h
+league.o: ../EuroleagueManager/league.cpp ../EuroleagueManager/league.h \
+		../EuroleagueManager/team.h \
+		../EuroleagueManager/player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o league.o ../EuroleagueManager/league.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

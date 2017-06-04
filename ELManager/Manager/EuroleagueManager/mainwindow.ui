@@ -263,7 +263,7 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
              </property>
             </widget>
            </item>
-           <item row="5" column="0">
+           <item row="6" column="0">
             <widget class="QPushButton" name="nextGameButton">
              <property name="minimumSize">
               <size>
@@ -277,6 +277,23 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
              </property>
              <property name="text">
               <string>NEXT GAME</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QPushButton" name="pushButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(140, 60, 0);
+font: 25 11pt &quot;Ubuntu&quot;;</string>
+             </property>
+             <property name="text">
+              <string>TACTICS</string>
              </property>
             </widget>
            </item>
@@ -298,7 +315,7 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
               <string notr="true">background:transparent;</string>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>3</number>
              </property>
              <widget class="QWidget" name="homePage">
               <widget class="QLabel" name="label">
@@ -350,31 +367,180 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
               <widget class="QLabel" name="label_3">
                <property name="geometry">
                 <rect>
-                 <x>160</x>
-                 <y>160</y>
-                 <width>67</width>
-                 <height>17</height>
+                 <x>146</x>
+                 <y>30</y>
+                 <width>141</width>
+                 <height>20</height>
                 </rect>
                </property>
                <property name="text">
-                <string>standings</string>
+                <string>STANDINGS</string>
+               </property>
+              </widget>
+              <widget class="QListWidget" name="standingsListWidget">
+               <property name="geometry">
+                <rect>
+                 <x>55</x>
+                 <y>81</y>
+                 <width>431</width>
+                 <height>261</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
               </widget>
              </widget>
              <widget class="QWidget" name="schedulePage">
-              <widget class="QLabel" name="label_4">
-               <property name="geometry">
-                <rect>
-                 <x>180</x>
-                 <y>150</y>
-                 <width>67</width>
-                 <height>17</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>schedule</string>
-               </property>
-              </widget>
+              <layout class="QGridLayout" name="gridLayout_7">
+               <item row="2" column="0">
+                <widget class="QPushButton" name="previousRoundButton">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>PREVIOUS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>schedule</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QPushButton" name="nextRoundButton">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>NEXT</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="3">
+                <widget class="QStackedWidget" name="stackedWidget_2">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <widget class="QWidget" name="page">
+                  <widget class="QLabel" name="label_11">
+                   <property name="geometry">
+                    <rect>
+                     <x>40</x>
+                     <y>70</y>
+                     <width>131</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>GAME 1</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_12">
+                   <property name="geometry">
+                    <rect>
+                     <x>40</x>
+                     <y>120</y>
+                     <width>131</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>GAME 1</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_13">
+                   <property name="geometry">
+                    <rect>
+                     <x>40</x>
+                     <y>170</y>
+                     <width>131</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>GAME 1</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_14">
+                   <property name="geometry">
+                    <rect>
+                     <x>40</x>
+                     <y>220</y>
+                     <width>131</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>GAME 1</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_15">
+                   <property name="geometry">
+                    <rect>
+                     <x>180</x>
+                     <y>70</y>
+                     <width>261</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>home - visitor</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_16">
+                   <property name="geometry">
+                    <rect>
+                     <x>180</x>
+                     <y>120</y>
+                     <width>261</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>home - visitor</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_17">
+                   <property name="geometry">
+                    <rect>
+                     <x>180</x>
+                     <y>170</y>
+                     <width>261</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>home - visitor</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_18">
+                   <property name="geometry">
+                    <rect>
+                     <x>180</x>
+                     <y>220</y>
+                     <width>261</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>home - visitor</string>
+                   </property>
+                  </widget>
+                 </widget>
+                 <widget class="QWidget" name="page_2"/>
+                </widget>
+               </item>
+              </layout>
              </widget>
              <widget class="QWidget" name="transferMarketPage">
               <layout class="QGridLayout" name="gridLayout_6">
@@ -404,206 +570,251 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
                </item>
               </layout>
              </widget>
+             <widget class="QWidget" name="tacticsPage">
+              <layout class="QGridLayout" name="gridLayout_10">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_19">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;ATTACK&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="textFormat">
+                  <enum>Qt::RichText</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QFrame" name="frame_3">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_11">
+                  <item row="0" column="0">
+                   <widget class="QRadioButton" name="runAndGunButton">
+                    <property name="styleSheet">
+                     <string notr="true">color:white;</string>
+                    </property>
+                    <property name="text">
+                     <string>RUN AND GUN</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QRadioButton" name="positionAttackButton">
+                    <property name="styleSheet">
+                     <string notr="true">color:white;</string>
+                    </property>
+                    <property name="text">
+                     <string>POSITION</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_20">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;DEFENCE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="textFormat">
+                  <enum>Qt::RichText</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QFrame" name="frame_4">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="0" column="0">
+                   <widget class="QRadioButton" name="manToManButton">
+                    <property name="styleSheet">
+                     <string notr="true">color:white;</string>
+                    </property>
+                    <property name="text">
+                     <string>MAN TO MAN</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QRadioButton" name="zoneButton">
+                    <property name="styleSheet">
+                     <string notr="true">color:white;</string>
+                    </property>
+                    <property name="text">
+                     <string>ZONE</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
              <widget class="QWidget" name="nextGamePage">
-              <widget class="QLabel" name="roundLabel">
-               <property name="geometry">
-                <rect>
-                 <x>110</x>
-                 <y>20</y>
-                 <width>281</width>
-                 <height>20</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">font: 57 20pt &quot;Ubuntu&quot;;
+              <layout class="QGridLayout" name="gridLayout_9">
+               <item row="0" column="1" colspan="2">
+                <widget class="QLabel" name="roundLabel">
+                 <property name="styleSheet">
+                  <string notr="true">font: 57 20pt &quot;Ubuntu&quot;;
 
 background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>ROUND</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label_7">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>90</y>
-                 <width>67</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 1</string>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label_8">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>140</y>
-                 <width>67</width>
-                 <height>17</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 2</string>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label_9">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>190</y>
-                 <width>67</width>
-                 <height>17</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 3</string>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label_10">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>250</y>
-                 <width>67</width>
-                 <height>17</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 4</string>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label_6">
-               <property name="geometry">
-                <rect>
-                 <x>110</x>
-                 <y>60</y>
-                 <width>67</width>
-                 <height>17</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>HOME</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label_21">
-               <property name="geometry">
-                <rect>
-                 <x>320</x>
-                 <y>60</y>
-                 <width>67</width>
-                 <height>17</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>AWAY</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QLabel" name="firstResultLabel">
-               <property name="geometry">
-                <rect>
-                 <x>110</x>
-                 <y>90</y>
-                 <width>291</width>
-                 <height>20</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 1 RESULT</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QLabel" name="secondResultLabel">
-               <property name="geometry">
-                <rect>
-                 <x>110</x>
-                 <y>140</y>
-                 <width>291</width>
-                 <height>20</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 1 RESULT</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QLabel" name="thirdResultLabel">
-               <property name="geometry">
-                <rect>
-                 <x>110</x>
-                 <y>190</y>
-                 <width>291</width>
-                 <height>20</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 1 RESULT</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QLabel" name="fourthResultLabel">
-               <property name="geometry">
-                <rect>
-                 <x>110</x>
-                 <y>250</y>
-                 <width>291</width>
-                 <height>20</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgb(239, 173, 124)</string>
-               </property>
-               <property name="text">
-                <string>GAME 1 RESULT</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
+                 </property>
+                 <property name="text">
+                  <string>ROUND</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_6">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>HOME</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_21">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>AWAY</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_7">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1" colspan="2">
+                <widget class="QLabel" name="firstResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_8">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 2</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1" colspan="2">
+                <widget class="QLabel" name="secondResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_9">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 3</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1" colspan="2">
+                <widget class="QLabel" name="thirdResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_10">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 4</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1" colspan="2">
+                <widget class="QLabel" name="fourthResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(239, 173, 124)</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </widget>
            </item>

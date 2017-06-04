@@ -32,6 +32,20 @@ private slots:
 
     void on_buyButton_clicked();
 
+    void on_sellPlayerButton_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_runAndGunButton_clicked(bool checked);
+
+    void on_positionAttackButton_clicked(bool checked);
+
+    void on_manToManButton_clicked(bool checked);
+
+    void on_zoneButton_pressed();
+
+    void on_zoneButton_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };
