@@ -9,36 +9,35 @@
 class team
 {
 public:
-    team ();
-    team (const team & t);
+    team();
+    team(const team &t);
     team(int position, std::string name, std::string state, std::string town, std::string coach, double homeEfficiency, double awayEfficiency);
 
-    // Getters
-    int get_position() const;
-    std::string get_name() const;
-    std::string get_state() const;
-    std::string get_town() const;
-    std::string get_coach() const;
-    double get_homeEfficiency() const;
-    double get_awayEfficiency() const;
-    // int get_cur_budget()const;
+    /* Getters: */
+    int getPosition() const;
+    std::string getName() const;
+    std::string getState() const;
+    std::string getTown() const;
+    std::string getCoach() const;
+    double getHomeEfficiency() const;
+    double getAwayEfficiency() const;
+    int getCurrentBudget() const;
+    std::vector<player> getPlayers() const;
 
-    // Setters
-    void set_coach(const std::string &coachName);
-    void set_players(const std::vector<player> p);
+    /* Setters: */
+    void setCoach(const std::string &coachName);
+    void setPlayers(const std::vector<player> p);
 
     void toString();
     void addPlayers(const std::string &team_name);
-    std::vector<player> get_players() const;
-    static bool is_players_separator(char c);
-    std::vector<std::string> playersParse(std::string & line);
-    team & operator =(const team &t);
+    static bool isPlayersSeparator(char c);
+    std::vector<std::string> playersParse(std::string &line);
+    team &operator = (const team &t);
+
+    int buyPlayer(player &p);
+    std::vector<player> sellPlayer(std::string name);
 
     int m_maxBudget;
-    int getCurrentBudget() const;
-
-    void buyPlayer(player & p);
-    std::vector<player> sellPlayer(std::string name);
 
 private:
     int m_position;
@@ -49,9 +48,6 @@ private:
     double m_homeEfficiency;
     double m_awayEfficiency;
     std::vector<player> m_players;
-   //int m_cur_budget;
-
-
 };
 
 #endif // TEAM_H

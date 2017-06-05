@@ -25,6 +25,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -51,7 +52,7 @@ public:
     QFrame *frame;
     QGridLayout *gridLayout_5;
     QPushButton *nextGameButton;
-    QPushButton *pushButton;
+    QPushButton *tacticsButton;
     QPushButton *homeButton;
     QPushButton *myTeamButton;
     QPushButton *standingsButton;
@@ -63,6 +64,20 @@ public:
     QWidget *homePage;
     QLabel *label;
     QFrame *logoHome;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_26;
+    QLabel *label_28;
+    QLabel *label_29;
+    QLabel *label_30;
+    QLabel *label_32;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *nameLabel_2;
+    QLabel *surnameLabel_2;
+    QLabel *nationalityLabel;
+    QLabel *teamNameLabel;
+    QLabel *currentBudgetLabel;
     QWidget *myTeamPage;
     QGridLayout *gridLayout_8;
     QLabel *label_2;
@@ -244,13 +259,13 @@ public:
 
         gridLayout_5->addWidget(nextGameButton, 6, 0, 1, 1);
 
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setMinimumSize(QSize(0, 50));
-        pushButton->setStyleSheet(QLatin1String("background-color:rgb(140, 60, 0);\n"
+        tacticsButton = new QPushButton(frame);
+        tacticsButton->setObjectName(QStringLiteral("tacticsButton"));
+        tacticsButton->setMinimumSize(QSize(0, 50));
+        tacticsButton->setStyleSheet(QLatin1String("background-color:rgb(140, 60, 0);\n"
 "font: 25 11pt \"Ubuntu\";"));
 
-        gridLayout_5->addWidget(pushButton, 5, 0, 1, 1);
+        gridLayout_5->addWidget(tacticsButton, 5, 0, 1, 1);
 
         homeButton = new QPushButton(frame);
         homeButton->setObjectName(QStringLiteral("homeButton"));
@@ -310,13 +325,79 @@ public:
         homePage->setObjectName(QStringLiteral("homePage"));
         label = new QLabel(homePage);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(170, 20, 141, 41));
+        label->setGeometry(QRect(160, 0, 141, 41));
         logoHome = new QFrame(homePage);
         logoHome->setObjectName(QStringLiteral("logoHome"));
         logoHome->setGeometry(QRect(10, 60, 191, 191));
         logoHome->setStyleSheet(QStringLiteral("background-color: rgb(233, 185, 110);"));
         logoHome->setFrameShape(QFrame::StyledPanel);
         logoHome->setFrameShadow(QFrame::Raised);
+        verticalLayoutWidget = new QWidget(homePage);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(230, 60, 131, 221));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label_26 = new QLabel(verticalLayoutWidget);
+        label_26->setObjectName(QStringLiteral("label_26"));
+
+        verticalLayout->addWidget(label_26);
+
+        label_28 = new QLabel(verticalLayoutWidget);
+        label_28->setObjectName(QStringLiteral("label_28"));
+
+        verticalLayout->addWidget(label_28);
+
+        label_29 = new QLabel(verticalLayoutWidget);
+        label_29->setObjectName(QStringLiteral("label_29"));
+
+        verticalLayout->addWidget(label_29);
+
+        label_30 = new QLabel(verticalLayoutWidget);
+        label_30->setObjectName(QStringLiteral("label_30"));
+
+        verticalLayout->addWidget(label_30);
+
+        label_32 = new QLabel(verticalLayoutWidget);
+        label_32->setObjectName(QStringLiteral("label_32"));
+
+        verticalLayout->addWidget(label_32);
+
+        verticalLayoutWidget_2 = new QWidget(homePage);
+        verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
+        verticalLayoutWidget_2->setGeometry(QRect(370, 60, 131, 221));
+        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        nameLabel_2 = new QLabel(verticalLayoutWidget_2);
+        nameLabel_2->setObjectName(QStringLiteral("nameLabel_2"));
+
+        verticalLayout_2->addWidget(nameLabel_2);
+
+        surnameLabel_2 = new QLabel(verticalLayoutWidget_2);
+        surnameLabel_2->setObjectName(QStringLiteral("surnameLabel_2"));
+
+        verticalLayout_2->addWidget(surnameLabel_2);
+
+        nationalityLabel = new QLabel(verticalLayoutWidget_2);
+        nationalityLabel->setObjectName(QStringLiteral("nationalityLabel"));
+
+        verticalLayout_2->addWidget(nationalityLabel);
+
+        teamNameLabel = new QLabel(verticalLayoutWidget_2);
+        teamNameLabel->setObjectName(QStringLiteral("teamNameLabel"));
+
+        verticalLayout_2->addWidget(teamNameLabel);
+
+        currentBudgetLabel = new QLabel(verticalLayoutWidget_2);
+        currentBudgetLabel->setObjectName(QStringLiteral("currentBudgetLabel"));
+
+        verticalLayout_2->addWidget(currentBudgetLabel);
+
         gamePlayStackedWidget->addWidget(homePage);
         myTeamPage = new QWidget();
         myTeamPage->setObjectName(QStringLiteral("myTeamPage"));
@@ -874,8 +955,8 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
-        gamePlayStackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(1);
+        gamePlayStackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -906,13 +987,23 @@ public:
         );
         startButton->setText(QApplication::translate("MainWindow", "START", Q_NULLPTR));
         nextGameButton->setText(QApplication::translate("MainWindow", "NEXT GAME", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "TACTICS", Q_NULLPTR));
+        tacticsButton->setText(QApplication::translate("MainWindow", "TACTICS", Q_NULLPTR));
         homeButton->setText(QApplication::translate("MainWindow", "HOME", Q_NULLPTR));
         myTeamButton->setText(QApplication::translate("MainWindow", "MY TEAM", Q_NULLPTR));
         standingsButton->setText(QApplication::translate("MainWindow", "STANDINGS", Q_NULLPTR));
         scheduleButton->setText(QApplication::translate("MainWindow", "SCHEDULE", Q_NULLPTR));
         transferMarketButton->setText(QApplication::translate("MainWindow", "TRANSFER MARKET", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "HOME PAGE", Q_NULLPTR));
+        label_26->setText(QApplication::translate("MainWindow", "NAME", Q_NULLPTR));
+        label_28->setText(QApplication::translate("MainWindow", "SURNAME", Q_NULLPTR));
+        label_29->setText(QApplication::translate("MainWindow", "NATIONALITY", Q_NULLPTR));
+        label_30->setText(QApplication::translate("MainWindow", "TEAM NAME", Q_NULLPTR));
+        label_32->setText(QApplication::translate("MainWindow", "CURRENT BUDGET", Q_NULLPTR));
+        nameLabel_2->setText(QString());
+        surnameLabel_2->setText(QString());
+        nationalityLabel->setText(QString());
+        teamNameLabel->setText(QString());
+        currentBudgetLabel->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "MY TEAM PAGE", Q_NULLPTR));
         sellPlayerButton->setText(QApplication::translate("MainWindow", "SELL PLAYER", Q_NULLPTR));
         label_42->setText(QApplication::translate("MainWindow", "PO", Q_NULLPTR));

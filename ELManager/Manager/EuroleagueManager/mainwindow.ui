@@ -24,7 +24,7 @@
        <string notr="true">background:transparent;</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="logIn">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -196,7 +196,7 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
             </widget>
            </item>
            <item row="5" column="0">
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="tacticsButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -315,14 +315,14 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
               <string notr="true">background:transparent;</string>
              </property>
              <property name="currentIndex">
-              <number>3</number>
+              <number>6</number>
              </property>
              <widget class="QWidget" name="homePage">
               <widget class="QLabel" name="label">
                <property name="geometry">
                 <rect>
-                 <x>170</x>
-                 <y>20</y>
+                 <x>160</x>
+                 <y>0</y>
                  <width>141</width>
                  <height>41</height>
                 </rect>
@@ -349,6 +349,100 @@ font: 25 11pt &quot;Ubuntu&quot;;</string>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
+              </widget>
+              <widget class="QWidget" name="verticalLayoutWidget">
+               <property name="geometry">
+                <rect>
+                 <x>230</x>
+                 <y>60</y>
+                 <width>131</width>
+                 <height>221</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                 <widget class="QLabel" name="label_26">
+                  <property name="text">
+                   <string>NAME</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_28">
+                  <property name="text">
+                   <string>SURNAME</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_29">
+                  <property name="text">
+                   <string>NATIONALITY</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_30">
+                  <property name="text">
+                   <string>TEAM NAME</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_32">
+                  <property name="text">
+                   <string>CURRENT BUDGET</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="verticalLayoutWidget_2">
+               <property name="geometry">
+                <rect>
+                 <x>370</x>
+                 <y>60</y>
+                 <width>131</width>
+                 <height>221</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <widget class="QLabel" name="nameLabel_2">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="surnameLabel_2">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="nationalityLabel">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="teamNameLabel">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="currentBudgetLabel">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </widget>
              <widget class="QWidget" name="myTeamPage">

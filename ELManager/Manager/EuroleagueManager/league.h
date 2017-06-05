@@ -2,8 +2,9 @@
 #define LEAGUE_H
 
 #include "team.h"
-#include <vector>
 #include "player.h"
+
+#include <vector>
 
 class league
 {
@@ -11,18 +12,16 @@ public:
     league();
     league(std::vector<team> teams, team myTeam);
 
+    /* Setters: */
     void setTeams(std::vector<team> t);
-    std::vector<team> getTeams()const;
-
     void setMyTeam(team myTeam);
+    void setSchedule(std::vector<std::vector<team>> t);
+
+    /* Getters: */
+    std::vector<team> getTeams()const;
     team getMyTeam();
-
-    void set_schedule(std::vector<std::vector<team>> t);
-    std::vector<std::vector<team>> get_schedule()const;
-
-
+    std::vector<std::vector<team>> getSchedule()const;
     unsigned int getRound() const;
-
     std::vector<team> getNextRound();
     std::vector<team> getCurrentRound();
     std::vector<team> getKRound(int k);

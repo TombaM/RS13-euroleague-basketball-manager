@@ -1,47 +1,47 @@
-1::Langford, Keith::15/9/1983::United States of America::Guard::1.93::19::17::15::14::16::15::14::
+1::Langford, Keith::15/9/1983::USA::Guard::1.93::19::17::15::14::16::15::14::
 2::Colom, Quino::1/11/1988::Spain::Guard::1.88::17::1::13::15::14::14::14::
-3::Williams, Latavious::29/3/1989::United States of America::Center::2.03::14::16::8::7::8::17::14::
+3::Williams, Latavious::29/3/1989::USA::Center::2.03::14::16::8::7::8::17::14::
 4::Andjusic, Danilo::22/4/1991::Serbia::Guard::1.95::18::15::16::10::12::12::13::
-5::Antipov, Pavel::19/9/1991::Russian Federation::Forward::2.02::14::15::15::10::10::14::15::
-6::Green, Erick::9/5/1992::United States of America::Guard::1.90::18::17::15::10::14::13::14::
+5::Antipov, Pavel::19/9/1991::Russia::Forward::2.02::14::15::15::10::10::14::15::
+6::Green, Erick::9/5/1992::USA::Guard::1.90::18::17::15::10::14::13::14::
 7::Birch, Khem::28/9/1992::Canada::Center::2.06::14::15::6::7::7::18::15::
-8::Yount, Patrick::1/2/1992::United States of America::Center::2.09::14::15::7::7::8::18::16::
+8::Yount, Patrick::1/2/1992::USA::Center::2.09::14::15::7::7::8::18::16::
 9::Spanoulis, Vassilis::7/8/1982::Greece::Guard::1.93::18::18::19::16::15::14::14::
 10::Papapetrou, Ioannis::30/4/1994::Greece::Forward::2.07::16::16::12::10::11::16::14::
 11::Milutinov, Nikola::30/12/1994::Serbia::Center::2.13::15::17::8::10::8::17::16::
-12::Printezis, Georgios::22/2/1985::Greence::Forward::2.05::17::18::15::10::12::15::15::
+12::Printezis, Georgios::22/2/1985::Greece::Forward::2.05::17::18::15::10::12::15::15::
 13::Papanikolaou, Kostas::31/7/1990::Greece::Forward::2.04::15::15::10::8::11::17::18::
 14::Mantzaris, Vangelis::16/4/1990::Greece::Guard::1.94::17::15::15::15::15::15::17::
 15::Lojeski, Matt::24/7/1985::Belgium::Guard::1.98::18::17::16::12::16::15::15::
 16::Hackett, Daniel::19/12/1987::Italy::Guard::1.97::16::15::11::15::13::15::15::
 17::Guler, Sinan::8/11/1983::Turkey::Guard::1.92::17::16::13::15::14::14::14::
-18::Diebler, Jon::22/6/1988::United States of America::Guard::1.98::18::16::19::10::12::15::14::
-19::Daye, Austin::5/6/1988::United States of America::Center::2.11::16::15::14::8::14::17::15::
+18::Diebler, Jon::22/6/1988::USA::Guard::1.98::18::16::19::10::12::15::14::
+19::Daye, Austin::5/6/1988::USA::Center::2.11::16::15::14::8::14::17::15::
 20::Pliess, Tibor::2/11/1989::Germany::Center::2.18::16::16::8::7::9::17::17::
-21::Schilb, Blake::23/12/1983::United States of America::Forward::2.01::17::15::15::13::14::14::13::
-22::Tyus, Alex::8/1/1988::United States of America::Center::2.03::13::15::8::8::4::19::19::
-23::Dixon, Bobby::10/4/1983::United States of America::Guard::1.78::18::16::16::12::14::13::13::
+21::Schilb, Blake::23/12/1983::USA::Forward::2.01::17::15::15::13::14::14::13::
+22::Tyus, Alex::8/1/1988::USA::Center::2.03::13::15::8::8::4::19::19::
+23::Dixon, Bobby::10/4/1983::USA::Guard::1.78::18::16::16::12::14::13::13::
 24::Datome, Luigi::27/11/1987::Italy::Forward::2.03::17::16::16::10::14::15::14::
 25::Kalinic, Nikola::8/11/1991::Serbia::Forward::2.02::15::15::11::10::11::18::19::
 26::Vesely, Jan::24/4/1990::Chech Republic::Foward::2.13::12::16::8::8::9::20::18::
 27::Sloukas, Kostas::15/1/1990::Greece::Guard::1.90::16::15::12::16::15::15::15::
 28::Bogdanovic, Bogdan::18/8/1992::Serbia::Guard::1.97::18::16::17::14::14::15::15::
-29::Udoh, Ekpe::20/5/1987::United States of America::Center::2.08::15::18::8::8::9::20::20::
+29::Udoh, Ekpe::20/5/1987::USA::Center::2.08::15::18::8::8::9::20::20::
 30::Tomic, Ante::17/2/1987::Croatia::Center::2.17::15::15::9::11::10::16::14::
 31::Koponen, Petteri::13/4/1988::Finland::Guard::1.94::17::16::15::12::14::14::14::
 32::Oleson, Brad::11/4/1983::Spain::Guard::1.91::16::15::13::13::13::14::16::
 33::Vezenkov, Aleksandar::6/8/1995::Bulgaria::Forward::2.06::15::115::12::9::11::15::15::
 34::Claver, Viktor::30/8/1988::Spain::Forward::2.07::16::16::14::10::10::15::15::
-35::Doellman, Justin::3/2/1985::United States of America::Forward::2.06::16::17::5::10::11::15::15::
-36::Rice, Tyrese::15/5/1987::United States of America::Guard::1.85::17::15::17::16::14::13::12::
+35::Doellman, Justin::3/2/1985::USA::Forward::2.06::16::17::5::10::11::15::15::
+36::Rice, Tyrese::15/5/1987::USA::Guard::1.85::17::15::17::16::14::13::12::
 37::Zizic, Ante::4/1/1997::Croatia::Center::2.10::15::16::8::10::9::17::16::
-38::Clyburn, Will::17/5/1990::United States of America::Forward::2.01::16::18::13::10::14::18::16::
-39::Wanamaker, Brad::25/7/1989::United States of America::Guard::1.93::18::16::16::14::14::17::16::
-40::Miller, Darius::21/4/1990::United States of America::Forward::2.03::16::17::14::10::13::17::16::
+38::Clyburn, Will::17/5/1990::USA::Forward::2.01::16::18::13::10::14::18::16::
+39::Wanamaker, Brad::25/7/1989::USA::Guard::1.93::18::16::16::14::14::17::16::
+40::Miller, Darius::21/4/1990::USA::Forward::2.03::16::17::14::10::13::17::16::
 41::Thies, Daniel::4/4/1992::Germany::Center::2.04::16::16::8::9::11::18::17::
 42::Melli, Nicolo::26/1/1991::Italy::Forward::2.05::15::16::14::11::13::15::15::
 43::Beaubois, Rodrigue::24/4/1988::France::Guard::1.88::17::15::16::11::14::14::14::
 44::Hanga, Adam::12/4/1989::Hungary::Forward::2.01::14::15::12::9::13::18::18::
 45::Voigtmann, Johannes::30/9/1992::Germany::Center::2.11::15::17::12::10::9::16::15::
 46::Hanga, Adam::12/4/1989::Hungary::Forward::2.01::14::15::12::9::13::18::18::
-47::Larkin, Shane::2/10/1992::United States of America::Guard::1.80::17::16::16::14::14::16::14::
+47::Larkin, Shane::2/10/1992::USA::Guard::1.80::17::16::16::14::14::16::14::

@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include <iostream>
 
 #define HIGH_PRIORITY 20
 #define MIDDLE_PRIORITY 10
@@ -20,106 +19,115 @@ player::player(int number, std::string &name, std::string &dateOfBirth, std::str
         m_twoPointer(twoPoints), m_threePointer(threePoints), m_assits(assists), m_dribble(dribble), m_defence(defence), m_physicality(phyicality),
         m_injury(false)
 {
-    m_price=overallRating()*VALUE;
+    m_price = overallRating()*VALUE;
 }
 
-
-int player::get_number() const
+int player::getNumber() const
 {
-  return m_number;
+    return m_number;
 }
 
-std::string player::get_name() const
+std::string player::getName() const
 {
-  return m_name;
+    return m_name;
 }
 
-std::string player::get_dateOfBirth() const
+std::string player::getDateOfBirth() const
 {
-  return m_dateOfBirth;
+    return m_dateOfBirth;
 }
 
-std::string player::get_nationality() const
+std::string player::getNationality() const
 {
-  return m_nationality;
+    return m_nationality;
 }
 
-std::string player::get_position() const
+std::string player::getPosition() const
 {
-  return m_position;
+    return m_position;
 }
 
-double player::get_height() const
+double player::getHeight() const
 {
-  return m_height;
+    return m_height;
 }
 
-int player::get_onePointer() const
+int player::getOnePointer() const
 {
-  return m_onePointer;
+    return m_onePointer;
 }
 
-int player::get_twoPointer() const
+int player::getTwoPointer() const
 {
-  return m_twoPointer;
+    return m_twoPointer;
 }
 
-int player::get_threePointer() const
+int player::getThreePointer() const
 {
-  return m_threePointer;
+    return m_threePointer;
 }
 
-int player::get_assists() const
+int player::getAssists() const
 {
-  return m_assits;
+    return m_assits;
 }
 
-int player::get_dribble() const
+int player::getDribble() const
 {
-  return m_dribble;
+    return m_dribble;
 }
 
-int player::get_defence() const
+int player::getDefence() const
 {
-  return m_defence;
+    return m_defence;
 }
 
-int player::get_physicality() const
+int player::getPhysicality() const
 {
-  return m_physicality;
+    return m_physicality;
 }
 
-int player::get_injury() const
+int player::getInjury() const
 {
-  return m_injury;
+    return m_injury;
 }
 
-int player::get_price() const{
+int player::getPrice() const
+{
     return m_price;
 }
 
 int player::attackRating()
 {
-  return (get_assists() + get_dribble() + get_onePointer() + get_twoPointer() + get_threePointer()) / 5;
+    return (getAssists() + getDribble() + getOnePointer() + getTwoPointer() + getThreePointer()) / 5;
 }
 
 int player::defenseRating()
 {
-  return (get_defence() + get_physicality()) / 2;
+    return (getDefence() + getPhysicality()) / 2;
 }
 
 int player::overallRating()
 {
-  return (attackRating() + defenseRating());
+    return (attackRating() + defenseRating());
 }
 
 
 std::string player::toString()
 {
-  return std::to_string(get_number()) + " " + get_name() + " " + get_dateOfBirth() + " " + get_nationality() + " " +
-  get_position() + " " + std::to_string(get_height()) + " " + std::to_string(get_onePointer()) + " " +
-  std::to_string(get_twoPointer()) + " " + std::to_string(get_threePointer()) + " " + std::to_string(get_assists()) + " " +
-  std::to_string(get_dribble()) + " " + std::to_string(get_defence()) + " " + std::to_string(get_defence()) + " " +
-  std::to_string(get_physicality()) + " " + std::to_string(overallRating())+ " price= "
-                                          + std::to_string(m_price)+"$";
+  return std::to_string(getNumber()) + " " + getName() + "   " + getDateOfBirth() + "   " + getNationality() + " " +
+  getPosition() + "   " + std::to_string(getHeight()) + "   " + std::to_string(getOnePointer()) + " " +
+  std::to_string(getTwoPointer()) + " " + std::to_string(getThreePointer()) + " " + std::to_string(getAssists()) + " " +
+  std::to_string(getDribble()) + " " + std::to_string(getDefence()) + " " + std::to_string(getDefence()) + " " +
+  std::to_string(getPhysicality()) + "   " + "RATING: " + std::to_string(overallRating()) + "   " + "PRICE: " + std::to_string(m_price)+"$";
+
+  /*
+  return std::to_string(get_number()) + " "
+         + get_name() + "   "
+         + get_dateOfBirth() + "   "
+         + get_nationality() + "   "
+         + get_position() + "   "
+         + "HEIGHT: " + std::to_string(get_height()) + " "
+         + "RATING: " + std::to_string(overallRating()) + "   "
+         + "PRICE: " + std::to_string(m_price) + "$"; */
 }
