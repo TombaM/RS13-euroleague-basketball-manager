@@ -19,6 +19,7 @@
 #include <map>
 #include <QTime>
 
+
 #define AVG_THREE_POINTER 12
 
 league currentLeague;
@@ -26,11 +27,10 @@ std::vector<team> teams;
 team myTeam;
 bool offenseTactic = true;
 bool deffenceTactic = true;
+std::vector<player> transfermarket;
 
 
-
-std::map<std::string,int> standings;
-
+std::map<std::string, int> standings;
 
 unsigned int k = rand();
 
@@ -45,6 +45,30 @@ bool is_separatorSpace(char c)
     return c == ' ';
 }
 
+bool is_market_separator(char c)
+{
+    return c == ':';
+}
+
+std::vector<std::string> playersMarketParse(std::string & line)
+{
+    std::vector<std::string> res;
+
+    auto i = line.begin();
+    while(i != line.end()) {
+
+        i = std::find_if_not(i, line.end(), is_market_separator);
+
+       auto j = std::find_if(i, line.end(), is_market_separator);
+
+        if(i != line.end())
+              res.push_back(std::string(i, j));
+
+        i = j;
+    }
+
+    return res;
+}
 
 std::vector<std::string> parse(std::string &line)
 {        //setName(qName.toStdString());
@@ -93,6 +117,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setGeometry(425, 200, 200, 200);
     ui->stackedWidget->setCurrentIndex(0);
     ui->gamePlayStackedWidget->setCurrentIndex(0);
 
@@ -127,6 +152,7 @@ MainWindow::MainWindow(QWidget *parent) :
         team t = team(position, name, state, town, coach, homeEff, awayEff);
         teams.push_back(t);
         //t.toString();
+        standings[name] = 0;
     }
 
     int j = 0;
@@ -145,6 +171,46 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_startButton_clicked()
 {
+    QFile file("transferMarket.txt");
+    if(!file.open(QIODevice::ReadOnly)) {
+        QMessageBox::information(0, "error", file.errorString());
+    }
+
+    QTextStream in(&file);
+
+    while(!in.atEnd()) {
+
+        QString qLine = in.readLine();
+        std::string line = qLine.toStdString(); // line as a string
+
+        std::vector<std::string> data = playersMarketParse(line);
+
+        int number = std::stoi(data[0]);
+        std::string name = data[1];
+        std::string dateOfBirth = data[2];
+        std::string nationality = data[3];
+        std::string position = data[4];
+        double height = std::stof(data[5]);
+        int onePointer = std::stoi(data[6]);
+        int twoPointer = std::stoi(data[7]);
+        int threePointer = std::stoi(data[8]);
+        int assits = std::stoi(data[9]);
+        int dribble = std::stoi(data[10]);
+        int defence = std::stoi(data[11]);
+        int physicality = std::stoi(data[12]);
+
+        player p = player(number, name, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
+        //p.toString();
+        transfermarket.push_back(p);
+    }
+
+    // Stampanje igraca
+    auto i = transfermarket.begin();
+    while(i != transfermarket.end()) {
+
+        (*i).toString();
+        i++;
+    }
 
     QString qName = ui->nameEdit->text();
     QString qSurname = ui->surnameEdit->text();
@@ -170,55 +236,107 @@ void MainWindow::on_startButton_clicked()
 
   //  std::cout << currentLeague.getMyTeam().get_players().size()<< std::endl;
 
-    currentLeague.setTransferMarket();
+    //currentLeague.setTransferMarket();
     std::vector<std::vector<team>> tm{
-        {result[0], myTeam,
+       /* Round 1*/
+       {result[0], myTeam,
         result[1], result[6],
         result[2], result[5],
         result[3], result[4]},
-       /* Round 1 */
+       /* Round 2*/
        {result[6], result[0],
         result[5], myTeam,
         result[4], result[1],
         result[3], result[2]},
-       /* Round 2 */
+       /* Round 3 */
        {result[0], result[5],
         result[6], result[4],
-        myTeam,   result[3],
+        myTeam,    result[3],
         result[1], result[2]},
-       /* Round 3 */
+       /* Round 4 */
        {result[4], result[0],
         result[5], result[3],
         result[2], result[6],
-        myTeam,   result[1]},
-       /* Round 4 */
+        myTeam,    result[1]},
+       /* Round 5 */
        {result[0], result[3],
         result[4], result[2],
         result[5], result[1],
         result[6], myTeam},
-       /* Round 5 */
+       /* Round 6 */
        {result[2], result[0],
         result[1], result[3],
-        myTeam,   result[4],
+        myTeam,    result[4],
         result[6], result[5]},
-       /* Round 6 */
+       /* Round 7 */
        {result[0], result[1],
         result[2], myTeam,
         result[3], result[6],
-        result[4], result[5]}
-       };
+        result[4], result[5]},
+        /* Round 8 */
+       {myTeam,    result[0],
+        result[6], result[1],
+        result[5], result[2],
+        result[4], result[3]},
+        /* Round 9 */
+       {result[0], result[6],
+        myTeam,    result[5],
+        result[1], result[4],
+        result[2], result[3]},
+        /* Round 10 */
+       {result[5], result[0],
+        result[4], result[6],
+        result[3],  myTeam,
+        result[2], result[1]},
+        /* Round 11 */
+       {result[0], result[4],
+        result[3], result[5],
+        result[6], result[2],
+        result[1], myTeam},
+        /* Round 12 */
+       {result[3], result[0],
+        result[2], result[4],
+        result[1], result[5],
+        myTeam,    result[6]},
+        /* Round 13 */
+       {result[0], result[2],
+        result[3], result[1],
+        result[4], myTeam,
+        result[5], result[6]},
+        /* Round 14 */
+       {result[1], result[0],
+        myTeam,    result[2],
+        result[6], result[3],
+        result[5], result[4]}};
 
     currentLeague.set_schedule(tm);
 
 
     /* Entering gameplay mode */
     ui->stackedWidget->setCurrentIndex(1);
-    ui->stackedWidget->setFixedSize(QSize(1000, 500));
+    this->setGeometry(0, 0, 1100, 600);
+    if(currentLeague.getMyTeam().get_name() == "Anadolu Efes")
+        ui->logoHome->setStyleSheet("background-image:url(\"efes.png\")");
+    else if(currentLeague.getMyTeam().get_name() == "CSKA")
+        ui->logoHome->setStyleSheet("background-image:url(\"cska.png\")");
+    else if(currentLeague.getMyTeam().get_name() == "Crvena Zvezda")
+        ui->logoHome->setStyleSheet("background-image:url(\"zvezda.png\")");
+    else if(currentLeague.getMyTeam().get_name() == "Maccabi")
+        ui->logoHome->setStyleSheet("background-image:url(\"maccabi.png\")");
+    else if(currentLeague.getMyTeam().get_name() == "Real Madrid")
+        ui->logoHome->setStyleSheet("background-image:url(\"real.png\")");
+    else if(currentLeague.getMyTeam().get_name() == "Panathinaikos")
+        ui->logoHome->setStyleSheet("background-image:url(\"panathinaikos.png\")");
+    else if(currentLeague.getMyTeam().get_name() == "Zalgiris")
+        ui->logoHome->setStyleSheet("background-image:url(\"zalgiris.png\")");
+    else if(currentLeague.getMyTeam().get_name() == "EA7 Emporio Armani")
+        ui->logoHome->setStyleSheet("background-image:url(\"armani.png\")");
 }
 
 void MainWindow::on_homeButton_clicked()
 {
     ui->gamePlayStackedWidget->setCurrentIndex(0);
+
 }
 
 void MainWindow::on_myTeamButton_clicked()
@@ -248,27 +366,110 @@ void MainWindow::on_standingsButton_clicked()
 {
     ui->gamePlayStackedWidget->setCurrentIndex(2);
 
-    ui->standingsListWidget->clear();
+    std::vector<std::pair<std::string, int>> sortedStandings;
 
-    QStringList items;
-
-    for (auto iter = standings.begin(); iter != standings.end(); iter++ ) {
-
-        QString item = QString::fromStdString(iter->first);
-        int points = iter->second;
-        std::string sPoints = " " + std::to_string(points);
-        QString qPoints = QString::fromStdString(sPoints);
-        item += qPoints;
-
-        items += item;
+    for(auto i = standings.begin(); i != standings.end(); ++i)
+    {
+        sortedStandings.push_back(*i);
     }
 
-    ui->standingsListWidget->addItems(items);
+    sort(sortedStandings.begin(), sortedStandings.end(),
+         [=](std::pair<std::string, int> & a, std::pair<std::string, int> & b)
+         {
+            return a.second > b.second;
+         });
+
+    /* First Place */
+    ui->firstPlaceName->setText(QString::fromStdString(sortedStandings[0].first));
+    ui->firstPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[0].second)));
+    /* Second Place */
+    ui->secondPlaceName->setText(QString::fromStdString(sortedStandings[1].first));
+    ui->secondPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[1].second)));
+    /* Third Place */
+    ui->thirdPlaceName->setText(QString::fromStdString(sortedStandings[2].first));
+    ui->thirdPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[2].second)));
+    /* Fourth Place */
+    ui->fourthPlaceName->setText(QString::fromStdString(sortedStandings[3].first));
+    ui->fourthPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[3].second)));
+    /* Fifth Place */
+    ui->fifthPlaceName->setText(QString::fromStdString(sortedStandings[4].first));
+    ui->fifthPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[4].second)));
+    /* Sixth Place */
+    ui->sixthPlaceName->setText(QString::fromStdString(sortedStandings[5].first));
+    ui->sixthPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[5].second)));
+    /* Seventh Place */
+    ui->seventhPlaceName->setText(QString::fromStdString(sortedStandings[6].first));
+    ui->seventhPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[6].second)));
+    /* Eighth Place */
+    ui->eighthPlaceName->setText(QString::fromStdString(sortedStandings[7].first));
+    ui->eighthPlacePoints->setText(QString::fromStdString(std::to_string(sortedStandings[7].second)));
+
+
 }
 
 void MainWindow::on_scheduleButton_clicked()
 {
     ui->gamePlayStackedWidget->setCurrentIndex(3);
+
+    std::vector<team> t = currentLeague.getCurrentRound();
+
+    /* Round schedule label */
+    int round = currentLeague.getRound();
+    currentLeague.scheduleCounter = round;
+    ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(round+1)));
+
+    /* Game 1 label */
+    ui->firstScheduleLabel->setText(QString::fromStdString(t[0].get_name() + " - " + t[1].get_name()));
+    /* Game 2 label */
+    ui->secondScheduleLabel->setText(QString::fromStdString(t[2].get_name() + " - " + t[3].get_name()));
+    /* Game 3 label */
+    ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].get_name() + " - " + t[5].get_name()));
+    /* Game 4 label */
+    ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].get_name() + " - " + t[7].get_name()));
+}
+
+void MainWindow::on_nextRoundButton_clicked()
+{
+    if(currentLeague.scheduleCounter < 13)
+    {
+        currentLeague.scheduleCounter++;
+
+        std::vector<team> t = currentLeague.getKRound(currentLeague.scheduleCounter);
+
+        ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(currentLeague.scheduleCounter+1)));
+
+        /* Game 1 label */
+        ui->firstScheduleLabel->setText(QString::fromStdString(t[0].get_name() + " - " + t[1].get_name()));
+        /* Game 2 label */
+        ui->secondScheduleLabel->setText(QString::fromStdString(t[2].get_name() + " - " + t[3].get_name()));
+        /* Game 3 label */
+        ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].get_name() + " - " + t[5].get_name()));
+        /* Game 4 label */
+        ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].get_name() + " - " + t[7].get_name()));
+    }
+}
+
+void MainWindow::on_previousRoundButton_clicked()
+{
+    if(currentLeague.scheduleCounter > 0)
+    {
+        currentLeague.scheduleCounter--;
+
+        std::vector<team> t = currentLeague.getKRound(currentLeague.scheduleCounter);
+
+        ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(currentLeague.scheduleCounter+1)));
+
+
+        /* Game 1 label */
+        ui->firstScheduleLabel->setText(QString::fromStdString(t[0].get_name() + " - " + t[1].get_name()));
+        /* Game 2 label */
+        ui->secondScheduleLabel->setText(QString::fromStdString(t[2].get_name() + " - " + t[3].get_name()));
+        /* Game 3 label */
+        ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].get_name() + " - " + t[5].get_name()));
+        /* Game 4 label */
+        ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].get_name() + " - " + t[7].get_name()));
+    }
+
 }
 
 void MainWindow::on_transferMarketButton_clicked()
@@ -277,9 +478,9 @@ void MainWindow::on_transferMarketButton_clicked()
 
     ui->transferMarketListWidget->clear();
 
-    std::vector<player> players = currentLeague.getTransferMarket();
-    auto i = players.begin();
-    auto end = players.end();
+    //std::vector<player> players = currentLeague.getTransferMarket();
+    auto i = transfermarket.begin();
+    auto end = transfermarket.end();
 
     QStringList items;
 
@@ -328,12 +529,12 @@ bool homeVictory(team & homeTeam, team & awayTeam, int parameter)
 std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter){
     bool homeWin = homeVictory(homeTeam, awayTeam, parameter);
     if(homeWin){
-        standings[homeTeam.get_name()]+=2;
-        standings[awayTeam.get_name()]+=1;
+        standings[homeTeam.get_name()] += 2;
+        standings[awayTeam.get_name()] += 1;
     }
     else{
-        standings[homeTeam.get_name()]+= 1;
-        standings[awayTeam.get_name()]+= 2;
+        standings[homeTeam.get_name()] += 1;
+        standings[awayTeam.get_name()] += 2;
     }
 
 
@@ -348,7 +549,7 @@ std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter){
     }
     else
     {
-        awayPoints = rand()%50 + 50;
+        awayPoints = rand()%40 + 60;
         homePoints = awayPoints - rand() % 15-1;
     }
 
@@ -404,12 +605,12 @@ std::string getResultMyTeam(team &myTeam, team &oppTeam, bool isHomeCourt, int p
 {
     bool myTeamWin = myTeamVictory(myTeam, oppTeam, isHomeCourt, parameter);
     if(myTeamWin){
-        standings[myTeam.get_name()]+= 2;
-        standings[oppTeam.get_name()]+= 1;
+        standings[myTeam.get_name()] += 2;
+        standings[oppTeam.get_name()] += 1;
     }
     else{
         standings[myTeam.get_name()]+= 1;
-        standings[myTeam.get_name()]+= 2;
+        standings[oppTeam.get_name()]+= 2;
     }
     int homePoints;
     int awayPoints;
@@ -421,7 +622,7 @@ std::string getResultMyTeam(team &myTeam, team &oppTeam, bool isHomeCourt, int p
          awayPoints = homePoints - rand()%15 - 1;
     } else {
 
-        awayPoints = rand()%50 + 50;
+        awayPoints = rand()%40 + 60;
         homePoints = awayPoints - rand()%15 - 1;
     }
 
@@ -434,25 +635,16 @@ void MainWindow::on_nextGameButton_clicked()
 
     std::vector<team> nextRound = currentLeague.getNextRound();
 
-
-
-
-    for(unsigned int i = 0; i < nextRound.size() - 1; i = i+2)
+    for(unsigned int i = 0; i < nextRound.size() - 1; i += 2)
     {
         std::string result;
-        if(nextRound[i].get_name()==currentLeague.getMyTeam().get_name()){
-            int x = i%2;
-            if(x) {
-                result = nextRound[i].get_name() + " " + getResultMyTeam(nextRound[i], nextRound[i+1],true, k++) + " " + nextRound[i+1].get_name();
-            }
-            else{
-                result = nextRound[i+1].get_name() + " " + getResultMyTeam(nextRound[i], nextRound[i+1],false, k++) + " " + nextRound[i].get_name();
-            }
-        } else
+
+        if(nextRound[i].get_name() == currentLeague.getMyTeam().get_name())
+            result = nextRound[i].get_name() + " " + getResultMyTeam(nextRound[i], nextRound[i+1], true, k++) + " " + nextRound[i+1].get_name();
+        else if(nextRound[i+1].get_name() == currentLeague.getMyTeam().get_name())
+            result = nextRound[i].get_name() + " " + getResultMyTeam(nextRound[i+1], nextRound[i], false, k++) + " " + nextRound[i+1].get_name();
+        else
             result = nextRound[i].get_name() + " " + getResultOthers(nextRound[i], nextRound[i+1], k++) + " " + nextRound[i+1].get_name();
-        //std::cout << nextRound[i].get_name() << " ";
-        //std::cout << getResultOthers(nextRound[i], nextRound[i+1], k++) << " ";
-        //std::cout << nextRound[i+1].get_name() << std::endl;
 
         /* Updating the round counter label */
         std::string roundLabelText = "Round " + std::to_string(currentLeague.getRound());
@@ -499,9 +691,17 @@ void MainWindow::on_buyButton_clicked()
     int onePointer = std::stoi(data[7]);
     int twoPointer = std::stoi(data[8]);
     int threePointer = std::stoi(data[9]);
+    std::string fullname=name +" "+sur;
 
-    player p = player(number, name, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
-
+    player p = player(number, fullname, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
+    auto i=transfermarket.begin();
+    std::vector<player> new_transfermarket;
+    while (i!=transfermarket.end()){
+        if(i->get_name()!=p.get_name())
+            new_transfermarket.push_back(*i);
+        i++;
+    }
+    transfermarket=new_transfermarket;
     team t1 = currentLeague.getMyTeam();
     t1.buyPlayer(p);
     currentLeague.setMyTeam(t1);
@@ -530,11 +730,29 @@ void MainWindow::on_sellPlayerButton_clicked()
     std::string selectedPlayer = qSelectedPlayer.toStdString();
    //std::cout<<selectedPlayer<<std::endl;
     std::vector<std::string> data = transferMarketParse(selectedPlayer);
-    std::string name=data[1] + " " + data[2];
+    int number = std::stoi(data[0]);
+    std::string name = data[1];
+    std::string sur = data[2];
+    int assits = std::stoi(data[10]);
+    int dribble = std::stoi(data[11]);
+    int defence = std::stoi(data[12]);
+    int physicality = std::stoi(data[13]);
+    std::string dateOfBirth = data[3];
+    std::string nationality = data[4];
+    std::string position = data[5];
+    double height = std::stof(data[6]);
+    int onePointer = std::stoi(data[7]);
+    int twoPointer = std::stoi(data[8]);
+    int threePointer = std::stoi(data[9]);
+    std::string fullname=name + " " + sur;
+
+    player p = player(number, fullname, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
+    std::string name1=data[1] + " " + data[2];
     team t = currentLeague.getMyTeam();
-    std::vector<player> p = t.sellPlayer(name);
-    t.set_players(p);
+    std::vector<player> pl = t.sellPlayer(name1);
+    t.set_players(pl);
     currentLeague.setMyTeam(t);
+    transfermarket.push_back(p);
 
     std::cout << currentLeague.getMyTeam().getCurrentBudget() << std::endl;
 }
@@ -567,4 +785,5 @@ void MainWindow::on_manToManButton_clicked(bool checked)
     if(checked)
         deffenceTactic = false;
 }
+
 

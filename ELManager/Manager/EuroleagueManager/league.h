@@ -17,9 +17,6 @@ public:
     void setMyTeam(team myTeam);
     team getMyTeam();
 
-    std::vector<player> getTransferMarket();
-    void setTransferMarket();
-
     void set_schedule(std::vector<std::vector<team>> t);
     std::vector<std::vector<team>> get_schedule()const;
 
@@ -27,11 +24,14 @@ public:
     unsigned int getRound() const;
 
     std::vector<team> getNextRound();
+    std::vector<team> getCurrentRound();
+    std::vector<team> getKRound(int k);
+
+    unsigned int scheduleCounter;
 
 private:
     std::vector<team> m_teams;
     team m_myTeam;
-    std::vector<player> m_transferMarket;
     std::vector<std::vector<team>> m_schedule;
     unsigned int m_round;
 };

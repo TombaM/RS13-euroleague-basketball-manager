@@ -8,7 +8,7 @@
 league::league()
     :m_round(0)
 {
-
+    scheduleCounter = 0;
 }
 
 league::league(std::vector<team> teams, team myTeam)
@@ -37,7 +37,7 @@ team league::getMyTeam()
     return m_myTeam;
 }
 
-bool is_market_separator(char c)
+/* is_market_separator(char c)
 {
     return c == ':';
 }
@@ -60,7 +60,7 @@ std::vector<std::string> playersMarketParse(std::string & line)
     }
 
     return res;
-}
+}*/
 
 void league::set_schedule(std::vector<std::vector<team>> t){
     m_schedule=t;
@@ -68,7 +68,7 @@ void league::set_schedule(std::vector<std::vector<team>> t){
 std::vector<std::vector<team>> league::get_schedule()const{
     return m_schedule;
 }
-
+/*
 void league::setTransferMarket()
 {
     QFile file("transferMarket.txt");
@@ -117,7 +117,7 @@ std::vector<player> league::getTransferMarket()
 {
     return m_transferMarket;
 }
-
+*/
 unsigned int league::getRound() const
 {
     return m_round;
@@ -127,11 +127,19 @@ std::vector<team> league::getNextRound()
 {
     std::vector<team> nextRound = m_schedule[m_round];
 
-    if(m_round < 6)
+    if(m_round < 14)
         m_round++;
 
     // if m_round == 6 ====> END GAME
 
     return nextRound;
 }
+ std::vector<team> league::getCurrentRound()
+ {
+     return m_schedule[m_round];
+ }
 
+ std::vector<team> league::getKRound(int k)
+ {
+     return m_schedule[k];
+ }

@@ -46,6 +46,10 @@ private slots:
 
     void on_zoneButton_clicked(bool checked);
 
+    void on_nextRoundButton_clicked();
+
+    void on_previousRoundButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

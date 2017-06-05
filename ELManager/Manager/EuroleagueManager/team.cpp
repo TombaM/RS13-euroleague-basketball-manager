@@ -192,7 +192,7 @@ int team::getCurrentBudget() const
 void team::buyPlayer(player &p)
 {
     int newBudget = getCurrentBudget() + p.get_price();
-    if(newBudget < m_maxBudget)
+    if(newBudget <= m_maxBudget)
         m_players.push_back(p);
     else
         std::cout << "CANNOT BUY PLAYER, MAX BUDGET REACHED" << std::endl;
