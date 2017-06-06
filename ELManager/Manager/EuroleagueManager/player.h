@@ -28,10 +28,10 @@ public:
     int getDefence() const;
     int getPhysicality() const;
     int getInjury() const;
-    int getPrice()const;
-    int attackRating();
-    int defenseRating();
-    int overallRating();
+    int getPrice() const;
+    int attackRating() const;
+    int defenseRating() const;
+    int overallRating() const;
 
     std::string toString();
 

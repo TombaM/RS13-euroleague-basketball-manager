@@ -97,17 +97,17 @@ int player::getPrice() const
     return m_price;
 }
 
-int player::attackRating()
+int player::attackRating() const
 {
     return (getAssists() + getDribble() + getOnePointer() + getTwoPointer() + getThreePointer()) / 5;
 }
 
-int player::defenseRating()
+int player::defenseRating() const
 {
     return (getDefence() + getPhysicality()) / 2;
 }
 
-int player::overallRating()
+int player::overallRating() const
 {
     return (attackRating() + defenseRating());
 }

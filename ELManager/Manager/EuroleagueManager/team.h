@@ -23,12 +23,14 @@ public:
     double getAwayEfficiency() const;
     int getCurrentBudget() const;
     std::vector<player> getPlayers() const;
+    int getMaxBudget() const;
+    std::vector<player> getStartingFive() const;
 
     /* Setters: */
     void setCoach(const std::string &coachName);
     void setPlayers(const std::vector<player> p);
+    void setStartingFive(std::vector<player> p);
 
-    void toString();
     void addPlayers(const std::string &team_name);
     static bool isPlayersSeparator(char c);
     std::vector<std::string> playersParse(std::string &line);
@@ -37,7 +39,9 @@ public:
     int buyPlayer(player &p);
     std::vector<player> sellPlayer(std::string name);
 
-    int m_maxBudget;
+
+
+
 
 private:
     int m_position;
@@ -48,6 +52,8 @@ private:
     double m_homeEfficiency;
     double m_awayEfficiency;
     std::vector<player> m_players;
+    std::vector<player> m_startingFive;
+    int m_maxBudget;
 };
 
 #endif // TEAM_H

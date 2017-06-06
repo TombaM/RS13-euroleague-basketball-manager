@@ -14,6 +14,11 @@ team::team()
 
 }
 
+bool comparePlayer(const player &p1,const  player &p2)
+{
+    return p1.overallRating() > p2.overallRating();
+}
+
 team::team(const team &t)
 {
     m_position = t.getPosition();
@@ -115,11 +120,20 @@ double team::getAwayEfficiency() const
     return m_awayEfficiency;
 }
 
-void team::toString()
+int team::getMaxBudget() const
 {
-    std::cout << std::to_string(getPosition()) + " " + getName() + " " + getState() + " "
-                 + getTown() + " " + getCoach() + " " + std::to_string(getHomeEfficiency()) + " "
-                 + std::to_string(getAwayEfficiency()) << std::endl;
+    return m_maxBudget;
+}
+
+std::vector<player> team::getStartingFive() const
+{
+    return m_startingFive;
+}
+
+
+void team::setStartingFive(std::vector<player> p)
+{
+    m_startingFive=p;
 }
 
 void team::addPlayers(const std::string &teamName)
@@ -160,6 +174,13 @@ void team::addPlayers(const std::string &teamName)
 
         m_players.push_back(p);
     }
+
+    std::vector<player> tmp=m_players;
+    std::sort(tmp.begin(),tmp.end(),comparePlayer);
+    for (int i=0;i<5;i++)
+        m_startingFive.push_back(tmp[i]);
+
+    m_maxBudget+=m_maxBudget*5/100;
 }
 
 void team::setPlayers(const std::vector<player> p)
