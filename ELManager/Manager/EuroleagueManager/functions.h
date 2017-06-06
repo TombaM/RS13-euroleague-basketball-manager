@@ -1,10 +1,13 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-#include <string>
 #include "team.h"
-#include "mainwindow.h"
 
-std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter);
-bool homeVictory(team & homeTeam, team & awayTeam, int parameter);
+bool isSeparator(char c);
+bool isSeparatorSpace(char c);
+std::vector<std::string> parse(std::string &line);
+std::vector<std::string> transferMarketParse(std::string & line);
+std::vector<std::string> playersParse(std::string &line);
+player makePlayerFromString(std::vector<std::string> data);
+player makePlayerFromString2(std::vector<std::string> data);
 
 #endif // FUNCTIONS_H

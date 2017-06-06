@@ -52,12 +52,14 @@ SOURCES       = ../EuroleagueManager/main.cpp \
 		../EuroleagueManager/mainwindow.cpp \
 		../EuroleagueManager/team.cpp \
 		../EuroleagueManager/player.cpp \
-		../EuroleagueManager/league.cpp moc_mainwindow.cpp
+		../EuroleagueManager/league.cpp \
+		../EuroleagueManager/functions.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		team.o \
 		player.o \
 		league.o \
+		functions.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -123,11 +125,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../EuroleagueManager/EuroleagueManager.pro ../EuroleagueManager/mainwindow.h \
 		../EuroleagueManager/team.h \
 		../EuroleagueManager/player.h \
-		../EuroleagueManager/league.h ../EuroleagueManager/main.cpp \
+		../EuroleagueManager/league.h \
+		../EuroleagueManager/functions.h ../EuroleagueManager/main.cpp \
 		../EuroleagueManager/mainwindow.cpp \
 		../EuroleagueManager/team.cpp \
 		../EuroleagueManager/player.cpp \
-		../EuroleagueManager/league.cpp
+		../EuroleagueManager/league.cpp \
+		../EuroleagueManager/functions.cpp
 QMAKE_TARGET  = EuroleagueManager
 DESTDIR       = 
 TARGET        = EuroleagueManager
@@ -284,8 +288,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../EuroleagueManager/mainwindow.h ../EuroleagueManager/team.h ../EuroleagueManager/player.h ../EuroleagueManager/league.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../EuroleagueManager/main.cpp ../EuroleagueManager/mainwindow.cpp ../EuroleagueManager/team.cpp ../EuroleagueManager/player.cpp ../EuroleagueManager/league.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../EuroleagueManager/mainwindow.h ../EuroleagueManager/team.h ../EuroleagueManager/player.h ../EuroleagueManager/league.h ../EuroleagueManager/functions.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EuroleagueManager/main.cpp ../EuroleagueManager/mainwindow.cpp ../EuroleagueManager/team.cpp ../EuroleagueManager/player.cpp ../EuroleagueManager/league.cpp ../EuroleagueManager/functions.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../EuroleagueManager/mainwindow.ui $(DISTDIR)/
 
 
@@ -366,6 +370,11 @@ league.o: ../EuroleagueManager/league.cpp ../EuroleagueManager/league.h \
 		../EuroleagueManager/team.h \
 		../EuroleagueManager/player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o league.o ../EuroleagueManager/league.cpp
+
+functions.o: ../EuroleagueManager/functions.cpp ../EuroleagueManager/functions.h \
+		../EuroleagueManager/team.h \
+		../EuroleagueManager/player.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o functions.o ../EuroleagueManager/functions.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

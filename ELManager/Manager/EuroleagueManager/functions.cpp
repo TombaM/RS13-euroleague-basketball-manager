@@ -1,61 +1,118 @@
 #include "functions.h"
 
-
-bool homeVictory(team & homeTeam, team & awayTeam, int parameter)
+bool isSeparator(char c)
 {
-    int sumHomePlayers = 0;
-    int sumAwayPlayers = 0;
-    std::vector<player> homePlayers = homeTeam.getPlayers();
-    std::vector<player> awayPlayers = awayTeam.getPlayers();
-
-    int length = homePlayers.size();
-
-    for (int i = 0; i < length; i++) {
-
-        sumHomePlayers += homePlayers[i].overallRating();
-        sumAwayPlayers += awayPlayers[i].overallRating();
-    }
-
-    sumHomePlayers = sumHomePlayers * homeTeam.getHomeEfficiency();
-    sumAwayPlayers = sumAwayPlayers * awayTeam.getAwayEfficiency();
-
-    int overallSum = sumAwayPlayers + sumHomePlayers;
-
-    srand(time(NULL) * parameter);
-
-    int random = rand() % (overallSum + 1);
-
-    return sumHomePlayers >= random;
+    return c == ':';
 }
 
-std::string getResultOthers(team & homeTeam, team & awayTeam,int parameter)
+bool isSeparatorSpace(char c)
 {
-    bool homeWin = homeVictory(homeTeam, awayTeam, parameter);
+    return c == ' ';
+}
 
-    if (homeWin) {
 
-        standings[homeTeam.getName()] += 2;
-        standings[awayTeam.getName()] += 1;
-    } else {
 
-        standings[homeTeam.getName()] += 1;
-        standings[awayTeam.getName()] += 2;
+
+std::vector<std::string> parse(std::string &line)
+{
+    std::vector<std::string> res;
+
+    auto i = line.begin();
+
+    while (i != line.end()) {
+
+        i = std::find_if_not(i, line.end(), isSeparator);
+        auto j = std::find_if(i, line.end(), isSeparator);
+
+        if (i != line.end())
+            res.push_back(std::string(i, j));
+
+        i = j;
     }
 
-    int homePoints;
-    int awayPoints;
+    return res;
+}
 
-    srand(time(NULL) * parameter);
+std::vector<std::string> transferMarketParse(std::string & line)
+{
+    std::vector<std::string> res;
 
-    if (homeWin) {
+    auto i = line.begin();
 
-        homePoints = rand( )%40 + 60;
-        awayPoints = homePoints - rand() % 15-1;
-    } else {
+    while (i != line.end()) {
 
-        awayPoints = rand()%40 + 60;
-        homePoints = awayPoints - rand() % 15-1;
+        i = std::find_if_not(i, line.end(), isSeparatorSpace);
+
+       auto j = std::find_if(i, line.end(), isSeparatorSpace);
+
+        if(i != line.end())
+              res.push_back(std::string(i, j));
+
+        i = j;
     }
 
-    return std::to_string(homePoints)+ " : " + std::to_string(awayPoints);
+    return res;
+}
+
+std::vector<std::string> playersParse(std::string &line)
+{
+    std::vector<std::string> res;
+
+    auto i = line.begin();
+
+    while (i != line.end()) {
+
+        i = std::find_if_not(i, line.end(), isSeparator);
+
+        auto j = std::find_if(i, line.end(), isSeparator);
+
+        if (i != line.end())
+              res.push_back(std::string(i, j));
+
+        i = j;
+    }
+
+    return res;
+}
+player makePlayerFromString(std::vector<std::string> data)
+{
+    int number = std::stoi(data[0]);
+    std::string name = data[1];
+    std::string surname = data[2];
+    int assits = std::stoi(data[10]);
+    int dribble = std::stoi(data[11]);
+    int defence = std::stoi(data[12]);
+    int physicality = std::stoi(data[13]);
+    std::string dateOfBirth = data[3];
+    std::string nationality = data[4];
+    std::string position = data[5];
+    double height = std::stof(data[6]);
+    int onePointer = std::stoi(data[7]);
+    int twoPointer = std::stoi(data[8]);
+    int threePointer = std::stoi(data[9]);
+    std::string fullname = name +" "+surname;
+
+    player p = player(number, fullname, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
+
+    return p;
+}
+
+player makePlayerFromString2(std::vector<std::string> data)
+{
+    int number = std::stoi(data[0]);
+    std::string name = data[1];
+    std::string dateOfBirth = data[2];
+    std::string nationality = data[3];
+    std::string position = data[4];
+    double height = std::stof(data[5]);
+    int onePointer = std::stoi(data[6]);
+    int twoPointer = std::stoi(data[7]);
+    int threePointer = std::stoi(data[8]);
+    int assits = std::stoi(data[9]);
+    int dribble = std::stoi(data[10]);
+    int defence = std::stoi(data[11]);
+    int physicality = std::stoi(data[12]);
+
+    player p = player(number, name, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
+    return p;
 }

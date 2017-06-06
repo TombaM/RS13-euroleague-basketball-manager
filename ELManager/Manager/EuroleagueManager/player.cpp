@@ -121,13 +121,4 @@ std::string player::toString()
   std::to_string(getDribble()) + " " + std::to_string(getDefence()) + " " + std::to_string(getDefence()) + " " +
   std::to_string(getPhysicality()) + "   " + "RATING: " + std::to_string(overallRating()) + "   " + "PRICE: " + std::to_string(m_price)+"$";
 
-  /*
-  return std::to_string(get_number()) + " "
-         + get_name() + "   "
-         + get_dateOfBirth() + "   "
-         + get_nationality() + "   "
-         + get_position() + "   "
-         + "HEIGHT: " + std::to_string(get_height()) + " "
-         + "RATING: " + std::to_string(overallRating()) + "   "
-         + "PRICE: " + std::to_string(m_price) + "$"; */
 }

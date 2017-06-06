@@ -32,8 +32,6 @@ public:
     void setStartingFive(std::vector<player> p);
 
     void addPlayers(const std::string &team_name);
-    static bool isPlayersSeparator(char c);
-    std::vector<std::string> playersParse(std::string &line);
     team &operator = (const team &t);
 
     int buyPlayer(player &p);

@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 #include <QDebug>
+#include "functions.h"
 
 #define VALUE 500
 
@@ -30,6 +31,7 @@ team::team(const team &t)
     m_awayEfficiency = t.getAwayEfficiency();
     m_players = t.getPlayers();
     m_maxBudget=t.m_maxBudget;
+    m_startingFive=t.getStartingFive();
 }
 
 team::team(int position, std::string name, std::string state, std::string town, std::string coach, double homeEfficiency, double awayEfficiency)
@@ -38,32 +40,6 @@ team::team(int position, std::string name, std::string state, std::string town, 
     {
 
     }
-
-bool team::isPlayersSeparator(char c)
-{
-    return c == ':';
-}
-
-std::vector<std::string> team::playersParse(std::string &line)
-{
-    std::vector<std::string> res;
-
-    auto i = line.begin();
-
-    while (i != line.end()) {
-
-        i = std::find_if_not(i, line.end(), isPlayersSeparator);
-
-        auto j = std::find_if(i, line.end(), isPlayersSeparator);
-
-        if (i != line.end())
-              res.push_back(std::string(i, j));
-
-        i = j;
-    }
-
-    return res;
-}
 
 team &team::operator = (const team &t)
 {
@@ -76,6 +52,7 @@ team &team::operator = (const team &t)
     m_awayEfficiency = t.getAwayEfficiency();
     m_players = t.getPlayers();
     m_maxBudget = t.m_maxBudget;
+    m_startingFive=t.getStartingFive();
 
     return *this;
 }
@@ -155,21 +132,8 @@ void team::addPlayers(const std::string &teamName)
 
         std::vector<std::string> data = playersParse(line);
 
-        int number = std::stoi(data[0]);
-        std::string name = data[1];
-        std::string dateOfBirth = data[2];
-        std::string nationality = data[3];
-        std::string position = data[4];
-        double height = std::stof(data[5]);
-        int onePointer = std::stoi(data[6]);
-        int twoPointer = std::stoi(data[7]);
-        int threePointer = std::stoi(data[8]);
-        int assits = std::stoi(data[9]);
-        int dribble = std::stoi(data[10]);
-        int defence = std::stoi(data[11]);
-        int physicality = std::stoi(data[12]);
 
-        player p = player(number, name, dateOfBirth, nationality, position, height, onePointer, twoPointer, threePointer, assits, dribble, defence, physicality);
+        player p = makePlayerFromString2(data);
         m_maxBudget+=p.getPrice();
 
         m_players.push_back(p);
@@ -216,7 +180,7 @@ std::vector<player> team::sellPlayer(std::string name)
 {
     std::vector<player> p = getPlayers();
     std::vector<player> q;
-    for (int i = 0; i < p.size(); i++) {
+    for (unsigned int i = 0; i < p.size(); i++) {
 
         if (name != p[i].getName())
             q.push_back(p[i]);
