@@ -927,3 +927,4 @@ void MainWindow::on_manToManButton_clicked(bool checked)
     if(checked)
         deffenceTactic = false;
 }
+

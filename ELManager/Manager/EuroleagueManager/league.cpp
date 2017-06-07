@@ -43,6 +43,11 @@ void league::setSchedule(std::vector<std::vector<team>> t)
     m_schedule=t;
 }
 
+void league::setCurrentRound(int t)
+{
+    m_round=t;
+}
+
 std::vector<std::vector<team>> league::getSchedule()const
 {
     return m_schedule;

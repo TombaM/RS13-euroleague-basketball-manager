@@ -16,6 +16,7 @@ public:
     void setTeams(std::vector<team> t);
     void setMyTeam(team myTeam);
     void setSchedule(std::vector<std::vector<team>> t);
+    void setCurrentRound(int t);
 
     /* Getters: */
     std::vector<team> getTeams()const;

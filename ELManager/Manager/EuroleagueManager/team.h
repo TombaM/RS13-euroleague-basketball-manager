@@ -30,6 +30,8 @@ public:
     void setCoach(const std::string &coachName);
     void setPlayers(const std::vector<player> p);
     void setStartingFive(std::vector<player> p);
+    void setHomeEfficiency( double x);
+    void setAwayEfficiency(double x);
 
     void addPlayers(const std::string &team_name);
     team &operator = (const team &t);

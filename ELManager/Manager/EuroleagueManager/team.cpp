@@ -164,6 +164,15 @@ int team::getCurrentBudget() const
     return currB;
 }
 
+void team::setHomeEfficiency(double x){
+    m_homeEfficiency=x;
+}
+
+void team::setAwayEfficiency(double x)
+{
+    m_awayEfficiency=x;
+}
+
 int team::buyPlayer(player &p)
 {
     int newBudget = getCurrentBudget() + p.getPrice();

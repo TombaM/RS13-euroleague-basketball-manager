@@ -1,0 +1,1664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>763</width>
+    <height>498</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(&quot;wallpaper.jpg&quot;);</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="logIn">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="nameLabel">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(238, 238, 236);</string>
+          </property>
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="nameEdit">
+          <property name="styleSheet">
+           <string notr="true">color: white;
+background-color: rgba(120, 77, 30, 150);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="surnameLabel">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(238, 238, 236);</string>
+          </property>
+          <property name="text">
+           <string>Surname</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="surnameEdit">
+          <property name="styleSheet">
+           <string notr="true">color: white;
+background-color: rgba(120, 77, 30, 150);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="nationlityLabel">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(238, 238, 236);</string>
+          </property>
+          <property name="text">
+           <string>Nationality</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="nationalityBox">
+          <property name="styleSheet">
+           <string notr="true">color: white;
+background-color: rgb(120, 77, 30);</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Argentina</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Brasil</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>China</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Croatia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>France</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Germany</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hungary</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>India</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Japan</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Romania</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Russian Federation</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Serbia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>United Kingdom</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>United States of America</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="teamLabel">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(238, 238, 236);</string>
+          </property>
+          <property name="text">
+           <string>Team</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="teamBox">
+          <property name="styleSheet">
+           <string notr="true">color: white;
+background-color: rgb(120, 77, 30);</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Anadolu Efes</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Crvena Zvezda</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CSKA</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>EA7 Emporio Armani</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Maccabi</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Panathinaikos</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Real Madrid</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Zalgiris</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="startButton">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(78, 154, 6);</string>
+          </property>
+          <property name="text">
+           <string>START</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="gamePlay">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background: transparent;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="6" column="0">
+            <widget class="QPushButton" name="nextGameButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 25 11pt &quot;Ubuntu&quot;;
+background-color: rgb(78, 154, 6);</string>
+             </property>
+             <property name="text">
+              <string>NEXT GAME</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QPushButton" name="tacticsButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>TACTICS</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="homeButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>HOME</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="myTeamButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>MY TEAM</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="standingsButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>STANDINGS</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="scheduleButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>SCHEDULE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="transferMarketButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>TRANSFER MARKET</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QFrame" name="frame_2">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="1" column="0">
+            <widget class="QStackedWidget" name="gamePlayStackedWidget">
+             <property name="styleSheet">
+              <string notr="true">background:transparent;</string>
+             </property>
+             <property name="currentIndex">
+              <number>6</number>
+             </property>
+             <widget class="QWidget" name="homePage">
+              <layout class="QGridLayout" name="gridLayout_14">
+               <item row="3" column="0" rowspan="2">
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <widget class="QLabel" name="coachNameLabel">
+                   <property name="maximumSize">
+                    <size>
+                     <width>250</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 18pt &quot;Ubuntu&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;NAME&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>1</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:black;</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="nationalityLabel">
+                   <property name="maximumSize">
+                    <size>
+                     <width>250</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 25 16pt &quot;Ubuntu&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;NATIONALITY&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line_2">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>1</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:black;</string>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="teamNameLabel">
+                   <property name="maximumSize">
+                    <size>
+                     <width>250</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 57 20pt &quot;Ubuntu&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>TEAM NAME</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="2" column="2">
+                <widget class="QPushButton" name="moveFromStartingFiveButton">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(204, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string>MOVE</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" colspan="3">
+                <widget class="QListWidget" name="startingFiveList">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" rowspan="2">
+                <widget class="QFrame" name="logoHome">
+                 <property name="minimumSize">
+                  <size>
+                   <width>250</width>
+                   <height>250</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>250</width>
+                   <height>250</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1" colspan="2">
+                <widget class="QLabel" name="label_5">
+                 <property name="layoutDirection">
+                  <enum>Qt::RightToLeft</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:14pt; font-style:italic;&quot;&gt;Available budget:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="3">
+                <widget class="QLabel" name="availableBudgetLabel">
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="layoutDirection">
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 60 12pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;HOME PAGE&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1" colspan="3">
+                <widget class="QLabel" name="label">
+                 <property name="styleSheet">
+                  <string notr="true">font: 57 20pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>STARTING FIVE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="myTeamPage">
+              <layout class="QGridLayout" name="gridLayout_8">
+               <item row="0" column="0" colspan="2">
+                <widget class="QListWidget" name="myTeamList">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 12pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="sellPlayerButton">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(204, 0, 0)</string>
+                 </property>
+                 <property name="text">
+                  <string>SELL PLAYER</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="addToStartingFiveButton">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(32, 74, 135);</string>
+                 </property>
+                 <property name="text">
+                  <string>ADD TO STARTING FIVE</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="standingsPage">
+              <layout class="QGridLayout" name="gridLayout_13">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_42">
+                 <property name="maximumSize">
+                  <size>
+                   <width>50</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 11pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>PO</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_31">
+                 <property name="styleSheet">
+                  <string notr="true">font: 25 11pt &quot;Ubuntu&quot;;
+color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155))</string>
+                 </property>
+                 <property name="text">
+                  <string>NAME</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_27">
+                 <property name="maximumSize">
+                  <size>
+                   <width>70</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+font: 25 11pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>POINTS</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_3">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="firstPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="firstPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_4">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>2</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="secondPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="secondPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_17">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>3</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLabel" name="thirdPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="thirdPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_18">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>4</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLabel" name="fourthPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QLabel" name="fourthPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_22">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>5</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLabel" name="fifthPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QLabel" name="fifthPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_23">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>6</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLabel" name="sixthPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="2">
+                <widget class="QLabel" name="sixthPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_24">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>7</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QLabel" name="seventhPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="2">
+                <widget class="QLabel" name="seventhPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="label_25">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="1">
+                <widget class="QLabel" name="eighthPlaceName">
+                 <property name="styleSheet">
+                  <string notr="true">color: white;
+background-color: qlineargradient(spread:pad, x1:0.274, y1:0.465954, x2:1, y2:0.443, stop:0 rgba(120, 77, 30, 155), stop:0.477612 rgba(138, 81, 29, 155), stop:0.791045 rgba(157, 108, 39, 155), stop:0.995025 rgba(182, 139, 70, 155));
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="indent">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="2">
+                <widget class="QLabel" name="eighthPlacePoints">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(182, 139, 70, 155);
+color: white;
+font: 57 20pt &quot;Ubuntu&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="schedulePage">
+              <layout class="QGridLayout" name="gridLayout_7">
+               <item row="1" column="3">
+                <widget class="QLabel" name="label_11">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>AWAY</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_13">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>5</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1" colspan="3">
+                <widget class="QLabel" name="firstScheduleLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 SCHEDULE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_16">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 2</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>5</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1" colspan="3">
+                <widget class="QLabel" name="secondScheduleLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 2 SCHEDULE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_15">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 3</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>5</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1" colspan="3">
+                <widget class="QLabel" name="thirdScheduleLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 3 SCHEDULE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_14">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 4</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>5</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1" colspan="3">
+                <widget class="QLabel" name="fourthScheduleLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 4 SCHEDULE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1" colspan="3">
+                <widget class="QLabel" name="roundScheduleLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>ROUND COUNTER</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_12">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>HOME</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="3">
+                <widget class="QPushButton" name="nextRoundButton">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>NEXT</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QPushButton" name="previousRoundButton">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(120, 77, 30);
+font: 25 11pt &quot;Ubuntu&quot;;
+color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>PREVIOUS</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="transferMarketPage">
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="0" column="0">
+                <widget class="QListWidget" name="transferMarketListWidget">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 12pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="buyButton">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(52, 101, 164)</string>
+                 </property>
+                 <property name="text">
+                  <string>BUY</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tacticsPage">
+              <layout class="QGridLayout" name="gridLayout_10">
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_19">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;ATTACK&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="textFormat">
+                  <enum>Qt::RichText</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QWidget" name="positionWidget" native="true"/>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLabel" name="label_20">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;DEFENCE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="textFormat">
+                  <enum>Qt::RichText</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="3">
+                <widget class="QFrame" name="frame_4">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="0" column="0">
+                   <widget class="QRadioButton" name="manToManButton">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:white;
+margin:0px auto;
+</string>
+                    </property>
+                    <property name="text">
+                     <string>MAN TO MAN</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QWidget" name="widget_2" native="true"/>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QRadioButton" name="zoneButton">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:white;
+margin:0px auto;
+</string>
+                    </property>
+                    <property name="text">
+                     <string>ZONE</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QWidget" name="runGunWidget" native="true"/>
+               </item>
+               <item row="4" column="0">
+                <widget class="QWidget" name="manToManWidget" native="true"/>
+               </item>
+               <item row="2" column="0" colspan="3">
+                <widget class="QFrame" name="frame_3">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_11">
+                  <item row="0" column="0">
+                   <widget class="QRadioButton" name="runAndGunButton">
+                    <property name="styleSheet">
+                     <string notr="true">color:white;
+margin:auto;</string>
+                    </property>
+                    <property name="text">
+                     <string>RUN AND GUN</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QWidget" name="widget" native="true"/>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QRadioButton" name="positionAttackButton">
+                    <property name="styleSheet">
+                     <string notr="true">color:white;
+margin:auto;</string>
+                    </property>
+                    <property name="text">
+                     <string>POSITION</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QWidget" name="zoneWidget" native="true"/>
+               </item>
+              </layout>
+              <zorder>frame_3</zorder>
+              <zorder>frame_4</zorder>
+              <zorder>positionWidget</zorder>
+              <zorder>runGunWidget</zorder>
+              <zorder>manToManWidget</zorder>
+              <zorder>zoneWidget</zorder>
+              <zorder>label_19</zorder>
+              <zorder>label_20</zorder>
+             </widget>
+             <widget class="QWidget" name="nextGamePage">
+              <layout class="QGridLayout" name="gridLayout_9">
+               <item row="0" column="1" colspan="2">
+                <widget class="QLabel" name="roundLabel">
+                 <property name="layoutDirection">
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ROUND&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_6">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>HOME</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_21">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>AWAY</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_7">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 12pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_8">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 12pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1" colspan="2">
+                <widget class="QLabel" name="secondResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_9">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 12pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1" colspan="2">
+                <widget class="QLabel" name="thirdResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_10">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 12pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1" colspan="2">
+                <widget class="QLabel" name="fourthResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1" colspan="2">
+                <widget class="QLabel" name="firstResultLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>GAME 1 RESULT</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" rowspan="2">
+                <widget class="QFrame" name="pictureWidget">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>763</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
