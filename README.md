@@ -29,7 +29,7 @@ $ sudo apt-get install qt5-default
 ```sh
 $ sudo apt-get install qt5-doc
 ```
-And eventually:
+* And eventually (optional):
 
 ```sh
 $ sudo apt-get install qt5-doc-html qtbase5-doc-html
