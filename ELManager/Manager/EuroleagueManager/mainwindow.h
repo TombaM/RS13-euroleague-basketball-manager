@@ -35,6 +35,8 @@ private slots:
     void on_nextRoundButton_clicked();
     void on_previousRoundButton_clicked();
 
+    void on_firstPlaceName_linkHovered(const QString &link);
+
 private:
     Ui::MainWindow *ui;
 };

@@ -11,7 +11,9 @@
 #define LOW_PRIORITY 5
 #define NUM 6
 #define PARAMETER 2.7
-#define VALUE 500
+#define VALUE 200
+#define ATT_COEF 100
+#define DEF_COEF 80
 
 player::player(int number, std::string &name, std::string &dateOfBirth, std::string &nationality, std::string &position,
             double height, int onePoint, int twoPoints, int threePoints, int assists, int dribble, int defence, int phyicality)
@@ -99,17 +101,17 @@ int player::getPrice() const
 
 int player::attackRating() const
 {
-    return (getAssists() + getDribble() + getOnePointer() + getTwoPointer() + getThreePointer()) / 5;
+    return (getAssists() + getDribble() + getOnePointer() + getTwoPointer() + getThreePointer()) ;
 }
 
 int player::defenseRating() const
 {
-    return (getDefence() + getPhysicality()) / 2;
+    return (getDefence() + getPhysicality()) ;
 }
 
 int player::overallRating() const
 {
-    return (attackRating() + defenseRating());
+    return (attackRating()*ATT_COEF + defenseRating()*DEF_COEF);
 }
 
 

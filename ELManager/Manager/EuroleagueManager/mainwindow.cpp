@@ -24,7 +24,7 @@
 #define AVG_THREE_POINTER 12
 #define NUM_OF_TEAMS 8
 #define STARTING_FIVE_COEF 3
-#define COEF 10
+#define COEF 500
 
 league currentLeague;
 std::vector<team> teams;
@@ -301,6 +301,7 @@ void MainWindow::on_startButton_clicked()
     }
 
     ui->pictureWidget->setStyleSheet("background-image:url(\"clipart.png\"); background-repeat:no-repeat;");
+    ui->trophyPictureWidget->setStyleSheet("background-image:url(\"trophy.png\"); background-repeat:no-repeat;");
 
     ui->manToManWidget->setStyleSheet("background-image:url(\"man2man.png\"); background-repeat:no-repeat;");
     ui->zoneWidget->setStyleSheet("background-image:url(\"zone.png\"); background-repeat:no-repeat;");
@@ -417,75 +418,118 @@ void MainWindow::on_scheduleButton_clicked()
 {
     ui->gamePlayStackedWidget->setCurrentIndex(3);
 
-    std::vector<team> t = currentLeague.getCurrentRound();
+    if(currentLeague.getRound() < 14)
+    {
+        ui->scheduleStackedWidget->setCurrentIndex(0);
+        std::vector<team> t = currentLeague.getCurrentRound();
 
-    /* Round schedule label */
-    int round = currentLeague.getRound();
-    currentLeague.scheduleCounter = round;
-    ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(round+1)));
+        /* Round schedule label */
+        int round = currentLeague.getRound();
+        currentLeague.scheduleCounter = round;
+        ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(round+1)));
 
-                                        /* Game 1 label */
-    ui->firstScheduleLabel->setText(QString::fromStdString(t[0].getName() + " - " + t[1].getName()));
+                                            /* Game 1 label */
+        ui->firstScheduleLabel->setText(QString::fromStdString(t[0].getName() + " - " + t[1].getName()));
 
-                                        /* Game 2 label */
-    ui->secondScheduleLabel->setText(QString::fromStdString(t[2].getName() + " - " + t[3].getName()));
+                                            /* Game 2 label */
+        ui->secondScheduleLabel->setText(QString::fromStdString(t[2].getName() + " - " + t[3].getName()));
 
-                                        /* Game 3 label */
-    ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].getName() + " - " + t[5].getName()));
+                                            /* Game 3 label */
+        ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].getName() + " - " + t[5].getName()));
 
-                                        /* Game 4 label */
-    ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].getName() + " - " + t[7].getName()));
+                                            /* Game 4 label */
+        ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].getName() + " - " + t[7].getName()));
+    } else if(currentLeague.getRound() == 14) {
+        currentLeague.scheduleCounter = currentLeague.getRound();
+        ui->scheduleStackedWidget->setCurrentIndex(1);
+
+        std::vector<std::pair<std::string, int>> sortedStandings;
+
+        for (auto i = standings.begin(); i != standings.end(); ++i)
+            sortedStandings.push_back(*i);
+
+        sort(sortedStandings.begin(), sortedStandings.end(),
+             [=](std::pair<std::string, int> & a, std::pair<std::string, int> & b)
+             {
+                return a.second > b.second;
+             });
+
+        ui->semiFirstLabel->setText(QString::fromStdString(sortedStandings[0].first));
+        ui->semiSecondLabel->setText(QString::fromStdString(sortedStandings[1].first));
+        ui->semiThirdLabel->setText(QString::fromStdString(sortedStandings[2].first));
+        ui->semiFourthLabel->setText(QString::fromStdString(sortedStandings[3].first));
+    } else if(currentLeague.getRound() == 15) {
+        currentLeague.scheduleCounter = currentLeague.getRound();
+        ui->scheduleStackedWidget->setCurrentIndex(2);
+    }
 }
 
     /* NEXT ROUND FOR SCHEDULE: */
 void MainWindow::on_nextRoundButton_clicked()
 {
-    if (currentLeague.scheduleCounter < 13) {
-
+    if(currentLeague.scheduleCounter < 15) {
         currentLeague.scheduleCounter++;
 
-        std::vector<team> t = currentLeague.getKRound(currentLeague.scheduleCounter);
+        if (currentLeague.scheduleCounter < 14) {
+            ui->scheduleStackedWidget->setCurrentIndex(0);
 
-        ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(currentLeague.scheduleCounter+1)));
 
-                                            /* Game 1 label */
-        ui->firstScheduleLabel->setText(QString::fromStdString(t[0].getName() + " - " + t[1].getName()));
+            std::vector<team> t = currentLeague.getKRound(currentLeague.scheduleCounter);
 
-                                            /* Game 2 label */
-        ui->secondScheduleLabel->setText(QString::fromStdString(t[2].getName() + " - " + t[3].getName()));
+            ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(currentLeague.scheduleCounter+1)));
 
-                                            /* Game 3 label */
-        ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].getName() + " - " + t[5].getName()));
+                                                /* Game 1 label */
+            ui->firstScheduleLabel->setText(QString::fromStdString(t[0].getName() + " - " + t[1].getName()));
 
-                                            /* Game 4 label */
-        ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].getName() + " - " + t[7].getName()));
+                                                /* Game 2 label */
+            ui->secondScheduleLabel->setText(QString::fromStdString(t[2].getName() + " - " + t[3].getName()));
+
+                                                /* Game 3 label */
+            ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].getName() + " - " + t[5].getName()));
+
+                                                /* Game 4 label */
+            ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].getName() + " - " + t[7].getName()));
+        } else if(currentLeague.scheduleCounter == 14) {
+            ui->scheduleStackedWidget->setCurrentIndex(1);
+            std::cout<< " USLEO JE " << std::endl;
+        } else if(currentLeague.scheduleCounter == 15) {
+            ui->scheduleStackedWidget->setCurrentIndex(2);
+        }
     }
-
 }
+
 
     /* PREVIOUS BUTTON FOR SCHEDULE: */
 void MainWindow::on_previousRoundButton_clicked()
 {
-    if (currentLeague.scheduleCounter > 0) {
-
+    if (currentLeague.scheduleCounter > 0)
+    {
         currentLeague.scheduleCounter--;
 
-        std::vector<team> t = currentLeague.getKRound(currentLeague.scheduleCounter);
+        if(currentLeague.scheduleCounter < 14) {
+            ui->scheduleStackedWidget->setCurrentIndex(0);
 
-        ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(currentLeague.scheduleCounter+1)));
+            std::vector<team> t = currentLeague.getKRound(currentLeague.scheduleCounter);
+
+            ui->roundScheduleLabel->setText(QString::fromStdString("ROUND " + std::to_string(currentLeague.scheduleCounter+1)));
 
 
-                                            /* Game 1 label */
-        ui->firstScheduleLabel->setText(QString::fromStdString(t[0].getName() + " - " + t[1].getName()));
+                                                /* Game 1 label */
+            ui->firstScheduleLabel->setText(QString::fromStdString(t[0].getName() + " - " + t[1].getName()));
 
-                                            /* Game 2 label */
-        ui->secondScheduleLabel->setText(QString::fromStdString(t[2].getName() + " - " + t[3].getName()));
+                                                /* Game 2 label */
+            ui->secondScheduleLabel->setText(QString::fromStdString(t[2].getName() + " - " + t[3].getName()));
 
-                                            /* Game 3 label */
-        ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].getName() + " - " + t[5].getName()));
+                                                /* Game 3 label */
+            ui->thirdScheduleLabel->setText(QString::fromStdString(t[4].getName() + " - " + t[5].getName()));
 
-                                            /* Game 4 label */
-        ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].getName() + " - " + t[7].getName()));
+                                                /* Game 4 label */
+            ui->fourthScheduleLabel->setText(QString::fromStdString(t[6].getName() + " - " + t[7].getName()));
+        } else if(currentLeague.scheduleCounter == 14) {
+            ui->scheduleStackedWidget->setCurrentIndex(1);
+        } else if(currentLeague.scheduleCounter == 15) {
+            ui->scheduleStackedWidget->setCurrentIndex(2);
+        }
     }
 
 }
@@ -694,7 +738,7 @@ void MainWindow::on_nextGameButton_clicked()
     if (currentRound<=13){
     std::vector<team> nextRound = currentLeague.getNextRound();
 
-
+    ui->gameStackedWidget->setCurrentIndex(0);
 
 
     for (unsigned int i = 0; i < nextRound.size() - 1; i += 2) {
@@ -725,7 +769,7 @@ void MainWindow::on_nextGameButton_clicked()
     //    int currentRound = currentLeague.getRound();
 
      /*   if (currentRound == 14) {
-            /*ui->nextGameButton->setEnabled(false);
+            ui->nextGameButton->setEnabled(false);
             ui->nextGameButton->setStyleSheet(QString::fromStdString("background-color:rgb(164, 0, 0);"));
             //ui->gamePlayStackedWidget->setCurrentIndex(2);*/
 /*            std::vector<std::pair<std::string, int>> sortedStandings;
@@ -747,6 +791,7 @@ void MainWindow::on_nextGameButton_clicked()
     }
 
         if (currentRound == 14) {
+            ui->gameStackedWidget->setCurrentIndex(1);
             /*ui->nextGameButton->setEnabled(false);
             ui->nextGameButton->setStyleSheet(QString::fromStdString("background-color:rgb(164, 0, 0);"));
             //ui->gamePlayStackedWidget->setCurrentIndex(2);*/
@@ -795,7 +840,16 @@ void MainWindow::on_nextGameButton_clicked()
                    finals.push_back(semifinals[i]);
                else
                    finals.push_back(semifinals[i+2]);
+
+
+               if(i == 0)
+                   ui->firstSemiResult->setText(QString::fromStdString(result));
+               else
+                   ui->secondSemiResult->setText(QString::fromStdString(result));
+
             }
+            ui->firstFinalistLabel->setText(QString::fromStdString(finals[0].getName()));
+            ui->secondFinalistLabel->setText(QString::fromStdString(finals[1].getName()));
 
             currentLeague.setCurrentRound(15);
             return;
@@ -804,6 +858,7 @@ void MainWindow::on_nextGameButton_clicked()
 
         if (currentRound==15)
         {
+            ui->gameStackedWidget->setCurrentIndex(2);
             std::string result;
             team first=finals[0];
             team second=finals[1];
@@ -822,10 +877,14 @@ void MainWindow::on_nextGameButton_clicked()
             else
                 result=first.getName() + " " + getResultOthers(first,second,k,&tmp) + " " + second.getName();
             std::cout<<result<<std::endl;
-            if(flag && tmp)
+            if(flag && tmp) {
                 std::cout<<"winer is first team"<<std::endl;
-            else
+                ui->winnerLabel->setText(QString::fromStdString(first.getName()));
+            } else {
+                ui->winnerLabel->setText(QString::fromStdString(second.getName()));
                 std::cout<<"winer is second team"<<std::endl;
+            }
+            ui->finalsResult->setText(QString::fromStdString(result));
         }
 
 
@@ -927,3 +986,4 @@ void MainWindow::on_manToManButton_clicked(bool checked)
     if(checked)
         deffenceTactic = false;
 }
+

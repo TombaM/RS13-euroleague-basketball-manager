@@ -40,15 +40,15 @@ team league::getMyTeam()
 
 void league::setSchedule(std::vector<std::vector<team>> t)
 {
-    m_schedule=t;
+    m_schedule = t;
 }
 
 void league::setCurrentRound(int t)
 {
-    m_round=t;
+    m_round = t;
 }
 
-std::vector<std::vector<team>> league::getSchedule()const
+std::vector<std::vector<team>> league::getSchedule() const
 {
     return m_schedule;
 }
@@ -65,16 +65,15 @@ std::vector<team> league::getNextRound()
     if(m_round < 14)
         m_round++;
 
-    // if m_round == 6 ====> END GAME
-
     return nextRound;
 }
- std::vector<team> league::getCurrentRound()
- {
-     return m_schedule[m_round];
- }
 
- std::vector<team> league::getKRound(int k)
- {
-     return m_schedule[k];
- }
+std::vector<team> league::getCurrentRound()
+{
+    return m_schedule[m_round];
+}
+
+std::vector<team> league::getKRound(int k)
+{
+    return m_schedule[k];
+}

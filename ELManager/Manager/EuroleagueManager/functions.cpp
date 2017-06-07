@@ -11,8 +11,6 @@ bool isSeparatorSpace(char c)
 }
 
 
-
-
 std::vector<std::string> parse(std::string &line)
 {
     std::vector<std::string> res;

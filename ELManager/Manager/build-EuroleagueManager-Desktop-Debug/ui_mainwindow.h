@@ -111,19 +111,52 @@ public:
     QLabel *eighthPlacePoints;
     QWidget *schedulePage;
     QGridLayout *gridLayout_7;
-    QLabel *label_11;
-    QLabel *label_13;
-    QLabel *firstScheduleLabel;
-    QLabel *label_16;
-    QLabel *secondScheduleLabel;
-    QLabel *label_15;
-    QLabel *thirdScheduleLabel;
-    QLabel *label_14;
-    QLabel *fourthScheduleLabel;
-    QLabel *roundScheduleLabel;
-    QLabel *label_12;
     QPushButton *nextRoundButton;
     QPushButton *previousRoundButton;
+    QStackedWidget *scheduleStackedWidget;
+    QWidget *page;
+    QGridLayout *gridLayout_15;
+    QLabel *secondScheduleLabel;
+    QLabel *label_12;
+    QLabel *thirdScheduleLabel;
+    QLabel *label_15;
+    QLabel *label_16;
+    QLabel *label_14;
+    QLabel *label_11;
+    QLabel *roundScheduleLabel;
+    QLabel *fourthScheduleLabel;
+    QLabel *firstScheduleLabel;
+    QLabel *label_13;
+    QWidget *page_2;
+    QGridLayout *gridLayout_17;
+    QWidget *widget_11;
+    QLabel *roundScheduleLabel_13;
+    QWidget *widget_13;
+    QLabel *semiFirstLabel;
+    QWidget *widget_12;
+    QLabel *semiSecondLabel;
+    QWidget *widget_10;
+    QWidget *widget_14;
+    QLabel *roundScheduleLabel_12;
+    QLabel *roundScheduleLabel_6;
+    QWidget *widget_5;
+    QLabel *semiThirdLabel;
+    QLabel *semiFourthLabel;
+    QWidget *widget_6;
+    QLabel *roundScheduleLabel_14;
+    QWidget *widget_9;
+    QWidget *page_3;
+    QGridLayout *gridLayout_16;
+    QWidget *widget_3;
+    QLabel *roundScheduleLabel_7;
+    QWidget *widget_4;
+    QLabel *firstFinalistLabel;
+    QWidget *trophyPictureWidget;
+    QLabel *secondFinalistLabel;
+    QWidget *widget_8;
+    QWidget *widget_7;
+    QLabel *roundScheduleLabel_10;
+    QLabel *winnerLabel;
     QWidget *transferMarketPage;
     QGridLayout *gridLayout_6;
     QListWidget *transferMarketListWidget;
@@ -148,25 +181,47 @@ public:
     QWidget *zoneWidget;
     QWidget *nextGamePage;
     QGridLayout *gridLayout_9;
+    QStackedWidget *gameStackedWidget;
+    QWidget *page_4;
+    QGridLayout *gridLayout_18;
+    QWidget *pictureWidget;
     QLabel *roundLabel;
-    QLabel *label_6;
+    QLabel *label_10;
     QLabel *label_21;
     QLabel *label_7;
-    QLabel *label_8;
-    QLabel *secondResultLabel;
-    QLabel *label_9;
-    QLabel *thirdResultLabel;
-    QLabel *label_10;
-    QLabel *fourthResultLabel;
     QLabel *firstResultLabel;
-    QFrame *pictureWidget;
+    QLabel *label_9;
+    QLabel *secondResultLabel;
+    QLabel *label_6;
+    QLabel *thirdResultLabel;
+    QLabel *label_8;
+    QLabel *fourthResultLabel;
+    QWidget *page_6;
+    QGridLayout *gridLayout_19;
+    QLabel *firstSemiResult;
+    QWidget *widget_19;
+    QLabel *secondSemiResult;
+    QWidget *widget_18;
+    QLabel *label_29;
+    QWidget *widget_17;
+    QWidget *widget_15;
+    QLabel *label_2;
+    QWidget *widget_16;
+    QWidget *widget_20;
+    QWidget *page_5;
+    QGridLayout *gridLayout_20;
+    QWidget *widget_22;
+    QLabel *label_28;
+    QWidget *widget_23;
+    QLabel *finalsResult;
+    QWidget *widget_21;
     QMenuBar *menuBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(763, 464);
+        MainWindow->resize(763, 498);
         MainWindow->setLayoutDirection(Qt::LeftToRight);
         MainWindow->setStyleSheet(QStringLiteral("background-image: url(\"wallpaper.jpg\");"));
         centralWidget = new QWidget(MainWindow);
@@ -727,127 +782,333 @@ public:
         gridLayout_7->setSpacing(6);
         gridLayout_7->setContentsMargins(11, 11, 11, 11);
         gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
-        label_11 = new QLabel(schedulePage);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        label_11->setAlignment(Qt::AlignCenter);
+        nextRoundButton = new QPushButton(schedulePage);
+        nextRoundButton->setObjectName(QStringLiteral("nextRoundButton"));
+        nextRoundButton->setMinimumSize(QSize(0, 40));
+        nextRoundButton->setMaximumSize(QSize(16777215, 16777215));
+        nextRoundButton->setStyleSheet(QLatin1String("background-color:rgb(120, 77, 30);\n"
+"font: 25 11pt \"Ubuntu\";\n"
+"color:white;\n"
+""));
 
-        gridLayout_7->addWidget(label_11, 1, 3, 1, 1);
+        gridLayout_7->addWidget(nextRoundButton, 1, 1, 1, 1);
 
-        label_13 = new QLabel(schedulePage);
-        label_13->setObjectName(QStringLiteral("label_13"));
-        label_13->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        label_13->setAlignment(Qt::AlignCenter);
-        label_13->setIndent(5);
+        previousRoundButton = new QPushButton(schedulePage);
+        previousRoundButton->setObjectName(QStringLiteral("previousRoundButton"));
+        previousRoundButton->setMinimumSize(QSize(0, 40));
+        previousRoundButton->setMaximumSize(QSize(16777215, 16777215));
+        previousRoundButton->setStyleSheet(QLatin1String("background-color:rgb(120, 77, 30);\n"
+"font: 25 11pt \"Ubuntu\";\n"
+"color:white;"));
 
-        gridLayout_7->addWidget(label_13, 2, 0, 1, 1);
+        gridLayout_7->addWidget(previousRoundButton, 1, 0, 1, 1);
 
-        firstScheduleLabel = new QLabel(schedulePage);
-        firstScheduleLabel->setObjectName(QStringLiteral("firstScheduleLabel"));
-        firstScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        firstScheduleLabel->setAlignment(Qt::AlignCenter);
-
-        gridLayout_7->addWidget(firstScheduleLabel, 2, 1, 1, 3);
-
-        label_16 = new QLabel(schedulePage);
-        label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        label_16->setAlignment(Qt::AlignCenter);
-        label_16->setIndent(5);
-
-        gridLayout_7->addWidget(label_16, 3, 0, 1, 1);
-
-        secondScheduleLabel = new QLabel(schedulePage);
+        scheduleStackedWidget = new QStackedWidget(schedulePage);
+        scheduleStackedWidget->setObjectName(QStringLiteral("scheduleStackedWidget"));
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        gridLayout_15 = new QGridLayout(page);
+        gridLayout_15->setSpacing(6);
+        gridLayout_15->setContentsMargins(11, 11, 11, 11);
+        gridLayout_15->setObjectName(QStringLiteral("gridLayout_15"));
+        secondScheduleLabel = new QLabel(page);
         secondScheduleLabel->setObjectName(QStringLiteral("secondScheduleLabel"));
         secondScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
 "font: 25 14pt \"Ubuntu\";\n"
 "color: white;"));
         secondScheduleLabel->setAlignment(Qt::AlignCenter);
 
-        gridLayout_7->addWidget(secondScheduleLabel, 3, 1, 1, 3);
+        gridLayout_15->addWidget(secondScheduleLabel, 3, 1, 1, 3);
 
-        label_15 = new QLabel(schedulePage);
-        label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        label_15->setAlignment(Qt::AlignCenter);
-        label_15->setIndent(5);
-
-        gridLayout_7->addWidget(label_15, 4, 0, 1, 1);
-
-        thirdScheduleLabel = new QLabel(schedulePage);
-        thirdScheduleLabel->setObjectName(QStringLiteral("thirdScheduleLabel"));
-        thirdScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        thirdScheduleLabel->setAlignment(Qt::AlignCenter);
-
-        gridLayout_7->addWidget(thirdScheduleLabel, 4, 1, 1, 3);
-
-        label_14 = new QLabel(schedulePage);
-        label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        label_14->setAlignment(Qt::AlignCenter);
-        label_14->setIndent(5);
-
-        gridLayout_7->addWidget(label_14, 5, 0, 1, 1);
-
-        fourthScheduleLabel = new QLabel(schedulePage);
-        fourthScheduleLabel->setObjectName(QStringLiteral("fourthScheduleLabel"));
-        fourthScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        fourthScheduleLabel->setAlignment(Qt::AlignCenter);
-
-        gridLayout_7->addWidget(fourthScheduleLabel, 5, 1, 1, 3);
-
-        roundScheduleLabel = new QLabel(schedulePage);
-        roundScheduleLabel->setObjectName(QStringLiteral("roundScheduleLabel"));
-        roundScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        roundScheduleLabel->setAlignment(Qt::AlignCenter);
-
-        gridLayout_7->addWidget(roundScheduleLabel, 0, 1, 1, 3);
-
-        label_12 = new QLabel(schedulePage);
+        label_12 = new QLabel(page);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
 "font: 25 14pt \"Ubuntu\";\n"
 "color: white;"));
         label_12->setAlignment(Qt::AlignCenter);
 
-        gridLayout_7->addWidget(label_12, 1, 1, 1, 1);
+        gridLayout_15->addWidget(label_12, 1, 3, 1, 1);
 
-        nextRoundButton = new QPushButton(schedulePage);
-        nextRoundButton->setObjectName(QStringLiteral("nextRoundButton"));
-        nextRoundButton->setMinimumSize(QSize(0, 40));
-        nextRoundButton->setStyleSheet(QLatin1String("background-color:rgb(120, 77, 30);\n"
-"font: 25 11pt \"Ubuntu\";\n"
-"color:white;\n"
-""));
+        thirdScheduleLabel = new QLabel(page);
+        thirdScheduleLabel->setObjectName(QStringLiteral("thirdScheduleLabel"));
+        thirdScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        thirdScheduleLabel->setAlignment(Qt::AlignCenter);
 
-        gridLayout_7->addWidget(nextRoundButton, 6, 3, 1, 1);
+        gridLayout_15->addWidget(thirdScheduleLabel, 4, 1, 1, 3);
 
-        previousRoundButton = new QPushButton(schedulePage);
-        previousRoundButton->setObjectName(QStringLiteral("previousRoundButton"));
-        previousRoundButton->setMinimumSize(QSize(0, 40));
-        previousRoundButton->setStyleSheet(QLatin1String("background-color:rgb(120, 77, 30);\n"
-"font: 25 11pt \"Ubuntu\";\n"
-"color:white;"));
+        label_15 = new QLabel(page);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_15->setAlignment(Qt::AlignCenter);
 
-        gridLayout_7->addWidget(previousRoundButton, 6, 1, 1, 1);
+        gridLayout_15->addWidget(label_15, 3, 0, 1, 1);
+
+        label_16 = new QLabel(page);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_16->setAlignment(Qt::AlignCenter);
+
+        gridLayout_15->addWidget(label_16, 2, 0, 1, 1);
+
+        label_14 = new QLabel(page);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_14->setAlignment(Qt::AlignCenter);
+
+        gridLayout_15->addWidget(label_14, 5, 0, 1, 1);
+
+        label_11 = new QLabel(page);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_11->setAlignment(Qt::AlignCenter);
+
+        gridLayout_15->addWidget(label_11, 1, 1, 1, 1);
+
+        roundScheduleLabel = new QLabel(page);
+        roundScheduleLabel->setObjectName(QStringLiteral("roundScheduleLabel"));
+        roundScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        roundScheduleLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_15->addWidget(roundScheduleLabel, 0, 2, 1, 1);
+
+        fourthScheduleLabel = new QLabel(page);
+        fourthScheduleLabel->setObjectName(QStringLiteral("fourthScheduleLabel"));
+        fourthScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        fourthScheduleLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_15->addWidget(fourthScheduleLabel, 5, 1, 1, 3);
+
+        firstScheduleLabel = new QLabel(page);
+        firstScheduleLabel->setObjectName(QStringLiteral("firstScheduleLabel"));
+        firstScheduleLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        firstScheduleLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_15->addWidget(firstScheduleLabel, 2, 1, 1, 3);
+
+        label_13 = new QLabel(page);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_13->setAlignment(Qt::AlignCenter);
+
+        gridLayout_15->addWidget(label_13, 4, 0, 1, 1);
+
+        scheduleStackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QStringLiteral("page_2"));
+        gridLayout_17 = new QGridLayout(page_2);
+        gridLayout_17->setSpacing(6);
+        gridLayout_17->setContentsMargins(11, 11, 11, 11);
+        gridLayout_17->setObjectName(QStringLiteral("gridLayout_17"));
+        widget_11 = new QWidget(page_2);
+        widget_11->setObjectName(QStringLiteral("widget_11"));
+
+        gridLayout_17->addWidget(widget_11, 0, 0, 1, 1);
+
+        roundScheduleLabel_13 = new QLabel(page_2);
+        roundScheduleLabel_13->setObjectName(QStringLiteral("roundScheduleLabel_13"));
+        roundScheduleLabel_13->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        roundScheduleLabel_13->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(roundScheduleLabel_13, 0, 1, 1, 1);
+
+        widget_13 = new QWidget(page_2);
+        widget_13->setObjectName(QStringLiteral("widget_13"));
+
+        gridLayout_17->addWidget(widget_13, 0, 2, 1, 1);
+
+        semiFirstLabel = new QLabel(page_2);
+        semiFirstLabel->setObjectName(QStringLiteral("semiFirstLabel"));
+        semiFirstLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        semiFirstLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(semiFirstLabel, 1, 0, 1, 1);
+
+        widget_12 = new QWidget(page_2);
+        widget_12->setObjectName(QStringLiteral("widget_12"));
+
+        gridLayout_17->addWidget(widget_12, 1, 1, 2, 1);
+
+        semiSecondLabel = new QLabel(page_2);
+        semiSecondLabel->setObjectName(QStringLiteral("semiSecondLabel"));
+        semiSecondLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        semiSecondLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(semiSecondLabel, 1, 2, 1, 1);
+
+        widget_10 = new QWidget(page_2);
+        widget_10->setObjectName(QStringLiteral("widget_10"));
+
+        gridLayout_17->addWidget(widget_10, 2, 0, 4, 1);
+
+        widget_14 = new QWidget(page_2);
+        widget_14->setObjectName(QStringLiteral("widget_14"));
+
+        gridLayout_17->addWidget(widget_14, 2, 2, 4, 1);
+
+        roundScheduleLabel_12 = new QLabel(page_2);
+        roundScheduleLabel_12->setObjectName(QStringLiteral("roundScheduleLabel_12"));
+        roundScheduleLabel_12->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        roundScheduleLabel_12->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(roundScheduleLabel_12, 3, 1, 1, 1);
+
+        roundScheduleLabel_6 = new QLabel(page_2);
+        roundScheduleLabel_6->setObjectName(QStringLiteral("roundScheduleLabel_6"));
+        roundScheduleLabel_6->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        roundScheduleLabel_6->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(roundScheduleLabel_6, 4, 1, 1, 1);
+
+        widget_5 = new QWidget(page_2);
+        widget_5->setObjectName(QStringLiteral("widget_5"));
+
+        gridLayout_17->addWidget(widget_5, 5, 1, 2, 1);
+
+        semiThirdLabel = new QLabel(page_2);
+        semiThirdLabel->setObjectName(QStringLiteral("semiThirdLabel"));
+        semiThirdLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        semiThirdLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(semiThirdLabel, 6, 0, 1, 1);
+
+        semiFourthLabel = new QLabel(page_2);
+        semiFourthLabel->setObjectName(QStringLiteral("semiFourthLabel"));
+        semiFourthLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        semiFourthLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(semiFourthLabel, 6, 2, 1, 1);
+
+        widget_6 = new QWidget(page_2);
+        widget_6->setObjectName(QStringLiteral("widget_6"));
+
+        gridLayout_17->addWidget(widget_6, 7, 0, 1, 1);
+
+        roundScheduleLabel_14 = new QLabel(page_2);
+        roundScheduleLabel_14->setObjectName(QStringLiteral("roundScheduleLabel_14"));
+        roundScheduleLabel_14->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        roundScheduleLabel_14->setAlignment(Qt::AlignCenter);
+
+        gridLayout_17->addWidget(roundScheduleLabel_14, 7, 1, 1, 1);
+
+        widget_9 = new QWidget(page_2);
+        widget_9->setObjectName(QStringLiteral("widget_9"));
+
+        gridLayout_17->addWidget(widget_9, 7, 2, 1, 1);
+
+        scheduleStackedWidget->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName(QStringLiteral("page_3"));
+        gridLayout_16 = new QGridLayout(page_3);
+        gridLayout_16->setSpacing(6);
+        gridLayout_16->setContentsMargins(11, 11, 11, 11);
+        gridLayout_16->setObjectName(QStringLiteral("gridLayout_16"));
+        widget_3 = new QWidget(page_3);
+        widget_3->setObjectName(QStringLiteral("widget_3"));
+
+        gridLayout_16->addWidget(widget_3, 0, 0, 1, 1);
+
+        roundScheduleLabel_7 = new QLabel(page_3);
+        roundScheduleLabel_7->setObjectName(QStringLiteral("roundScheduleLabel_7"));
+        roundScheduleLabel_7->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        roundScheduleLabel_7->setAlignment(Qt::AlignCenter);
+
+        gridLayout_16->addWidget(roundScheduleLabel_7, 0, 1, 1, 1);
+
+        widget_4 = new QWidget(page_3);
+        widget_4->setObjectName(QStringLiteral("widget_4"));
+
+        gridLayout_16->addWidget(widget_4, 0, 2, 1, 1);
+
+        firstFinalistLabel = new QLabel(page_3);
+        firstFinalistLabel->setObjectName(QStringLiteral("firstFinalistLabel"));
+        firstFinalistLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        firstFinalistLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_16->addWidget(firstFinalistLabel, 1, 0, 1, 1);
+
+        trophyPictureWidget = new QWidget(page_3);
+        trophyPictureWidget->setObjectName(QStringLiteral("trophyPictureWidget"));
+
+        gridLayout_16->addWidget(trophyPictureWidget, 1, 1, 2, 1);
+
+        secondFinalistLabel = new QLabel(page_3);
+        secondFinalistLabel->setObjectName(QStringLiteral("secondFinalistLabel"));
+        secondFinalistLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        secondFinalistLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_16->addWidget(secondFinalistLabel, 1, 2, 1, 1);
+
+        widget_8 = new QWidget(page_3);
+        widget_8->setObjectName(QStringLiteral("widget_8"));
+
+        gridLayout_16->addWidget(widget_8, 2, 0, 2, 1);
+
+        widget_7 = new QWidget(page_3);
+        widget_7->setObjectName(QStringLiteral("widget_7"));
+
+        gridLayout_16->addWidget(widget_7, 2, 2, 2, 1);
+
+        roundScheduleLabel_10 = new QLabel(page_3);
+        roundScheduleLabel_10->setObjectName(QStringLiteral("roundScheduleLabel_10"));
+        roundScheduleLabel_10->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        roundScheduleLabel_10->setAlignment(Qt::AlignCenter);
+
+        gridLayout_16->addWidget(roundScheduleLabel_10, 3, 1, 1, 1);
+
+        winnerLabel = new QLabel(page_3);
+        winnerLabel->setObjectName(QStringLiteral("winnerLabel"));
+        winnerLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        winnerLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_16->addWidget(winnerLabel, 4, 0, 1, 3);
+
+        scheduleStackedWidget->addWidget(page_3);
+
+        gridLayout_7->addWidget(scheduleStackedWidget, 0, 0, 1, 2);
 
         gamePlayStackedWidget->addWidget(schedulePage);
         transferMarketPage = new QWidget();
@@ -989,7 +1250,6 @@ public:
         runGunWidget->raise();
         manToManWidget->raise();
         zoneWidget->raise();
-        manToManButton->raise();
         label_19->raise();
         label_20->raise();
         nextGamePage = new QWidget();
@@ -998,113 +1258,236 @@ public:
         gridLayout_9->setSpacing(6);
         gridLayout_9->setContentsMargins(11, 11, 11, 11);
         gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
-        roundLabel = new QLabel(nextGamePage);
+        gameStackedWidget = new QStackedWidget(nextGamePage);
+        gameStackedWidget->setObjectName(QStringLiteral("gameStackedWidget"));
+        page_4 = new QWidget();
+        page_4->setObjectName(QStringLiteral("page_4"));
+        gridLayout_18 = new QGridLayout(page_4);
+        gridLayout_18->setSpacing(6);
+        gridLayout_18->setContentsMargins(11, 11, 11, 11);
+        gridLayout_18->setObjectName(QStringLiteral("gridLayout_18"));
+        pictureWidget = new QWidget(page_4);
+        pictureWidget->setObjectName(QStringLiteral("pictureWidget"));
+
+        gridLayout_18->addWidget(pictureWidget, 0, 0, 2, 1);
+
+        roundLabel = new QLabel(page_4);
         roundLabel->setObjectName(QStringLiteral("roundLabel"));
-        roundLabel->setLayoutDirection(Qt::LeftToRight);
         roundLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
 "font: 25 14pt \"Ubuntu\";\n"
 "color: white;"));
         roundLabel->setAlignment(Qt::AlignCenter);
 
-        gridLayout_9->addWidget(roundLabel, 0, 1, 1, 2);
+        gridLayout_18->addWidget(roundLabel, 0, 1, 1, 2);
 
-        label_6 = new QLabel(nextGamePage);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+        label_10 = new QLabel(page_4);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
 "font: 25 14pt \"Ubuntu\";\n"
 "color: white;"));
-        label_6->setAlignment(Qt::AlignCenter);
+        label_10->setAlignment(Qt::AlignCenter);
 
-        gridLayout_9->addWidget(label_6, 1, 1, 1, 1);
+        gridLayout_18->addWidget(label_10, 1, 1, 1, 1);
 
-        label_21 = new QLabel(nextGamePage);
+        label_21 = new QLabel(page_4);
         label_21->setObjectName(QStringLiteral("label_21"));
         label_21->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
 "font: 25 14pt \"Ubuntu\";\n"
 "color: white;"));
         label_21->setAlignment(Qt::AlignCenter);
 
-        gridLayout_9->addWidget(label_21, 1, 2, 1, 1);
+        gridLayout_18->addWidget(label_21, 1, 2, 1, 1);
 
-        label_7 = new QLabel(nextGamePage);
+        label_7 = new QLabel(page_4);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 12pt \"Ubuntu\";\n"
+"font: 25 14pt \"Ubuntu\";\n"
 "color: white;"));
         label_7->setAlignment(Qt::AlignCenter);
 
-        gridLayout_9->addWidget(label_7, 2, 0, 1, 1);
+        gridLayout_18->addWidget(label_7, 2, 0, 1, 1);
 
-        label_8 = new QLabel(nextGamePage);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 12pt \"Ubuntu\";\n"
-"color: white;"));
-        label_8->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(label_8, 3, 0, 1, 1);
-
-        secondResultLabel = new QLabel(nextGamePage);
-        secondResultLabel->setObjectName(QStringLiteral("secondResultLabel"));
-        secondResultLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        secondResultLabel->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(secondResultLabel, 3, 1, 1, 2);
-
-        label_9 = new QLabel(nextGamePage);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 12pt \"Ubuntu\";\n"
-"color: white;"));
-        label_9->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(label_9, 4, 0, 1, 1);
-
-        thirdResultLabel = new QLabel(nextGamePage);
-        thirdResultLabel->setObjectName(QStringLiteral("thirdResultLabel"));
-        thirdResultLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        thirdResultLabel->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(thirdResultLabel, 4, 1, 1, 2);
-
-        label_10 = new QLabel(nextGamePage);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 12pt \"Ubuntu\";\n"
-"color: white;"));
-        label_10->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(label_10, 5, 0, 1, 1);
-
-        fourthResultLabel = new QLabel(nextGamePage);
-        fourthResultLabel->setObjectName(QStringLiteral("fourthResultLabel"));
-        fourthResultLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
-"font: 25 14pt \"Ubuntu\";\n"
-"color: white;"));
-        fourthResultLabel->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(fourthResultLabel, 5, 1, 1, 2);
-
-        firstResultLabel = new QLabel(nextGamePage);
+        firstResultLabel = new QLabel(page_4);
         firstResultLabel->setObjectName(QStringLiteral("firstResultLabel"));
         firstResultLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
 "font: 25 14pt \"Ubuntu\";\n"
 "color: white;"));
         firstResultLabel->setAlignment(Qt::AlignCenter);
 
-        gridLayout_9->addWidget(firstResultLabel, 2, 1, 1, 2);
+        gridLayout_18->addWidget(firstResultLabel, 2, 1, 1, 2);
 
-        pictureWidget = new QFrame(nextGamePage);
-        pictureWidget->setObjectName(QStringLiteral("pictureWidget"));
-        pictureWidget->setStyleSheet(QStringLiteral(""));
-        pictureWidget->setFrameShape(QFrame::StyledPanel);
-        pictureWidget->setFrameShadow(QFrame::Raised);
+        label_9 = new QLabel(page_4);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_9->setAlignment(Qt::AlignCenter);
 
-        gridLayout_9->addWidget(pictureWidget, 0, 0, 2, 1);
+        gridLayout_18->addWidget(label_9, 3, 0, 1, 1);
+
+        secondResultLabel = new QLabel(page_4);
+        secondResultLabel->setObjectName(QStringLiteral("secondResultLabel"));
+        secondResultLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        secondResultLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(secondResultLabel, 3, 1, 1, 2);
+
+        label_6 = new QLabel(page_4);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_6->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(label_6, 4, 0, 1, 1);
+
+        thirdResultLabel = new QLabel(page_4);
+        thirdResultLabel->setObjectName(QStringLiteral("thirdResultLabel"));
+        thirdResultLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        thirdResultLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(thirdResultLabel, 4, 1, 1, 2);
+
+        label_8 = new QLabel(page_4);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_8->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(label_8, 5, 0, 1, 1);
+
+        fourthResultLabel = new QLabel(page_4);
+        fourthResultLabel->setObjectName(QStringLiteral("fourthResultLabel"));
+        fourthResultLabel->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        fourthResultLabel->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(fourthResultLabel, 5, 1, 1, 2);
+
+        gameStackedWidget->addWidget(page_4);
+        page_6 = new QWidget();
+        page_6->setObjectName(QStringLiteral("page_6"));
+        gridLayout_19 = new QGridLayout(page_6);
+        gridLayout_19->setSpacing(6);
+        gridLayout_19->setContentsMargins(11, 11, 11, 11);
+        gridLayout_19->setObjectName(QStringLiteral("gridLayout_19"));
+        firstSemiResult = new QLabel(page_6);
+        firstSemiResult->setObjectName(QStringLiteral("firstSemiResult"));
+        firstSemiResult->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        firstSemiResult->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(firstSemiResult, 1, 0, 1, 3);
+
+        widget_19 = new QWidget(page_6);
+        widget_19->setObjectName(QStringLiteral("widget_19"));
+
+        gridLayout_19->addWidget(widget_19, 3, 0, 1, 3);
+
+        secondSemiResult = new QLabel(page_6);
+        secondSemiResult->setObjectName(QStringLiteral("secondSemiResult"));
+        secondSemiResult->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        secondSemiResult->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(secondSemiResult, 4, 0, 1, 3);
+
+        widget_18 = new QWidget(page_6);
+        widget_18->setObjectName(QStringLiteral("widget_18"));
+
+        gridLayout_19->addWidget(widget_18, 5, 0, 1, 1);
+
+        label_29 = new QLabel(page_6);
+        label_29->setObjectName(QStringLiteral("label_29"));
+        label_29->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_29->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(label_29, 5, 1, 1, 1);
+
+        widget_17 = new QWidget(page_6);
+        widget_17->setObjectName(QStringLiteral("widget_17"));
+
+        gridLayout_19->addWidget(widget_17, 5, 2, 1, 1);
+
+        widget_15 = new QWidget(page_6);
+        widget_15->setObjectName(QStringLiteral("widget_15"));
+
+        gridLayout_19->addWidget(widget_15, 0, 0, 1, 1);
+
+        label_2 = new QLabel(page_6);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(label_2, 0, 1, 1, 1);
+
+        widget_16 = new QWidget(page_6);
+        widget_16->setObjectName(QStringLiteral("widget_16"));
+
+        gridLayout_19->addWidget(widget_16, 0, 2, 1, 1);
+
+        widget_20 = new QWidget(page_6);
+        widget_20->setObjectName(QStringLiteral("widget_20"));
+
+        gridLayout_19->addWidget(widget_20, 2, 0, 1, 3);
+
+        gameStackedWidget->addWidget(page_6);
+        page_5 = new QWidget();
+        page_5->setObjectName(QStringLiteral("page_5"));
+        gridLayout_20 = new QGridLayout(page_5);
+        gridLayout_20->setSpacing(6);
+        gridLayout_20->setContentsMargins(11, 11, 11, 11);
+        gridLayout_20->setObjectName(QStringLiteral("gridLayout_20"));
+        widget_22 = new QWidget(page_5);
+        widget_22->setObjectName(QStringLiteral("widget_22"));
+
+        gridLayout_20->addWidget(widget_22, 0, 0, 1, 1);
+
+        label_28 = new QLabel(page_5);
+        label_28->setObjectName(QStringLiteral("label_28"));
+        label_28->setMaximumSize(QSize(16777215, 50));
+        label_28->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        label_28->setAlignment(Qt::AlignCenter);
+
+        gridLayout_20->addWidget(label_28, 0, 1, 1, 1);
+
+        widget_23 = new QWidget(page_5);
+        widget_23->setObjectName(QStringLiteral("widget_23"));
+
+        gridLayout_20->addWidget(widget_23, 0, 2, 1, 1);
+
+        finalsResult = new QLabel(page_5);
+        finalsResult->setObjectName(QStringLiteral("finalsResult"));
+        finalsResult->setMaximumSize(QSize(16777215, 70));
+        finalsResult->setStyleSheet(QLatin1String("background-color:rgba(120, 77, 30, 155);\n"
+"font: 25 14pt \"Ubuntu\";\n"
+"color: white;"));
+        finalsResult->setAlignment(Qt::AlignCenter);
+
+        gridLayout_20->addWidget(finalsResult, 1, 0, 1, 3);
+
+        widget_21 = new QWidget(page_5);
+        widget_21->setObjectName(QStringLiteral("widget_21"));
+
+        gridLayout_20->addWidget(widget_21, 2, 0, 1, 3);
+
+        gameStackedWidget->addWidget(page_5);
+
+        gridLayout_9->addWidget(gameStackedWidget, 0, 0, 1, 1);
 
         gamePlayStackedWidget->addWidget(nextGamePage);
 
@@ -1126,7 +1509,9 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget->setCurrentIndex(1);
-        gamePlayStackedWidget->setCurrentIndex(0);
+        gamePlayStackedWidget->setCurrentIndex(3);
+        scheduleStackedWidget->setCurrentIndex(1);
+        gameStackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1141,6 +1526,7 @@ public:
         nationalityBox->clear();
         nationalityBox->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Argentina", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Bulgaria", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Brasil", Q_NULLPTR)
          << QApplication::translate("MainWindow", "China", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Croatia", Q_NULLPTR)
@@ -1149,6 +1535,7 @@ public:
          << QApplication::translate("MainWindow", "Hungary", Q_NULLPTR)
          << QApplication::translate("MainWindow", "India", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Japan", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Poland", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Romania", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Russian Federation", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Serbia", Q_NULLPTR)
@@ -1211,19 +1598,32 @@ public:
         label_25->setText(QApplication::translate("MainWindow", "8", Q_NULLPTR));
         eighthPlaceName->setText(QApplication::translate("MainWindow", "1", Q_NULLPTR));
         eighthPlacePoints->setText(QApplication::translate("MainWindow", "8", Q_NULLPTR));
-        label_11->setText(QApplication::translate("MainWindow", "AWAY", Q_NULLPTR));
-        label_13->setText(QApplication::translate("MainWindow", "GAME 1", Q_NULLPTR));
-        firstScheduleLabel->setText(QApplication::translate("MainWindow", "GAME 1 SCHEDULE", Q_NULLPTR));
-        label_16->setText(QApplication::translate("MainWindow", "GAME 2", Q_NULLPTR));
-        secondScheduleLabel->setText(QApplication::translate("MainWindow", "GAME 2 SCHEDULE", Q_NULLPTR));
-        label_15->setText(QApplication::translate("MainWindow", "GAME 3", Q_NULLPTR));
-        thirdScheduleLabel->setText(QApplication::translate("MainWindow", "GAME 3 SCHEDULE", Q_NULLPTR));
-        label_14->setText(QApplication::translate("MainWindow", "GAME 4", Q_NULLPTR));
-        fourthScheduleLabel->setText(QApplication::translate("MainWindow", "GAME 4 SCHEDULE", Q_NULLPTR));
-        roundScheduleLabel->setText(QApplication::translate("MainWindow", "ROUND COUNTER", Q_NULLPTR));
-        label_12->setText(QApplication::translate("MainWindow", "HOME", Q_NULLPTR));
         nextRoundButton->setText(QApplication::translate("MainWindow", "NEXT", Q_NULLPTR));
         previousRoundButton->setText(QApplication::translate("MainWindow", "PREVIOUS", Q_NULLPTR));
+        secondScheduleLabel->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
+        label_12->setText(QApplication::translate("MainWindow", "AWAY", Q_NULLPTR));
+        thirdScheduleLabel->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
+        label_15->setText(QApplication::translate("MainWindow", "GAME 2", Q_NULLPTR));
+        label_16->setText(QApplication::translate("MainWindow", "GAME 1", Q_NULLPTR));
+        label_14->setText(QApplication::translate("MainWindow", "GAME 4", Q_NULLPTR));
+        label_11->setText(QApplication::translate("MainWindow", "HOME", Q_NULLPTR));
+        roundScheduleLabel->setText(QApplication::translate("MainWindow", "ROUND", Q_NULLPTR));
+        fourthScheduleLabel->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
+        firstScheduleLabel->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
+        label_13->setText(QApplication::translate("MainWindow", "GAME 3", Q_NULLPTR));
+        roundScheduleLabel_13->setText(QApplication::translate("MainWindow", "SEMIFINALS 1", Q_NULLPTR));
+        semiFirstLabel->setText(QApplication::translate("MainWindow", "SEMIFINALIST 1", Q_NULLPTR));
+        semiSecondLabel->setText(QApplication::translate("MainWindow", "SEMIFINALIST 2", Q_NULLPTR));
+        roundScheduleLabel_12->setText(QApplication::translate("MainWindow", "WINNER OF S1", Q_NULLPTR));
+        roundScheduleLabel_6->setText(QApplication::translate("MainWindow", "WINNER OF S2", Q_NULLPTR));
+        semiThirdLabel->setText(QApplication::translate("MainWindow", "SEMIFINALIST 3", Q_NULLPTR));
+        semiFourthLabel->setText(QApplication::translate("MainWindow", "SEMIFINALIST 4", Q_NULLPTR));
+        roundScheduleLabel_14->setText(QApplication::translate("MainWindow", "SEMIFINALS 2", Q_NULLPTR));
+        roundScheduleLabel_7->setText(QApplication::translate("MainWindow", "FINALS", Q_NULLPTR));
+        firstFinalistLabel->setText(QApplication::translate("MainWindow", "FINALIST 1", Q_NULLPTR));
+        secondFinalistLabel->setText(QApplication::translate("MainWindow", "FINALIST 2", Q_NULLPTR));
+        roundScheduleLabel_10->setText(QApplication::translate("MainWindow", "WINNER", Q_NULLPTR));
+        winnerLabel->setText(QApplication::translate("MainWindow", "CHAMPION", Q_NULLPTR));
         buyButton->setText(QApplication::translate("MainWindow", "BUY", Q_NULLPTR));
         label_19->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">ATTACK</span></p></body></html>", Q_NULLPTR));
         label_20->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">DEFENCE</span></p></body></html>", Q_NULLPTR));
@@ -1231,17 +1631,23 @@ public:
         zoneButton->setText(QApplication::translate("MainWindow", "ZONE", Q_NULLPTR));
         runAndGunButton->setText(QApplication::translate("MainWindow", "RUN AND GUN", Q_NULLPTR));
         positionAttackButton->setText(QApplication::translate("MainWindow", "POSITION", Q_NULLPTR));
-        roundLabel->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">ROUND</span></p></body></html>", Q_NULLPTR));
-        label_6->setText(QApplication::translate("MainWindow", "HOME", Q_NULLPTR));
+        roundLabel->setText(QApplication::translate("MainWindow", "ROUND ", Q_NULLPTR));
+        label_10->setText(QApplication::translate("MainWindow", "HOME", Q_NULLPTR));
         label_21->setText(QApplication::translate("MainWindow", "AWAY", Q_NULLPTR));
-        label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">GAME 1</span></p></body></html>", Q_NULLPTR));
-        label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">GAME 2</span></p></body></html>", Q_NULLPTR));
-        secondResultLabel->setText(QApplication::translate("MainWindow", "GAME 1 RESULT", Q_NULLPTR));
-        label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">GAME 3</span></p></body></html>", Q_NULLPTR));
-        thirdResultLabel->setText(QApplication::translate("MainWindow", "GAME 1 RESULT", Q_NULLPTR));
-        label_10->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">GAME 4</span></p></body></html>", Q_NULLPTR));
-        fourthResultLabel->setText(QApplication::translate("MainWindow", "GAME 1 RESULT", Q_NULLPTR));
-        firstResultLabel->setText(QApplication::translate("MainWindow", "GAME 1 RESULT", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "GAME 1", Q_NULLPTR));
+        firstResultLabel->setText(QApplication::translate("MainWindow", "FIRST GAME RESULTS", Q_NULLPTR));
+        label_9->setText(QApplication::translate("MainWindow", "GAME 2", Q_NULLPTR));
+        secondResultLabel->setText(QApplication::translate("MainWindow", "SECOND GAME RESULTS", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "GAME 3", Q_NULLPTR));
+        thirdResultLabel->setText(QApplication::translate("MainWindow", "THIRD GAME RESULTS", Q_NULLPTR));
+        label_8->setText(QApplication::translate("MainWindow", "GAME 4", Q_NULLPTR));
+        fourthResultLabel->setText(QApplication::translate("MainWindow", "FOURTH GAME RESULTS", Q_NULLPTR));
+        firstSemiResult->setText(QApplication::translate("MainWindow", "RESULTS OF S1", Q_NULLPTR));
+        secondSemiResult->setText(QApplication::translate("MainWindow", "FESULTS OF S2", Q_NULLPTR));
+        label_29->setText(QApplication::translate("MainWindow", "SEMIFINALS 2", Q_NULLPTR));
+        label_2->setText(QApplication::translate("MainWindow", "SEMIFINALS 1", Q_NULLPTR));
+        label_28->setText(QApplication::translate("MainWindow", "FINALS", Q_NULLPTR));
+        finalsResult->setText(QApplication::translate("MainWindow", "FINALS", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>763</width>
-    <height>464</height>
+    <height>498</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -90,6 +90,11 @@ background-color: rgb(120, 77, 30);</string>
           </item>
           <item>
            <property name="text">
+            <string>Bulgaria</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Brasil</string>
            </property>
           </item>
@@ -126,6 +131,11 @@ background-color: rgb(120, 77, 30);</string>
           <item>
            <property name="text">
             <string>Japan</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Poland</string>
            </property>
           </item>
           <item>
@@ -394,7 +404,7 @@ color:white;</string>
               <string notr="true">background:transparent;</string>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>3</number>
              </property>
              <widget class="QWidget" name="homePage">
               <layout class="QGridLayout" name="gridLayout_14">
@@ -1047,189 +1057,18 @@ font: 57 20pt &quot;Ubuntu&quot;;</string>
              </widget>
              <widget class="QWidget" name="schedulePage">
               <layout class="QGridLayout" name="gridLayout_7">
-               <item row="1" column="3">
-                <widget class="QLabel" name="label_11">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>AWAY</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_13">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 1</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="indent">
-                  <number>5</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1" colspan="3">
-                <widget class="QLabel" name="firstScheduleLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 1 SCHEDULE</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_16">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 2</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="indent">
-                  <number>5</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1" colspan="3">
-                <widget class="QLabel" name="secondScheduleLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 2 SCHEDULE</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="label_15">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 3</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="indent">
-                  <number>5</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1" colspan="3">
-                <widget class="QLabel" name="thirdScheduleLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 3 SCHEDULE</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="label_14">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 4</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="indent">
-                  <number>5</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1" colspan="3">
-                <widget class="QLabel" name="fourthScheduleLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 4 SCHEDULE</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1" colspan="3">
-                <widget class="QLabel" name="roundScheduleLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>ROUND COUNTER</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="1">
-                <widget class="QLabel" name="label_12">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 14pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>HOME</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="3">
                 <widget class="QPushButton" name="nextRoundButton">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
                    <height>40</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="styleSheet">
@@ -1243,12 +1082,18 @@ color:white;
                  </property>
                 </widget>
                </item>
-               <item row="6" column="1">
+               <item row="1" column="0">
                 <widget class="QPushButton" name="previousRoundButton">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
                    <height>40</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="styleSheet">
@@ -1259,6 +1104,424 @@ color:white;</string>
                  <property name="text">
                   <string>PREVIOUS</string>
                  </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QStackedWidget" name="scheduleStackedWidget">
+                 <property name="currentIndex">
+                  <number>1</number>
+                 </property>
+                 <widget class="QWidget" name="page">
+                  <layout class="QGridLayout" name="gridLayout_15">
+                   <item row="3" column="1" colspan="3">
+                    <widget class="QLabel" name="secondScheduleLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="3">
+                    <widget class="QLabel" name="label_12">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>AWAY</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1" colspan="3">
+                    <widget class="QLabel" name="thirdScheduleLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="label_15">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>GAME 2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_16">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>GAME 1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QLabel" name="label_14">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>GAME 4</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="label_11">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>HOME</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QLabel" name="roundScheduleLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>ROUND</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1" colspan="3">
+                    <widget class="QLabel" name="fourthScheduleLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1" colspan="3">
+                    <widget class="QLabel" name="firstScheduleLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QLabel" name="label_13">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>GAME 3</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_2">
+                  <layout class="QGridLayout" name="gridLayout_17">
+                   <item row="0" column="0">
+                    <widget class="QWidget" name="widget_11" native="true"/>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="roundScheduleLabel_13">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALS 1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QWidget" name="widget_13" native="true"/>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="semiFirstLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALIST 1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1" rowspan="2">
+                    <widget class="QWidget" name="widget_12" native="true"/>
+                   </item>
+                   <item row="1" column="2">
+                    <widget class="QLabel" name="semiSecondLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALIST 2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0" rowspan="4">
+                    <widget class="QWidget" name="widget_10" native="true"/>
+                   </item>
+                   <item row="2" column="2" rowspan="4">
+                    <widget class="QWidget" name="widget_14" native="true"/>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QLabel" name="roundScheduleLabel_12">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>WINNER OF S1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1">
+                    <widget class="QLabel" name="roundScheduleLabel_6">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>WINNER OF S2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1" rowspan="2">
+                    <widget class="QWidget" name="widget_5" native="true"/>
+                   </item>
+                   <item row="6" column="0">
+                    <widget class="QLabel" name="semiThirdLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALIST 3</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="2">
+                    <widget class="QLabel" name="semiFourthLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALIST 4</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="7" column="0">
+                    <widget class="QWidget" name="widget_6" native="true"/>
+                   </item>
+                   <item row="7" column="1">
+                    <widget class="QLabel" name="roundScheduleLabel_14">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALS 2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="7" column="2">
+                    <widget class="QWidget" name="widget_9" native="true"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_3">
+                  <layout class="QGridLayout" name="gridLayout_16">
+                   <item row="0" column="0">
+                    <widget class="QWidget" name="widget_3" native="true"/>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="roundScheduleLabel_7">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>FINALS</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QWidget" name="widget_4" native="true"/>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="firstFinalistLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>FINALIST 1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1" rowspan="2">
+                    <widget class="QWidget" name="trophyPictureWidget" native="true"/>
+                   </item>
+                   <item row="1" column="2">
+                    <widget class="QLabel" name="secondFinalistLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>FINALIST 2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0" rowspan="2">
+                    <widget class="QWidget" name="widget_8" native="true"/>
+                   </item>
+                   <item row="2" column="2" rowspan="2">
+                    <widget class="QWidget" name="widget_7" native="true"/>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QLabel" name="roundScheduleLabel_10">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>WINNER</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0" colspan="3">
+                    <widget class="QLabel" name="winnerLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>CHAMPION</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                 </widget>
                </item>
               </layout>
@@ -1448,191 +1711,325 @@ margin:auto;</string>
               <zorder>runGunWidget</zorder>
               <zorder>manToManWidget</zorder>
               <zorder>zoneWidget</zorder>
-              <zorder>manToManButton</zorder>
               <zorder>label_19</zorder>
               <zorder>label_20</zorder>
              </widget>
              <widget class="QWidget" name="nextGamePage">
               <layout class="QGridLayout" name="gridLayout_9">
-               <item row="0" column="1" colspan="2">
-                <widget class="QLabel" name="roundLabel">
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
+               <item row="0" column="0">
+                <widget class="QStackedWidget" name="gameStackedWidget">
+                 <property name="currentIndex">
+                  <number>0</number>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+                 <widget class="QWidget" name="page_4">
+                  <layout class="QGridLayout" name="gridLayout_18">
+                   <item row="0" column="0" rowspan="2">
+                    <widget class="QWidget" name="pictureWidget" native="true"/>
+                   </item>
+                   <item row="0" column="1" colspan="2">
+                    <widget class="QLabel" name="roundLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
 font: 25 14pt &quot;Ubuntu&quot;;
 color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ROUND&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_6">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+                     </property>
+                     <property name="text">
+                      <string>ROUND </string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="label_10">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
 font: 25 14pt &quot;Ubuntu&quot;;
 color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>HOME</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLabel" name="label_21">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+                     </property>
+                     <property name="text">
+                      <string>HOME</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="2">
+                    <widget class="QLabel" name="label_21">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
 font: 25 14pt &quot;Ubuntu&quot;;
 color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>AWAY</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_7">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 12pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_8">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 12pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1" colspan="2">
-                <widget class="QLabel" name="secondResultLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+                     </property>
+                     <property name="text">
+                      <string>AWAY</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_7">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
 font: 25 14pt &quot;Ubuntu&quot;;
 color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 1 RESULT</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="label_9">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 12pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1" colspan="2">
-                <widget class="QLabel" name="thirdResultLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+                     </property>
+                     <property name="text">
+                      <string>GAME 1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1" colspan="2">
+                    <widget class="QLabel" name="firstResultLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
 font: 25 14pt &quot;Ubuntu&quot;;
 color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 1 RESULT</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="label_10">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
-font: 25 12pt &quot;Ubuntu&quot;;
-color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;GAME 4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1" colspan="2">
-                <widget class="QLabel" name="fourthResultLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+                     </property>
+                     <property name="text">
+                      <string>FIRST GAME RESULTS</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="label_9">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
 font: 25 14pt &quot;Ubuntu&quot;;
 color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 1 RESULT</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1" colspan="2">
-                <widget class="QLabel" name="firstResultLabel">
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(120, 77, 30, 155);
+                     </property>
+                     <property name="text">
+                      <string>GAME 2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1" colspan="2">
+                    <widget class="QLabel" name="secondResultLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
 font: 25 14pt &quot;Ubuntu&quot;;
 color: white;</string>
-                 </property>
-                 <property name="text">
-                  <string>GAME 1 RESULT</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0" rowspan="2">
-                <widget class="QFrame" name="pictureWidget">
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
+                     </property>
+                     <property name="text">
+                      <string>SECOND GAME RESULTS</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QLabel" name="label_6">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>GAME 3</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1" colspan="2">
+                    <widget class="QLabel" name="thirdResultLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>THIRD GAME RESULTS</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QLabel" name="label_8">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>GAME 4</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1" colspan="2">
+                    <widget class="QLabel" name="fourthResultLabel">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>FOURTH GAME RESULTS</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_6">
+                  <layout class="QGridLayout" name="gridLayout_19">
+                   <item row="1" column="0" colspan="3">
+                    <widget class="QLabel" name="firstSemiResult">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>RESULTS OF S1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0" colspan="3">
+                    <widget class="QWidget" name="widget_19" native="true"/>
+                   </item>
+                   <item row="4" column="0" colspan="3">
+                    <widget class="QLabel" name="secondSemiResult">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>FESULTS OF S2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QWidget" name="widget_18" native="true"/>
+                   </item>
+                   <item row="5" column="1">
+                    <widget class="QLabel" name="label_29">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALS 2</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="2">
+                    <widget class="QWidget" name="widget_17" native="true"/>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QWidget" name="widget_15" native="true"/>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="label_2">
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>SEMIFINALS 1</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QWidget" name="widget_16" native="true"/>
+                   </item>
+                   <item row="2" column="0" colspan="3">
+                    <widget class="QWidget" name="widget_20" native="true"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_5">
+                  <layout class="QGridLayout" name="gridLayout_20">
+                   <item row="0" column="0">
+                    <widget class="QWidget" name="widget_22" native="true"/>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="label_28">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>FINALS</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QWidget" name="widget_23" native="true"/>
+                   </item>
+                   <item row="1" column="0" colspan="3">
+                    <widget class="QLabel" name="finalsResult">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>70</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgba(120, 77, 30, 155);
+font: 25 14pt &quot;Ubuntu&quot;;
+color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>FINALS</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0" colspan="3">
+                    <widget class="QWidget" name="widget_21" native="true"/>
+                   </item>
+                  </layout>
+                 </widget>
                 </widget>
                </item>
               </layout>

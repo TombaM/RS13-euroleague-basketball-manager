@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[19];
-    char stringdata0[439];
+    QByteArrayData data[21];
+    char stringdata0[474];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,7 +47,9 @@ QT_MOC_LITERAL(14, 301, 31), // "on_positionAttackButton_clicked"
 QT_MOC_LITERAL(15, 333, 25), // "on_manToManButton_clicked"
 QT_MOC_LITERAL(16, 359, 21), // "on_zoneButton_clicked"
 QT_MOC_LITERAL(17, 381, 26), // "on_nextRoundButton_clicked"
-QT_MOC_LITERAL(18, 408, 30) // "on_previousRoundButton_clicked"
+QT_MOC_LITERAL(18, 408, 30), // "on_previousRoundButton_clicked"
+QT_MOC_LITERAL(19, 439, 29), // "on_firstPlaceName_linkHovered"
+QT_MOC_LITERAL(20, 469, 4) // "link"
 
     },
     "MainWindow\0on_startButton_clicked\0\0"
@@ -62,7 +64,8 @@ QT_MOC_LITERAL(18, 408, 30) // "on_previousRoundButton_clicked"
     "on_positionAttackButton_clicked\0"
     "on_manToManButton_clicked\0"
     "on_zoneButton_clicked\0on_nextRoundButton_clicked\0"
-    "on_previousRoundButton_clicked"
+    "on_previousRoundButton_clicked\0"
+    "on_firstPlaceName_linkHovered\0link"
 };
 #undef QT_MOC_LITERAL
 
@@ -72,7 +75,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -80,22 +83,23 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   94,    2, 0x08 /* Private */,
-       3,    0,   95,    2, 0x08 /* Private */,
-       4,    0,   96,    2, 0x08 /* Private */,
-       5,    0,   97,    2, 0x08 /* Private */,
-       6,    0,   98,    2, 0x08 /* Private */,
-       7,    0,   99,    2, 0x08 /* Private */,
-       8,    0,  100,    2, 0x08 /* Private */,
-       9,    0,  101,    2, 0x08 /* Private */,
-      10,    0,  102,    2, 0x08 /* Private */,
-      11,    0,  103,    2, 0x08 /* Private */,
-      12,    1,  104,    2, 0x08 /* Private */,
-      14,    1,  107,    2, 0x08 /* Private */,
-      15,    1,  110,    2, 0x08 /* Private */,
-      16,    1,  113,    2, 0x08 /* Private */,
-      17,    0,  116,    2, 0x08 /* Private */,
-      18,    0,  117,    2, 0x08 /* Private */,
+       1,    0,   99,    2, 0x08 /* Private */,
+       3,    0,  100,    2, 0x08 /* Private */,
+       4,    0,  101,    2, 0x08 /* Private */,
+       5,    0,  102,    2, 0x08 /* Private */,
+       6,    0,  103,    2, 0x08 /* Private */,
+       7,    0,  104,    2, 0x08 /* Private */,
+       8,    0,  105,    2, 0x08 /* Private */,
+       9,    0,  106,    2, 0x08 /* Private */,
+      10,    0,  107,    2, 0x08 /* Private */,
+      11,    0,  108,    2, 0x08 /* Private */,
+      12,    1,  109,    2, 0x08 /* Private */,
+      14,    1,  112,    2, 0x08 /* Private */,
+      15,    1,  115,    2, 0x08 /* Private */,
+      16,    1,  118,    2, 0x08 /* Private */,
+      17,    0,  121,    2, 0x08 /* Private */,
+      18,    0,  122,    2, 0x08 /* Private */,
+      19,    1,  123,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -114,6 +118,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Bool,   13,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   20,
 
        0        // eod
 };
@@ -170,13 +175,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 17)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        _id -= 17;
     }
     return _id;
 }
